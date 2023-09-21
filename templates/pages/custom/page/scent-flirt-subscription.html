@@ -5,6 +5,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <style>
 
 	.body {
@@ -104,6 +107,14 @@
 		margin: 0;
 		padding: 6rem 0;
 	}
+
+
+	.section-membership {
+		background-color: #f2f8ff;
+		margin: 0;
+		/* padding: 6rem 0; */
+		/* padding: 6rem 0 0 0;  */
+	}
 	.fw-6{
 	    font-weight: 600;
 	}
@@ -175,10 +186,129 @@
 		background-color: #fcecf3;
 	}
 
-	.testimonial-subs{
-
+	.section-membership .card {
+		border: 3px solid #000000;
+		border-radius: 0;
 	}
 
+	.section-membership .card-header {
+		background-color: #000000;
+		border-radius:0;
+	}
+	
+	.section-membership .subHeading{
+		color: #8f8d8d;
+		font-weight: 700;
+		margin-bottom: 0;
+	}
+
+	.section-membership hr {
+		background:#000000;
+	}
+
+	.section-membership .amount-big{
+		font-weight: 900;
+		font-size: 50px;
+	}
+
+	.section-membership .amount-month {
+		font-weight: 800;
+	}
+
+	.section-membership ul  {
+		padding-inline-start: 0%;
+		list-style: none;
+		margin-left: 0;
+	}
+
+	.section-membership li {
+		display: flex;
+		margin-top: 20px;
+	}
+
+	.section-membership li p{
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+	
+	.section-membership li:before {
+		content: "•";
+		font-size: 50px;
+		padding-right: 15px;
+		vertical-align: middle;
+		line-height: 20px;
+		color: #f587b6;
+	}
+
+	.section-membership input[type="checkbox"] {
+		appearance: none;
+		width: 1.15em;
+		height: 1.15em;
+		border: 1px solid #ff65a7;
+		border-radius: 0;
+		transform: translateY(-0.075em);
+	}
+
+	.section-membership .badge-pink {
+		position: absolute;
+		display: flex;
+		background-color: #ff1378;
+		border-radius: 100%;
+		width: 100px;
+		height: 100px;
+		right: -27px;
+		top: 20px;
+	}
+
+	.section-membership .badge-pink span {
+		color: #ffffff;
+		font-size: 23px;
+		vertical-align: middle;
+		line-height: 1.2;
+		margin: auto;
+	}
+
+	.form-check input:checked + label:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 4px;
+		left: 6px;
+		width: 6px;
+		height: 14px;
+		border: solid #ff65a7;
+		border-width: 0 2px 2px 0;
+		transform: rotate(45deg);
+	}
+
+	.slick-dots{
+		display: none !important;
+	}
+
+	.slick-next, .slick-prev {
+	    top: 95% !important;
+	}
+	
+	.slick-next:before, .slick-prev:before {
+	    color: #fff0 !important;
+	}
+	.slick-prev {
+	    left: 0px;
+	}
+	.slick-next, .slick-prev {
+	    width: 20rem;
+	}
+
+	@media (max-width: 768px) {
+	    .d-smn-none {
+	        display: none;
+	    }
+
+		.section-membership .badge-pink {
+			right: 0;
+			top: 20px;
+		}
+	}
 
 </style>
 
@@ -332,6 +462,259 @@
 	</div>
 </div>
 
+<div class="section-membership pt-5">
+	<div class="container text-center">
+		<h1 class="clr-black mb-5 font-weight-bold">CHOOSE YOUR MEMBERSHIP</h1>
+		<div class="row mt-5 pt-3 d-smn-none">
+			<div class="col-md-6 col-lg-5 offset-lg-1">
+				<div class="card">
+					<div class="card-header py-3">
+						<h5 class="text-light font-weight-bold mb-0">SCENTFLIRT</h5>
+					</div>
+					<div class="card-body px-5">
+						<p class="subHeading">STARTING AT</p>
+						<P class="clr-black mb-1"><span class="amount-big">$34</span><span class="amount-month"> / A MONTH</span></P>
+						<hr>
+						<div class="text-left">
+							<ul>
+								<li>
+									<p>
+										Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.
+									</p>
+								</li>
+								<li>
+									<p>
+										Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.
+									</p>
+								</li>
+								<li>
+									<p>
+										Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.
+									</p>
+								</li>
+							</ul>
+							<form class="mt-5 mb-3" action="" method="post">
+								<h6 class="clr-black font-weight-bold">CHOOSE YOUR SUBSCRIPTION LENGTH</h6>
+								
+								<div class="form-check mt-3">
+									<input class="form-check-input" type="checkbox" name="subscription" id="monthly">
+									<label class="form-check-label pl-md-3" for="monthly">
+										<span class="clr-black font-weight-bold">MONTHLY</span> <span>$34/month</span>
+									</label>
+								</div>
+								
+								<div class="form-check mt-3">
+									<input class="form-check-input" type="checkbox" name="subscription" id="quarterly">
+									<label class="form-check-label pl-md-3" for="quarterly">
+										<span class="clr-black font-weight-bold">3-MONTH PREPAID</span> <span>$99/3 months + FREE shipping</span>
+									</label>
+								</div>
+								
+								<div class="form-check mt-3">
+									<input class="form-check-input" type="checkbox" name="subscription" id="annually">
+									<label class="form-check-label pl-md-3" for="annually">
+										<span class="clr-black font-weight-bold">6-MONTH PREPAID</span> <span>$204/6 months + FREE shipping</span>
+									</label>
+								</div>
+								<div class="note text-center mt-4">
+									<i>All Plans Auto-Renew</i>
+								</div>
+								<button class="btn-primary mt-4 mb-5 w-100">SUBSCRIBE</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-5">
+				<div class="card">
+					<div class="card-header py-3">
+						<h5 class="text-light font-weight-bold mb-0">SCENTFLIRT PLUS</h5>
+					</div>
+					<div class="card-body px-5">
+						<div class="badge-pink">
+							<span>BEST VALUE</span>
+						</div>
+						<p class="subHeading">STARTING AT</p>
+						<P class="clr-black mb-1"><span class="amount-big">$54</span><span class="amount-month"> / A MONTH</span></P>
+						<hr>
+						<div class="text-left">
+							<ul>
+								<li>
+									<p>
+										Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.
+									</p>
+								</li>
+								<li>
+									<p>
+										Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.
+									</p>
+								</li>
+								<li>
+									<p>
+										Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.
+									</p>
+								</li>
+							</ul>
+							<form class="mt-5 mb-3" action="" method="post">
+								<h6 class="clr-black font-weight-bold">CHOOSE YOUR SUBSCRIPTION LENGTH</h6>
+								
+								<div class="form-check mt-3">
+									<input class="form-check-input" type="checkbox" name="subscription" id="monthly">
+									<label class="form-check-label pl-md-3" for="monthly">
+										<span class="clr-black font-weight-bold">MONTHLY</span> <span>$54/month</span>
+									</label>
+								</div>
+								
+								<div class="form-check mt-3">
+									<input class="form-check-input" type="checkbox" name="subscription" id="quarterly">
+									<label class="form-check-label pl-md-3" for="quarterly">
+										<span class="clr-black font-weight-bold">3-MONTH PREPAID</span> <span>$140/3 months + FREE shipping</span>
+									</label>
+								</div>
+								
+								<div class="form-check mt-3">
+									<input class="form-check-input" type="checkbox" name="subscription" id="annually">
+									<label class="form-check-label pl-md-3" for="annually">
+										<span class="clr-black font-weight-bold">6-MONTH PREPAID</span> <span>$250/6 months + FREE shipping</span>
+									</label>
+								</div>
+								<div class="note text-center mt-4">
+									<i>All Plans Auto-Renew</i>
+								</div>
+								<button class="btn-primary mt-4 mb-5 w-100">SUBSCRIBE</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mt-5 pt-3 slider slider1 d-md-none">
+			<!-- Slick Carousel items -->
+			<div class="slider-item m-2">
+				<div class="card">
+					<div class="card-header py-3">
+						<h5 class="text-light font-weight-bold mb-0">SCENTFLIRT</h5>
+					</div>
+					<div class="card-body px-5">
+						<p class="subHeading">STARTING AT</p>
+						<P class="clr-black mb-1"><span class="amount-big">$34</span><span class="amount-month"> / A MONTH</span></P>
+						<hr>
+						<div class="text-left">
+							<ul>
+								<li>
+									<p>
+										Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.
+									</p>
+								</li>
+								<li>
+									<p>
+										Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.
+									</p>
+								</li>
+								<li>
+									<p>
+										Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.
+									</p>
+								</li>
+							</ul>
+							<form class="mt-5 mb-3" action="" method="post">
+								<h6 class="clr-black font-weight-bold">CHOOSE YOUR SUBSCRIPTION LENGTH</h6>
+								
+								<div class="form-check mt-3">
+									<input class="form-check-input" type="checkbox" name="subscription" id="monthly">
+									<label class="form-check-label pl-md-3" for="monthly">
+										<span class="clr-black font-weight-bold">MONTHLY</span> <span>$34/month</span>
+									</label>
+								</div>
+								
+								<div class="form-check mt-3">
+									<input class="form-check-input" type="checkbox" name="subscription" id="quarterly">
+									<label class="form-check-label pl-md-3" for="quarterly">
+										<span class="clr-black font-weight-bold">3-MONTH PREPAID</span> <span>$99/3 months + FREE shipping</span>
+									</label>
+								</div>
+								
+								<div class="form-check mt-3">
+									<input class="form-check-input" type="checkbox" name="subscription" id="annually">
+									<label class="form-check-label pl-md-3" for="annually">
+										<span class="clr-black font-weight-bold">6-MONTH PREPAID</span> <span>$204/6 months + FREE shipping</span>
+									</label>
+								</div>
+								<div class="note text-center mt-4">
+									<i>All Plans Auto-Renew</i>
+								</div>
+								<button class="btn-primary mt-4 mb-5 w-100">SUBSCRIBE</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="slider-item m-2">
+				<div class="card">
+					<div class="card-header py-3">
+						<h5 class="text-light font-weight-bold mb-0">SCENTFLIRT PLUS</h5>
+					</div>
+					<div class="card-body px-5">
+						<div class="badge-pink">
+							<span>BEST VALUE</span>
+						</div>
+						<p class="subHeading">STARTING AT</p>
+						<P class="clr-black mb-1"><span class="amount-big">$54</span><span class="amount-month"> / A MONTH</span></P>
+						<hr>
+						<div class="text-left">
+							<ul>
+								<li>
+									<p>
+										Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua.
+									</p>
+								</li>
+								<li>
+									<p>
+										Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.
+									</p>
+								</li>
+								<li>
+									<p>
+										Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit.
+									</p>
+								</li>
+							</ul>
+							<form class="mt-5 mb-3" action="" method="post">
+								<h6 class="clr-black font-weight-bold">CHOOSE YOUR SUBSCRIPTION LENGTH</h6>
+								
+								<div class="form-check mt-3">
+									<input class="form-check-input" type="checkbox" name="subscription" id="monthly">
+									<label class="form-check-label pl-md-3" for="monthly">
+										<span class="clr-black font-weight-bold">MONTHLY</span> <span>$54/month</span>
+									</label>
+								</div>
+								
+								<div class="form-check mt-3">
+									<input class="form-check-input" type="checkbox" name="subscription" id="quarterly">
+									<label class="form-check-label pl-md-3" for="quarterly">
+										<span class="clr-black font-weight-bold">3-MONTH PREPAID</span> <span>$140/3 months + FREE shipping</span>
+									</label>
+								</div>
+								
+								<div class="form-check mt-3">
+									<input class="form-check-input" type="checkbox" name="subscription" id="annually">
+									<label class="form-check-label pl-md-3" for="annually">
+										<span class="clr-black font-weight-bold">6-MONTH PREPAID</span> <span>$250/6 months + FREE shipping</span>
+									</label>
+								</div>
+								<div class="note text-center mt-4">
+									<i>All Plans Auto-Renew</i>
+								</div>
+								<button class="btn-primary mt-4 mb-5 w-100">SUBSCRIBE</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 <div class="section-herd">
 	<div class="container text-center">
@@ -370,28 +753,48 @@
 
 
 <script type="text/javascript">
+	console.log(321);
 	// Get references to the video and play button
 	const video = document.getElementById('myVideo');
 	const playButton = document.getElementById('playButton');
 
 	// Add a click event listener to the play button
-	playButton.addEventListener('click', function() {
-	    if (video.paused) {
-	        // Play the video
-	        video.play();
-	    } else {
-	        // Pause the video
-	        video.pause();
-	    }
-	});
+	if (playButton) {
+		
+		playButton.addEventListener('click', function() {
+			if (video.paused) {
+				// Play the video
+				video.play();
+			} else {
+				// Pause the video
+				video.pause();
+			}
+		});
+	
+		// Add an event listener to update the play button when video playback state changes
+		video.addEventListener('play', function() {
+			playButton.style.display = 'none'; // Hide the button when playing
+		});
+	
+		video.addEventListener('pause', function() {
+			playButton.style.display = 'block'; // Show the button when paused
+		});
+	}
 
-	// Add an event listener to update the play button when video playback state changes
-	video.addEventListener('play', function() {
-	    playButton.style.display = 'none'; // Hide the button when playing
-	});
+	$(document).ready(function () {
+		$('input[type="checkbox"]').on('change', function() {
+			console.log(123);
+			$('input[name="subscription"]').prop('checked',false)
+			$(this).prop('checked', true);
+		});
 
-	video.addEventListener('pause', function() {
-	    playButton.style.display = 'block'; // Show the button when paused
+		$('.slider1').slick({
+            variableWidth: false,
+            autoplay: false, 
+            autoplaySpeed: 6000,
+            arrows: true, 
+            dots: false 
+        });
 	});
 
 </script>
