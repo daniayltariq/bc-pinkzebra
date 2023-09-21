@@ -1,0 +1,104 @@
+{{#partial "head"}} {{/partial}} {{#partial "page"}}
+<div class="account-head">
+    <h1 class="page-heading">
+        {{lang 'Hi '}}{{first (split customer.name " ") }}{{lang '!'}}
+    </h1>
+    <a
+        class="button button--primary logout"
+        href="{{urls.auth.logout}}"
+        aria-label="{{lang 'common.logout'}}"
+    >
+        {{lang 'common.logout'}}
+    </a>
+</div>
+<div class="account-body">
+    <h2 class="body-title">Your Account</h2>
+    <div class="body-content">
+        <a class="content-card orders" href="{{urls.account.orders.all}}">
+            <div class="card-img">
+                <svg width="24px" height="24px">
+                    <use xlink:href="#icon-user"></use>
+                </svg>
+            </div>
+            <div class="card-text">
+                <h3>Your orders</h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </a>
+        <a class="content-card parties" href="/my-account/my-parties/">
+            <div class="card-img">
+                <svg width="24px" height="24px">
+                    <use xlink:href="#icon-user"></use>
+                </svg>
+            </div>
+            <div class="card-text">
+                <h3>Your parties</h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </a>
+        <div class="content-card settings">
+            <div class="card-img">
+                <svg width="24px" height="24px">
+                    <use xlink:href="#icon-user"></use>
+                </svg>
+            </div>
+            <div class="card-text">
+                <h3>Account settings</h3>
+                <div class="card-links">
+                    <a class="button button--primary" href="{{urls.account.details}}">General Info</a>
+                    <a class="button button--primary" href="{{urls.account.addresses}}">Addresses</a>
+                    <a class="button button--primary" href="{{urls.account.payment_methods.all}}">Payment Info</a>
+                    <a class="button button--primary" href="/my-account/my-coupons">Coupons</a>
+                </div>
+            </div>
+        </div>
+        <a class="content-card subscriptions" href="/my-account/my-subscriptions/">
+            <div class="card-img">
+                <svg width="24px" height="24px">
+                    <use xlink:href="#icon-user"></use>
+                </svg>
+            </div>
+            <div class="card-text">
+                <h3>Subscriptions</h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </a>
+        <a class="content-card wishlists" href="{{urls.account.wishlists.all}}">
+            <div class="card-img">
+                <svg width="24px" height="24px">
+                    <use xlink:href="#icon-user"></use>
+                </svg>
+            </div>
+            <div class="card-text">
+                <h3>Wishlists</h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </a>
+        <a class="content-card manage-business" href="/my-account/manage-my-business/">
+            <div class="card-img">
+                <svg width="24px" height="24px">
+                    <use xlink:href="#icon-user"></use>
+                </svg>
+            </div>
+            <div class="card-text">
+                <h3>Manage my business</h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="account-faq">
+    {{{region name="my_account_fillslot"}}}
+</div>
+
+{{/partial}} {{> layout/base}}

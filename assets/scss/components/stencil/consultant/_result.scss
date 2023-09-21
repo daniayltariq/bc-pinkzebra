@@ -1,0 +1,53 @@
+.consultants-result {
+    text-align: center;
+
+    h2 {
+        text-transform: uppercase;
+    }
+
+    p {
+        margin-bottom: 0.5rem;
+    }
+
+    .consultants-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+        
+        @include breakpoint("large") {
+            flex-direction: row;
+        }
+    }
+
+    .consultant-information {
+        margin-top: 1rem;
+
+        @include breakpoint("large") {
+            width: 25%;
+        }
+
+        .fullname {
+            color: stencilColor("color-primaryDark");
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 1rem;
+            text-transform: uppercase;
+        }
+
+        .location {
+            font-size: 12px;
+        }
+
+        button {
+            margin-top: 0.5rem;
+            padding: 0 1rem;
+        }
+
+        img {
+            border-radius: 50%;
+            height: 130px;
+            width: 130px;
+        }
+    }
+}

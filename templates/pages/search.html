@@ -1,0 +1,169 @@
+---
+product_results:
+limit: {{theme_settings.searchpage_products_per_page}}
+---
+{{inject 'categoryTree' forms.search.category_options}}
+{{inject 'scentflirt_ids' theme_settings.scentflirt_products_ids}}
+{{~inject 'storefrontAPIToken' settings.storefront_api.token}}
+{{~inject 'themeSetting' theme_settings}}
+{{inject 'searchProductsPerPage' theme_settings.searchpage_products_per_page}}
+{{inject 'searchResultsCount' (lang 'search.results.count' count=result_count search_query=(sanitize
+forms.search.query))}}
+{{#partial "head"}}
+{{#if pagination.product_results.previous}}
+<link rel="prev" href="{{pagination.product_results.previous}}">
+{{/if}}
+{{#if pagination.product_results.next}}
+<link rel="next" href="{{pagination.product_results.next}}">
+{{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+{{{ stylesheet '/assets/scss/vendor/jstree/style.css' }}}
+<section class="nav">
+    {{#if forms.search.query}}
+    <div id="search-results-heading" class="search-results-heading__mobile">
+        {{>components/search/heading}}
+    </div>
+    {{/if}}
+    {{#unless product_results.faceted_search_enabled}}
+    {{>components/search/advanced-search}}
+    {{/unless}}
+</section>
+
+<section class="page {{#if result_count '===' 0}} no-results-page {{/if}}">
+    {{#if product_results.faceted_search_enabled}}
+    <aside class="facets-search page-sidebar{{#if forms.search.section '!=' 'product'}} u-hiddenVisually{{/if}}"
+        id="faceted-search-container">
+        {{> components/faceted-search/index product_results settings=theme_settings}}
+    </aside>
+    {{/if}}
+    <div class="page-content">
+        {{#if forms.search.query}}
+        <div id="search-results-heading" class="search-results-heading__desktop">
+            {{>components/search/heading}}
+        </div>
+        {{/if}}
+        <!-- {{#if forms.search.has_suggestions}}
+            <div class="panel panel--large">
+                <div class="panel-body">
+                    {{#if forms.search.suggested_query}}
+                        <div class="search-suggestion">
+                            {{lang 'forms.search.did_you_mean'}} <strong>{{forms.search.suggested_query.query}}</strong>
+                            <a href="{{forms.search.suggested_query.url}}" class="search-refine">{{lang 'forms.search.refine'}}</a>
+                        </div>
+
+                        {{#if result_count '===' 0}}
+                            <div class="search-suggestion">
+                                <p>
+                                    {{lang 'forms.search.your_search_for'}}
+                                    "<strong>{{{sanitize forms.search.query}}}</strong>"
+                                    {{lang 'forms.search.no_match'}}
+                                </p>
+                            </div>
+                        {{/if}}
+                    {{/if}}
+
+                    {{#if category_results.length}}
+                        <div class="search-suggestion">
+                            <h5 class="suggestion-title">{{lang 'forms.search.categories'}}</h5>
+                            <ul class="category-suggestion-list">
+
+                                {{#each category_results}}
+                                <li class="category-suggestion">
+
+                                    {{#each this}}
+                                        <a href="{{url}}">{{name}}</a>
+                                        {{#unless @last}} > {{/unless}}
+                                    {{/each}}
+
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    {{/if}}
+
+                    {{#if brand_results.length}}
+                        <div class="search-suggestion">
+                            <h5 class="suggestion-title">{{lang 'forms.search.brand'}}</h5>
+                            {{#each brand_results}}
+                                <a href="{{url}}">{{name}}</a>
+                                {{#unless @last}}, {{/unless}}
+                            {{/each}}
+                        </div>
+                    {{/if}}
+
+                    {{#if result_count '===' 0}}
+                        <div class="search-suggestion">
+                            <h5 class="suggestion-title">{{lang 'forms.search.suggestions.title'}}</h5>
+                            <ul>
+                                <li>{{lang 'forms.search.suggestions.line1'}}</li>
+                                <li>{{lang 'forms.search.suggestions.line2'}}</li>
+                                <li>{{lang 'forms.search.suggestions.line3'}}</li>
+                            </ul>
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+        {{/if}}  -->
+        {{#if result_count '===' 0}}
+        <div class="panel panel--large">
+            <div class="search-input-container">
+                <span class="navUser-action navUser-action--quickSearch">
+                </span>
+                <form onsubmit="return false" data-url="{{urls.search}}" data-quick-search-form>
+                    <fieldset class="form-fieldset">
+                        <div>
+                            <label class="is-srOnly">
+                                {{lang "search.quick_search.input_label"}}
+                            </label>
+                            <input class="form-input" placeholder="{{lang 'search.input_placeholder'}}"
+                                autocomplete="off" />
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="suggestions-container">
+                    <div class="search-tips">
+                        <h1> Search tips</h1>
+                        <ul>
+                            <li>
+                                Double check the spelling
+                            </li>
+                            <li>
+                                Use single words
+                            </li>
+                            <li>
+                                Use a less specific term (e.g "simmer pot" or "lilac")
+                            </li>
+                            <li>
+                                You can refine your search later
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="need-more-help">
+                        <h1> Need more help?</h1>
+                        <span>
+                            Contact your Consultant! They can help you. Find the perfect way to fragance your home.
+                        </span>
+                        <a href="#" class="button button--primary button--large"> CONTACT YOUR CONSULTANT </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+        <div role="tabpanel" id="search-results-content" aria-labelledby="search-results-content-count" {{#if
+            forms.search.section '!=' 'content' }}class="u-hidden" {{/if}}>
+            {{> components/search/content-listing}}
+        </div>
+
+        <div role="tabpanel" id="product-listing-container" aria-labelledby="search-results-product-count" {{#if
+            forms.search.section '!=' 'product' }}class="u-hidden" {{/if}}>
+            {{> components/search/product-listing}}
+        </div>
+
+        {{{region name="search_below_content"}}}
+    </div>
+</section>
+
+{{/partial}}
+{{> layout/base}}

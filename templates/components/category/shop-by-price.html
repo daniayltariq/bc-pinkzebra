@@ -1,0 +1,32 @@
+{{#and theme_settings.shop_by_price_visibility shop_by_price}}
+<div id="facetedSearch-navList"
+class="facetedSearch-navList"
+>
+<div class="accordion accordion--navList">
+    <div class="accordion-block shop-by-price">
+        {{> components/faceted-search/faceted-search-navigation facet='price' title='Price'}}
+        <div id="facetedSearch-content--price" class="accordion-content{{#unless start_collapsed}} is-open{{/unless}}">
+            <ul class="navList">
+                {{#each shop_by_price}}
+                <li class="navList-item">
+                    <a 
+                        {{#if selected }} 
+                            class="navList-action navList-action--checkbox is-selected is-active"
+                            role="status"
+                            aria-live="assertive"
+                    {{else}}
+                            class="navList-action navList-action--checkbox"
+                    {{/if}}
+                    href="{{url}}"
+                    >
+                    {{lang 'category.filter_price_range'}} {{low.formatted}} - {{high.formatted}}
+                    </a>
+                    <span class="price-filter-message aria-description--hidden">{{lang 'category.filter_select_announcement'}}</span>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+{{/and}}

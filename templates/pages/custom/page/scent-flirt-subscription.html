@@ -1,0 +1,400 @@
+{{#partial "page"}}
+<!-- Add this to the <head> section of your HTML document -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+
+	.body {
+	    margin-top: 0 !important;
+	}
+	.section{
+		margin: 0;
+		padding: 3rem 0;
+	}
+	.section-sprinkle-overview{
+		margin: 0;
+		padding: 8rem 0;
+	}
+	.body {
+	    margin-top: 0;
+	    margin-bottom: 0;
+	}
+	h1{
+		font-size: 1.8rem;
+	}
+	.clr-black{
+		color: #000000;
+	}
+	.text-center{
+		text-align: center;
+	}
+	.info-box{
+		width: 70%;
+		display: block;
+		margin: auto;
+	}
+
+	@media (max-width: 768px) {
+		.info-box{
+			width: 100%;
+		}
+	}
+
+	.heading-with-line {
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    text-align: center;
+	    position: relative; 
+	}
+
+	.heading-with-line::after {
+	    content: ""; 
+	    position: absolute; 
+	    bottom: -20px;
+	    left: 50%;
+	    transform: translateX(-50%); 
+	    width: 100px;
+	    height: 4px;
+	    background-color: #000000;
+	}
+
+	.mt-4 {
+	    margin-top: 1.5rem;
+	}
+
+	.mt-5 {
+	    margin-top: 2rem;
+	}
+
+	.section-sprinkle-overview{
+		background-color: #dbdbdb;
+	}
+
+	.btn-primary {
+	    background: #ff1378;
+	    padding: 0.7rem 2.5rem;
+	    color: #fff;
+	    font-weight: bold;
+	    border-radius: 50px;
+	}
+
+	.btn-secondary {
+		background-color: transparent;
+	    border: 2px solid #ff1378;
+	    padding: 0.4rem 2.5rem;
+	    color: #ff1378;
+	    font-weight: bold;
+	    border-radius: 50px;
+	}
+
+	.btn-primary-small {
+	    background: #ff1378;
+	    padding: 0.6rem 1.9rem;
+	    color: #fff;
+	    font-weight: bold;
+	    border-radius: 50px;
+	}
+
+	/*second section*/
+	.section-frag-experience{
+		margin: 0;
+		padding: 6rem 0;
+	}
+	.fw-6{
+	    font-weight: 600;
+	}
+
+
+	/*Fourth section*/
+	.cross-wrap{
+		display: flex; 
+	    justify-content: center; 
+	    align-items: center;    
+	    height: 15vh;
+	}
+	@media (max-width: 768px) {
+		.cross-wrap {
+		    height: 7vh;
+		}
+	}
+
+	.frag-text{
+		font-size: 1.6rem;
+		letter-spacing: 6px;
+		line-height: 1.3;
+		text-align: left;
+
+	}
+
+	.unique-img{
+		position: absolute;
+		top: -8px;
+	    left: -13px;
+	}
+
+	.tab-content img.placeholder-img {
+	    max-width: 160px;
+	}
+
+	.tab-content div.col {
+		display: flex;
+	    flex-direction: column;
+		justify-content: center; /* Center horizontally */
+	    align-items: center; /* Center vertically */
+	    margin-top: 1rem;
+	}
+
+
+	/*Eighth section*/
+	.section-herd{
+		background-color: #f8f8f8;
+		padding: 3rem 0;
+	}
+
+	@media (max-width: 768px) {
+	    .d-smm-none {
+	        display: none;
+	    }
+	}
+
+	@media (max-width: 768px) {
+	    .section-frag-life .nav-tabs .nav-item {
+		    width: 100%;
+		}
+
+		.section-frag-life .nav-tabs .nav-item a{
+		    text-align: center !important;
+		}
+	}
+
+	.bg-light-pink{
+		background-color: #fcecf3;
+	}
+
+	.testimonial-subs{
+
+	}
+
+
+</style>
+
+
+<div class="section-sprinkle-overview">
+	<div class="container text-center">
+		<div class="info-box text-center">
+			<h1 class="clr-black heading-with-line font-weight-bold">SCENTFLIRT</h1>
+
+			
+			<p class="mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+			incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+			exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+			irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+
+			<button class="btn-primary mt-5">SUBSCRIBE</button>
+		</div>
+	</div>
+</div>
+
+
+<div class="section">
+	<div class="container">
+		
+		<div class="row mt-5 pt-5">
+		
+			<div class="col-sm-6">
+				<img src="{{cdn 'assets/img/rectangle594.png'}}" class="mb-5" alt="SOFT SOY WAX MELTS">
+				
+			</div>
+
+			<div class="col-sm-1"></div>
+			<div class="col-sm-5">
+				<div class="mt-4 ">
+					<h3 class="mb-4 font-weight-bold clr-black">WHAT’S IN YOUR BOX</h3>
+					<p class="fw-600 mb-5"><b>Keep your space smelling great with fresh,
+					new fragrance samples every month. Decorate
+					your space with exclusive limited edition products.
+					Get a wide variety of fragrance products for one low price.</b></p>
+					<p>100+ hours of fragrance enjoyment</p>
+					<p>Fragrance products for your home, on the go or personal care</p>
+					<p>Limited edition scents made of non-toxic Soft Soy wax</p>
+				</div>
+			</div>
+
+						
+		</div>
+
+		<div class="row mt-2 pt-5">
+		
+			<div class="col-sm-5">
+				<div class="mt-4 ">
+					<h3 class="mb-4 font-weight-bold clr-black">MEMBER PERKS</h3>
+					<p class="fw-600 mb-5"><b>Not only do you get a box each month, but there are extra
+					perks to being a member!</b></p>
+					<p>Save 5% on all fragrance products after 6 consecutive
+						months in ScentFlirt.</p>
+					<p>Plus! Gain access to exclusive shopping!</p>
+					<button class="btn-primary mt-3">SEE MORE</button>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+
+			<div class="col-sm-6">
+				<img src="{{cdn 'assets/img/rectangle594.png'}}" class="mb-5" alt="SOFT SOY WAX MELTS">
+				
+			</div>
+						
+		</div>
+
+		
+
+	</div>
+</div>
+
+
+<div class="section bg-light-pink">
+	<div class="container text-center">
+		<div class="text-center">
+			
+
+			<p class="mt-5 fw-600">EACH MONTH, WE CURATE A FRAGRANCE EXPERIENCE FOR YOU TO ENJOY.<br>
+				WITH MILLIONS OF FRAGRANCE CUSTOMERS, WE KNOW</p>
+			<h1 class="clr-black font-weight-bold">WHAT YOU WANT</h1>
+
+
+			<div class="row mt-5 pt-5">
+				<div class="col-sm-3">
+					<img src="{{cdn 'assets/img/icons/Group2005.svg'}}" class="mb-5 mt-4" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-4 font-weight-bold clr-black">CLEAN & SAFE</h6>
+					<p>Eco-friendly and safe for use around
+						children and pets</p>
+				</div>
+
+				<div class="col-sm-3">
+					<img src="{{cdn 'assets/img/icons/Group2007.svg'}}" class="mb-5 mt-4" alt="clr-blackS">
+					<h6 class="mb-4 font-weight-bold clr-black">SCENT-SENSITIVE</h6>
+					<p>Made with only IFRA-certified
+					ingredients, Sprinkles are both
+					alcohol.</p>
+				</div>
+
+				<div class="col-sm-3">
+					<img src="{{cdn 'assets/img/icons/Group2011.svg'}}" class="mb-5 mt-4" alt="BLENDABLE">
+					<h6 class="mb-4 font-weight-bold clr-black">LASTING SCENT</h6>
+					<p>Our specially designed
+						production process ensures
+						your fragrance will last</p>
+				</div>
+
+				<div class="col-sm-3">
+					<img src="{{cdn 'assets/img/icons/Group2009.svg'}}" class="mb-5 mt-4" alt="MADE IN THE USA">
+					<h6 class="mb-4 font-weight-bold clr-black">VARIETY</h6>
+					<p>Delight your senses and fill your space
+						with new fragrance every month</p>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="section-frag-experience section-frag-unique">
+	<div class="container text-center">
+		<div class="row">
+			<div class="col-sm-6">
+				<img src="{{cdn 'assets/img/rectangle594.png'}}" class="mb-5 mt-4" alt="Gray Bg Img">
+			</div>			
+			<div class="col-sm-6 ">
+				<div class="row mt-5 d-smm-none">
+		        	<div class="testimonial-subs mb-4">
+		        		<img src="{{cdn 'assets/img/fivestars.png'}}" class="mb-2" alt="Five stars">
+			        	<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+							enim ad minim venia."</p>
+						<p><b>Hannah, 29</b></p>
+		        	</div>
+		        	<div class="testimonial-subs">
+		        		<img src="{{cdn 'assets/img/fivestars.png'}}" class="mb-2" alt="Five stars">
+			        	<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+							enim ad minim veniam."</p>
+						<p><b>Hannah, 29</b></p>
+		        	</div>
+		        </div>
+			</div>			
+
+		</div>
+	</div>
+</div>
+
+
+<div class="section-herd">
+	<div class="container text-center">
+		<div class="text-center">
+			
+			<h1 class="clr-black mb-5 font-weight-bold">HEARDF ROM THE HERD</h1>
+			<p>Check out what other Pink Zebra users are saying about our products! #pinkzebrah</p>
+
+			<div class="row mt-5">
+	        	
+	        	<div class="col-md-3 col-sm-3 col-12">
+	        		<img src="{{cdn 'assets/img/rectangle389.svg'}}" class="img mb-3">
+	        		<p>@username1 </p>
+	        	</div>
+	        	
+	        	<div class="col-md-3 col-sm-3 col-12">
+	        		<img src="{{cdn 'assets/img/rectangle389.svg'}}" class="img mb-3">
+	        		<p>@username2 </p>
+	        	</div>
+	        	
+	        	<div class="col-md-3 col-sm-3 col-12">
+	        		<img src="{{cdn 'assets/img/rectangle389.svg'}}" class="img mb-3">
+	        		<p>@username3 </p>
+	        	</div>
+	        	
+	        	<div class="col-md-3 col-sm-3 col-12">
+	        		<img src="{{cdn 'assets/img/rectangle389.svg'}}" class="img mb-3">
+	        		<p>@username4 </p>
+	        	</div>
+
+	        </div>
+			
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	// Get references to the video and play button
+	const video = document.getElementById('myVideo');
+	const playButton = document.getElementById('playButton');
+
+	// Add a click event listener to the play button
+	playButton.addEventListener('click', function() {
+	    if (video.paused) {
+	        // Play the video
+	        video.play();
+	    } else {
+	        // Pause the video
+	        video.pause();
+	    }
+	});
+
+	// Add an event listener to update the play button when video playback state changes
+	video.addEventListener('play', function() {
+	    playButton.style.display = 'none'; // Hide the button when playing
+	});
+
+	video.addEventListener('pause', function() {
+	    playButton.style.display = 'block'; // Show the button when paused
+	});
+
+</script>
+{{/partial}}
+
+{{> layout/base2}}

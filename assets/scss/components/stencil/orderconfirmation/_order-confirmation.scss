@@ -1,0 +1,304 @@
+.display-none {
+    display: none;
+}
+
+.nav--item {
+    .location {
+        align-items: center;
+        display: flex;
+    }
+}
+
+.consultant-location {
+    margin: 0 !important;
+}
+
+.confirmation-wrapper {
+    font-size: remCalc(16px);
+    font-weight: 500;
+    height: auto;
+    line-height: remCalc(19px);
+    margin: 0 auto;
+    max-width: remCalc(1077px);
+    overflow: hidden;
+    text-align: center;
+
+    .confirmation-greeting {
+        color: stencilColor("color-primaryAccent");
+        font-family: stencilFontFamily("special-font");
+        font-size: remCalc(100px);
+        font-weight: normal;
+        margin-top: 90px;
+        text-align: center;
+    }
+
+    .orderConfirmation {
+        padding-top: remCalc(36px);
+    }
+
+    .confirmation-contact-info-wrapper {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        a {
+            color: #000;
+            font-size: remCalc(16px);
+            line-height: remCalc(21px);
+            text-decoration: none;
+        }
+
+        .contact-consultant-link {
+            color: stencilColor("color-primaryAccent");
+            font-weight: 600;
+            letter-spacing: remCalc(1.6px);
+            line-height: remCalc(20px);
+            text-transform: uppercase;
+        }
+    }
+
+    p {
+        font-weight: 500;
+    }
+
+    .check-email-wrapper {
+        margin-bottom: remCalc(33px);
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .confirmation-to-email-wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        text-align: center;
+        width: max-content;
+
+        .confirmation-to-email {
+            color: stencilColor("color-primaryAccent");
+            margin-bottom: remCalc(48px);
+            position: relative;
+            text-align: center;
+
+            &::after {
+                background-color: stencilColor("color-primaryAccent");
+                border-radius: remCalc(8px);
+                color: stencilColor("color-primaryAccent");
+                content: "";
+                cursor: default;
+                font-size: 0.25rem;
+                padding: remCalc(1px) remCalc(6px);
+                position: absolute;
+                right: 0;
+                top: 100%;
+                width: 100%;
+            }
+
+        }
+
+    }
+
+    .have-qustion {
+        font-size: remCalc(16px);
+        font-weight: 600;
+        letter-spacing: remCalc(1.6px);
+        line-height: remCalc(20px);
+        margin-bottom: remCalc(9px);
+        text-transform: uppercase;
+    }
+
+    .continue-actions {
+        margin-bottom: 70px;
+    }
+
+    .send-to-text {
+        margin-bottom: remCalc(18px);
+    }
+
+    .help-text-content,
+    .send-to-text {
+        line-height: remCalc(19px);
+    }
+
+    .help-text-content {
+        margin-bottom: remCalc(44px);
+    }
+
+    @media only screen and (max-width: 1023px) {
+        .confirmation-greeting {
+            font-size: remCalc(52px);
+            line-height: remCalc(20px);
+            margin-top: remCalc(55px);
+        }
+
+        .confirmation-contact-info-wrapper {
+            flex-direction: column;
+
+            .web-version {
+                display: flex;
+            }
+
+            a {
+                padding: remCalc(15px) 0;
+            }
+        }
+
+        .loadingOverlay-container {
+            display: none;
+            min-height: unset;
+        }
+
+        .form-body {
+            padding: 0;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .orderConfirmation {
+            padding-top: remCalc(22px);
+        }
+
+        .continue-actions {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: remCalc(47px);
+
+            .button.button--secondary.button--large {
+                margin-bottom: remCalc(22px);
+            }
+
+            .button.button--primary.button--large {
+                margin-bottom: 0;
+            }
+
+            a {
+                max-width: remCalc(215px);
+            }
+        }
+
+        .help-text-content {
+            margin-bottom: remCalc(27px);
+        }
+
+        .confirmation-to-email-wrapper {
+            .confirmation-to-email {
+                margin-bottom: remCalc(22.5px);
+            }
+        }
+    }
+
+    @media only screen and (max-width: 428px) {
+        .confirmation-greeting {
+            font-size: remCalc(38px);
+            line-height: remCalc(20px);
+        }
+
+    }
+
+    #checkout-app {
+        color: #000;
+        font-family: "Montserrat", Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        letter-spacing: 0;
+        line-height: 21px;
+
+        .optimizedCheckout-contentPrimary {
+            min-height: unset;
+        }
+
+        .layout-cart {
+            display: none;
+        }
+
+        .layout {
+            padding: 0;
+        }
+
+        .layout-main {
+            padding: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .orderConfirmation-section {
+            border: 0;
+            margin: 0;
+            padding: 0;
+
+            [data-test="order-confirmation-order-number-text"] {
+                margin-bottom: remCalc(22px);
+
+                span {
+                    color: #000;
+                    font-size: remCalc(16px);
+                    font-weight: 600;
+                    letter-spacing: remCalc(1.6px);
+                    line-height: remCalc(20px);
+                    text-transform: uppercase;
+                }
+
+            }
+        }
+
+        .optimizedCheckout-headingPrimary,
+
+        [data-test="order-confirmation-order-status-text"],
+        [data-test="payment-instructions"],
+        .continueButtonContainer {
+            display: none;
+        }
+
+        .optimizedCheckout-headingSecondary {
+            border-bottom: 0;
+            text-transform: uppercase;
+        }
+
+        .form-body {
+            border: 0;
+
+            .form-field {
+                margin-bottom: remCalc(22px);
+            }
+
+            .form-label.optimizedCheckout-form-label {
+                display: flex;
+                font-weight: 600;
+                justify-content: space-between;
+                letter-spacing: remCalc(1.4px);
+                margin-bottom: remCalc(10px);
+                text-transform: uppercase;
+
+                small {
+                    margin: 0;
+                    text-transform: none;
+                }
+            }
+
+            .guest-signup.form {
+                margin: 0 auto;
+
+                .form-actions {
+                    margin-top: remCalc(30px);
+                }
+            }
+        }
+
+        .alertBox {
+            align-items: center;
+            margin: 0 auto;
+            margin-bottom: remCalc(24px);
+            padding: remCalc(24px) 0;
+            width: 100%;
+
+            .alertBox-message {
+                font-size: remCalc(16px);
+            }
+
+        }
+    }
+}

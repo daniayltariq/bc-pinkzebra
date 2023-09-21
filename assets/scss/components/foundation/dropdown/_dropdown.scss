@@ -1,0 +1,190 @@
+// =============================================================================
+// DROPDOWN (CSS)
+// =============================================================================
+
+
+.dropdown {
+    left: -9999px;
+    outline: none;
+    position: absolute;
+}
+
+.dropdown-menu {
+    z-index: $zIndex-lowest;
+
+    &.is-loading .loadingOverlay {
+        background: none;
+        padding: (spacing("double") + spacing("single")) 0;
+        position: relative;
+    }
+
+    &.is-open {
+        display: block;
+    }
+
+    .button {
+        &:focus {
+            z-index: $zIndex-lowest;
+        }
+    }
+}
+
+.dropdown-menu-item {
+    text-align: left;
+    
+
+    &:first-child {
+        > a {
+            padding-top: spacing("half");
+        }
+    }
+
+    &:last-child {
+        > a {
+            padding-bottom: spacing("base");
+        }
+    }
+
+    > a {
+        color: stencilColor("color-blackLight");
+        font-family: "Poppins-Regular";
+        margin: 0;
+        padding: spacing("sixth") (spacing("half") + spacing("quarter"));
+        text-decoration: none;
+    }
+}
+
+.form-wishlist {
+    position: relative;
+
+    @include breakpoint("small") {
+        padding: 0;
+        width: 70%;
+    }
+
+    @include breakpoint("medium") {
+        margin: 0;
+        max-width: remCalc(220px);
+        padding: 0;
+        width: 100%;
+    }
+
+    @include breakpoint("large") {
+        width: 80%;
+    }
+
+    @include breakpoint("xlarge") {
+        display: inline-block;
+        margin-top: 1rem;
+    }
+
+    .button {
+        color: #707070;
+        font-size: fontSize("smaller");
+        padding-left: remCalc(15px);
+        text-align: start;
+        text-transform: none;
+        width: 100%;
+
+        @include breakpoint("medium") {
+            width: 100%;
+        }
+
+        @include breakpoint("xlarge") {
+            margin-right: spacing("half");
+        }
+
+        &.dropdown-menu-button {
+            text-transform: uppercase;
+
+            &:active,
+            &:hover,
+            &:focus {
+                border: 1px solid stencilColor(input-border-color);
+            }
+        }
+    }
+}
+
+.dropdown-menu-button {
+    align-items: center;
+    border: 1px solid stencilColor(input-border-color);
+    color: stencilColor(input-font-color);
+    display: flex;
+    font-size: fontSize("smaller");
+    justify-content: space-between;
+    padding-left: remCalc(15px);
+    padding-right: remCalc(15px);
+
+    &.button {
+        border-width: 1px;
+        padding-left: remCalc(15px);
+        padding-right: remCalc(15px);
+    }
+
+    &.is-open {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &:focus {
+        z-index: $zIndex-lower;
+    }
+}
+
+#wishlist-dropdown.is-open {
+    background: white;
+    border: 1px solid stencilColor(input-border-color);
+    border-radius: 0 0 17px 17px;
+    left: auto !important;
+    max-width: none !important;
+    width: 100% !important;
+
+    @include breakpoint("small") {
+        padding-right: 20px;
+    }
+
+    @include breakpoint("medium") {
+        padding-right: 0;
+    }
+
+    @include breakpoint("xlarge") {
+        padding-right: 11px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    [data-wishlist] {
+        border-top: 0;
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .button {
+        background-color: stencilColor("dropdown--wishList-backgroundColor");
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        width: 100%;
+
+        &:hover,
+        &:active,
+        &:focus {
+            font-weight: fontWeight("bold");
+        }
+    }
+
+    .disabled-option {
+        border: initial;
+        cursor: default;
+        font-weight: 700;
+    }
+
+    li:not(:last-child) .button {
+        border-bottom: 0;
+        border-radius: 0;
+        border-top: 0;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,30 @@
+---
+cart: true
+---
+{{inject 'scentflirtProductIds' theme_settings.scentflirt_products_ids}}
+{{inject 'addOnIds' theme_settings.scentflirt_addon_ids}}
+{{inject 'addOnOptionIds' theme_settings.scentflirt_addon_option_ids}}
+{{inject 'kitIds' theme_settings.scentflirt_kit_ids}}
+{{inject 'scentflirt_products_img' theme_settings.scentflirt_products_img}}
+{{inject 'scentflirt_comparison_chart' theme_settings.scentflirt_comparison_chart}}
+{{inject 'pageTranslations' (langJson 'scentflirt')}}
+{{inject 'custom_page' 'join'}}
+{{~inject 'cartId' cart_id}}
+{{~inject 'pzEndpoint' theme_settings.pz_api_endpoint}}
+{{~inject 'storefrontAPIToken' settings.storefront_api.token}}
+{{~inject 'aws_url' theme_settings.aws_url}}
+
+{{#partial "pz_header"}}
+{{> components/common/navigation-pz}}
+{{/partial}}
+{{#partial "page"}}
+<div class="find-a-consutant-join-page">
+  {{> components/consultant/find-consultant}}
+</div>
+<main class="body" id="main-content" role="main" data-currency-code="{{currency_selector.active_currency_code}}">
+  <div class="scentflirt" id="root">
+  </div>
+</main>
+{{/partial}}
+
+{{> layout/base}}

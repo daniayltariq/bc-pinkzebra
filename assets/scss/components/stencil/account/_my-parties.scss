@@ -1,0 +1,115 @@
+.party-wrapper {
+    align-items: center;
+    border-bottom: container("border");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: spacing("single") spacing("single");
+    
+    &:first-of-type {
+        border-top: container("border");
+    }
+}
+
+.party-info {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .party-id {
+        color: stencilColor(color-primary);
+        font-size: fontSize("large");
+        font-weight: 500;
+    }
+
+    .party-status {
+        background-color: stencilColor("color-secondaryLighter");
+        color: stencilColor("navPages-color");
+        display: inline-block;
+        font-size: fontSize("smaller");
+        font-weight: fontWeight(semibold);
+        margin: 0 0 spacing("quarter");
+        padding: spacing("third") spacing("single");
+        text-transform: uppercase;
+
+        @include breakpoint("medium") {
+            &.desktop {
+                display: block;
+            }
+    
+            &.mobile {
+                display: none;
+            }
+        }
+
+        &.desktop {
+            display: none;
+        }
+
+        &.mobile {
+            display: block;
+            margin-top: remCalc(20px);
+        }
+    }
+}
+
+.party-table {
+    display: grid;
+    gap: remCalc(20px);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+
+    @include breakpoint("medium") {
+        display: flex;
+    }
+
+    .data-column {
+        @include breakpoint("medium") {
+            min-width: 180px;
+        }
+
+        @include breakpoint("large") {
+            min-width: 250px;
+        }
+
+        .data-value {
+            font-size: fontSize("large");
+        }
+    }
+
+    h6 {
+        color: stencilColor(navPages-color);
+        font-size: fontSize("large");
+        margin: 0;
+    }
+
+    button {
+        color: stencilColor(color-primary);
+        padding: 0;
+
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    .share-icons-wrapper {
+        align-items: center;
+        display: flex;
+        justify-content: flex-start;
+
+        .email-share-button {
+            align-items: center;
+            display: flex;
+            margin: 0 10px;
+        }
+        
+        .fb-share-button {
+            align-items: center;
+            display: flex;
+        }
+    }
+}

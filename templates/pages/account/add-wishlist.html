@@ -1,0 +1,71 @@
+---
+gql: "query customerAttributes{
+    customer{
+        attributes {
+            attribute(entityId:6) {
+                value
+            }
+        }
+    }
+}"
+---
+{{#partial "page"}}
+
+{{#if customer.customer_group_name '==' 'Consultant'}} 
+    {{#inArray (split gql.data.customer.attributes.attribute.value ',') (json forms.wishlist.id)}}
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs isLookbook='true'}}
+    {{else}}
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs }}
+    {{/inArray}}
+{{else}}
+    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs }}
+{{/if}}
+
+
+<div class="account">
+    {{#if settings.show_wishlist}}
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        <h2 class="page-heading wishlist-heading">
+            {{#if forms.wishlist.id}}
+                {{#if customer.customer_group_name '==' 'Consultant'}} 
+                    {{#inArray (split gql.data.customer.attributes.attribute.value ',') (json forms.wishlist.id)}}
+                        {{lang 'account.wishlists.lookbook.edit' name=forms.wishlist.name}}
+                    {{else}}
+                        {{lang 'account.wishlists.edit' name=forms.wishlist.name}}
+                    {{/inArray}}
+                {{else}}
+                    {{lang 'account.wishlists.edit' name=forms.wishlist.name}}
+                {{/if}}
+            {{else}}
+                {{#if forms.wishlist.action}}
+                    {{lang 'account.wishlists.new'}}
+                {{else}}
+                    {{#if customer.customer_group_name '==' 'Consultant'}} 
+                        {{#inArray (split gql.data.customer.attributes.attribute.value ',') (json forms.wishlist.id)}}
+                            {{lang 'account.wishlists.lookbook.view_heading' name=forms.wishlist.name}}
+                        {{else}}
+                            {{lang 'account.wishlists.view_heading' name=forms.wishlist.name}}
+                        {{/inArray}}
+                    {{else}}
+                        {{lang 'account.wishlists.view_heading' name=forms.wishlist.name}}
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+        </h2>
+        {{#if forms.wishlist.id}}
+            {{#if customer.customer_group_name '==' 'Consultant'}} 
+                {{#inArray (split gql.data.customer.attributes.attribute.value ',') (json forms.wishlist.id)}}
+                    {{> components/account/add-wishlist isLookbook='true'}}
+                {{else}}
+                    {{> components/account/add-wishlist }}
+                {{/inArray}}
+            {{else}}
+                {{> components/account/add-wishlist }}
+            {{/if}}
+        {{else}}
+            {{> components/account/add-wishlist }}
+        {{/if}}
+    {{/if}}
+</div>
+{{/partial}}
+{{> layout/base}}

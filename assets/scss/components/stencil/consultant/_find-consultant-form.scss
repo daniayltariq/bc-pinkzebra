@@ -1,0 +1,192 @@
+$font-size: 14px;
+$small-font-size: 12px;
+$large-font-size: 16px;
+
+$color-dark-light: #373737;
+$color-dark: #000;
+$color-grey-light: #9f9f9f;
+
+.find-a-consultant {
+    background-color: stencilColor("color-white");
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    color: $color-dark-light;
+    height: 100%;
+    left: 50%;
+    overflow-y: auto;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: zIndex("low");
+
+    @include breakpoint("large") {
+        height: 400px;
+        margin-top: 15rem;
+        max-width: 1612px;
+        overflow-y: hidden;
+        position: absolute;
+        width: 100%;
+
+        label {
+            flex-basis: 48%;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        #location {
+            width: 50%;
+        }
+    }
+
+    @include breakpoint("xxlarge") {
+        margin-top: 14rem;
+    }
+
+    @include breakpoint("large") {
+        .search-consultant {
+            display: flex;
+            gap: 40px;
+            margin-top: -3rem;
+            width: 100%;
+
+            &__wrapper {
+                width: 100%;
+            }
+        }
+
+        .separate {
+            transform: rotate(90deg);
+        }
+    }
+
+    .modal-close {
+        margin-top: 4rem;
+
+        @include breakpoint("large") {
+            margin-top: unset;
+        }
+    }
+
+    .search-consultant-form {
+        margin-top: -1rem;
+    }
+
+    &__content {
+        margin-top: 6rem;
+        padding: 1rem 2rem 3rem;
+
+        @include breakpoint("large") {
+            margin-top: 3rem;
+        }
+
+        label {
+            display: block;
+            font-size: $font-size;
+            font-weight: 600;
+            margin: 10px 0 5px 5px;
+            text-transform: uppercase;
+        }
+
+        .row {
+            @include breakpoint("large") {
+                display: flex;
+                gap: 20px;
+            }
+        }
+
+        .input {
+            @include breakpoint("large") {
+                width: 100%;
+            }
+        }
+    }
+
+    .consultant-search-input {
+        background: stencilColor("color-white") 0% 0% no-repeat padding-box;
+        border: 1px solid $color-grey-light !important;
+        border-radius: 26px !important;
+        height: 40px;
+        opacity: 1;
+        text-indent: 10px;
+        width: 100%;
+
+        &::placeholder,
+        &:not(:placeholder-shown),
+        &:valid {
+            color: $color-dark;
+            font-size: $small-font-size;
+        }
+
+        &[type=number]::-webkit-inner-spin-button,
+        &[type=number]::-webkit-outer-spin-button,
+        &[type=number]::-moz-number-spin-box {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &[type=number] {
+            -moz-appearance: textfield;
+        }
+    }
+
+    #zipcode {
+        @include breakpoint("large") {
+            width: 30%;
+        }
+    }
+
+    .consultant-search-submit {
+        display: flex;
+        margin: 1rem auto 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        @include breakpoint("large") {
+            margin: 0.5rem 0 0;
+        }
+
+    }
+
+    &__description {
+        h4 {
+            color: inherit;
+
+            font-size: $font-size;
+            margin-top: unset;
+            text-transform: uppercase;
+
+            @include breakpoint("large") {
+                color: stencilColor("color-primaryDark");
+            }
+        }
+
+        p {
+            color: $color-dark;
+            font-size: $small-font-size;
+        }
+    }
+
+    .search-consultant__wrapper {
+        +.search-consultant__wrapper {
+            border-top: 2px solid stencilColor("color-primaryDark");
+            padding-top: 2rem;
+
+            @include breakpoint("large") {
+                border-left: 2px solid stencilColor("color-primaryDark");
+                border-top: unset;
+                padding-left: 2rem;
+                padding-top: unset;
+            }
+        }
+    }
+}

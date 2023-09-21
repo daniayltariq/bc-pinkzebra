@@ -1,0 +1,112 @@
+// =============================================================================
+// WRITE A REVIEW (CSS)
+// =============================================================================
+
+.writeReview-productDetails {
+
+    @include breakpoint("medium") {
+        @include grid-column(6);
+    }
+
+    .product-title ,
+    .product-brand {
+        color: stencilColor("color-textBase");
+        text-align: center;
+    }
+
+    .product-title {
+        margin: unset;
+    }
+
+    .product-brand {
+        font-weight: 100;
+        margin-top: 0;
+        text-transform: none;
+    }
+}
+
+
+.writeReview-form {
+
+    @include breakpoint("medium") {
+        @include grid-column(6);
+    }
+}
+
+.writeReview-productImage-container {
+
+    @include lazy-loaded-padding("product_size");
+    position: relative;
+
+    img {
+        @include lazy-loaded-img;
+        bottom: unset;
+        /* Object-fit polyfill */
+        font-family: "object-fit: contain;";
+        height: 75%;
+        object-fit: contain;
+    }
+}
+
+#modal-review-form {
+    .modal-header {
+        border-bottom: unset;
+        padding-top: 3rem;
+
+        &-title {
+            color: stencilColor("color-textBase");
+            font-size: remCalc(25px);
+            text-transform: uppercase;
+        }
+    }
+
+    .modal-body {
+        padding: unset;
+    }
+
+    .form-label {
+        align-items: center;
+        display: flex;
+        text-transform: uppercase;
+        width: 100%;
+
+        small {
+            font-size: fontSize("smaller");
+            font-weight: 100;
+            margin-left: auto;
+            text-transform: capitalize;
+        }
+    }
+
+    .form-select {
+        background-position: right 1rem top 1rem;
+    }
+
+    .form-input,
+    .form-select {
+        color: stencilColor("color-textBase");
+        font-size: fontSize("large");
+    }
+
+    .form-field {
+        &--error {
+            font-size: fontSize("smaller");
+        }
+    }
+
+    .form-field--submit {
+        margin-top: 1rem;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .form-fieldset {
+        padding: 0 1rem;
+    }
+
+    .g-recaptcha {
+        margin-top: 2rem;
+    }
+}

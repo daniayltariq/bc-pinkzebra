@@ -1,0 +1,234 @@
+{{#partial "head"}}
+    {{{ checkout.checkout_head }}}
+    {{{stylesheet '/assets/css/theme.css'}}}
+    {{ getFontsCollection }}
+
+    <script type="text/javascript">
+        window.language = {{{langJson 'optimized_checkout'}}};
+    </script>
+
+
+    {{{head.scripts}}}
+{{/partial}}
+
+{{#partial "pz_header"}}
+    {{> components/common/navigation-pz}}
+{{/partial}}
+
+{{#partial "page"}}
+
+<div class="loadingOverlay loading-ocp"></div> 
+{{> components/order-confirmation-scentflirt }}
+
+<div class="confirmation-wrapper display-none">
+    {{inject "pz_api_endpoint" theme_settings.pz_api_endpoint}}
+    {{inject "aws_url" theme_settings.aws_url}}
+    <h1 class="confirmation-greeting">{{lang 'checkout.greeting'}}</h1>
+
+    {{{ checkout.order_confirmation_content }}}
+    <p class="send-to-text">{{lang 'checkout.send_email'}}</p>
+    <div class="confirmation-to-email-wrapper">
+        <p class="confirmation-to-email"></p>
+    </div>
+    <div class="check-email-wrapper">
+        <p>{{lang 'checkout.check_email'}}</p>
+        <p>{{lang 'checkout.check_email_1'}}</p>
+    </div>
+    <div class="continue-actions">
+        <a href="/" class="button button--secondary button--large">{{lang 'checkout.continue_shopping'}}</a>
+        <a href="{{urls.account.orders.all}}" class="button button--primary button--large">{{lang 'checkout.view_orders'}}</a>
+    </div>
+    <p class="have-qustion">{{lang 'checkout.have_a_question'}}</p>
+    <p class="help-text-content">{{lang 'checkout.here_to_help'}}</p>
+    <div class="confirmation-contact-info-wrapper">
+        {{> components/common/phone-link-item}}
+        {{> components/common/email-link-item}}
+        <a class="contact-consultant-link" href="#">
+            {{lang 'checkout.contact_consultant'}}
+        </a>
+    </div>
+    <div class="loadingOverlay pdp-update"></div>
+    {{{ footer.scripts }}}
+</div>
+<script>
+    function getStrictData(key) {
+        const jsContext = JSON.parse({{jsContext}});
+        return jsContext[key];
+    };
+    
+    function getPayload(method, body) {
+        return {
+            method, 
+            headers: {'Content-Type': 'application/json'},
+            body,
+        };
+    };
+
+    // TODO: NEED ZEBRA PATH TO SEND THIS DATA
+     function sendCreatedMetafieldsToPz(metafieldsData) {
+        try {
+            return new Promise(async (resolve) => {
+                const url = getStrictData('pz_api_endpoint');
+                const raw = JSON.stringify({order_attribution: metafieldsData});
+                const options = getPayload('POST', raw);
+                const response = await fetch(url, options);
+                const metaFields = await response.json();
+            });
+        } catch(err) {
+            console.error('An error occurred while sending order metafields:', err);
+        }
+    };
+    function createOrderMetafields(metafieldsData) {
+        
+        return new Promise(async (resolve, reject) => {
+            try {
+                const url = getStrictData('aws_url');
+                const endpoint = `${url}bc/orders/metafields/create`;
+                const raw = JSON.stringify(metafieldsData);
+                const options = getPayload('POST', raw);
+                const response = await fetch(endpoint, options);
+                const metaFields = await response.json();
+                resolve(metaFields);
+            } catch (error) {
+                reject(error);
+            }
+            
+        });
+    };
+
+    function updateCustomerAttribute(value, email) {
+        try {
+            return new Promise(async (resolve) => {
+                const url = getStrictData('aws_url');
+                const endpoint = `${url}bc/customer/attributes/update`;
+                const raw = JSON.stringify({
+                    value,
+                    email
+                });
+
+                const options = getPayload('POST', raw);
+                const response = await fetch(endpoint, options);
+                const attributes = await response.json();
+                resolve(attributes);
+            });
+        } catch(err) {
+            console.error('An error occurred while updating order metafields:', err);
+        }
+    };
+    function toggleLoader(show) {
+        const loader = document.querySelector('.loadingOverlay.pdp-update');
+        const state = show ? 'block' : 'none';
+        loader.style.display = state;
+    }
+    function setEmailValue(purchase) {
+
+        if (purchase) {
+            const emailField = document.querySelector('.confirmation-to-email');
+            emailField.textContent = purchase?.billingAddress?.email;
+        }
+    }
+    function updateOrderIdTextContent() {
+        const orderIdValue = document.querySelector('p[data-test="order-confirmation-order-number-text"] strong');
+        orderIdValue.textContent = `#${orderIdValue.textContent}`;
+    };
+    function setConsultant(consultant) {
+        const websiteElement = document.querySelector('.contact-consultant-link');
+        websiteElement.href = consultant.value.website;
+    };
+    function getOrderMetafieldsData() {
+        const consultant = JSON.parse(localStorage.getItem('consultant'));
+        const party = JSON.parse(localStorage.getItem('current_party'));
+
+        return {
+            consultant,
+            party,
+        }
+    };
+
+    function generateOrderMetafieldsData(consultant, party, orderId) {
+        let template = {};
+
+        if (consultant?.value?.repID) {
+            const consultant_id = consultant?.value?.repID;
+            template = { ...template, consultant_id };
+        }
+
+        if (party) {
+            const data = {
+                party_id: party.value?.id,
+                host: party.value?.host,
+                party_name: party.value?.name,
+            }
+            template = { ...template, ...data };
+        }
+
+        // const metafieldsData = JSON.stringify({...template, cartId: orderId});
+
+        return {...template, cartId: orderId};
+    }
+
+    const scentflirtOrderId = JSON.parse(localStorage.getItem('cartFromJoinProcess'));
+    document.getElementsByClassName('loading-ocp')[0].style.display = 'block';
+
+    fetch('/api/storefront/orders/{{checkout.order.id}}', {credentials: 'include'})
+        .then(function(response) {
+            return response.json();
+        })
+        .then(async function(purchase) {
+            toggleLoader(true);
+            let isOrderTheSame;
+
+            const orderId = '{{checkout.order.id}}';
+            const {consultant, party} = getOrderMetafieldsData();
+            const proccesedOrder = JSON.parse(localStorage.getItem('proccesed_order'));
+
+            if (proccesedOrder) {
+                isOrderTheSame = Number(proccesedOrder) === Number(orderId);
+            }
+            
+            setEmailValue(purchase);
+            if (consultant)
+                setConsultant (consultant);
+            setTimeout(() => {
+                updateOrderIdTextContent();
+            }, 2000);
+            
+            if (consultant && !proccesedOrder || consultant && !isOrderTheSame) {
+                try {
+                    const metafieldsData = generateOrderMetafieldsData(consultant, party, orderId);
+                    const createdOrderMetafields = await createOrderMetafields(metafieldsData);
+
+                    if (purchase.customerId && purchase.customerId !== undefined) {
+                        const value = consultant.value.repID;
+                        await updateCustomerAttribute(value, purchase.billingAddress.email);
+                    }
+                    // TODO: UNCOMMENT WHEN PZ ENDPOINT WILL BE AWAILABLE
+                    // await sendCreatedMetafieldsToPz(createdOrderMetafields.data.value);
+                    localStorage.setItem('proccesed_order', JSON.stringify(orderId));
+
+                    localStorage.removeItem('current_party');
+                } catch (error) {
+                    console.error("ORDER ATTRIBUTION FAILED", error);
+                }
+                
+        
+                toggleLoader(false);
+            } 
+            toggleLoader(false);
+
+            const { cartId } = purchase;
+
+            let sectionToDisplay = 'confirmation-wrapper';
+            
+            if (cartId === scentflirtOrderId?.value) {
+                sectionToDisplay = 'order-confirmation-scentflirt__wrapper';
+            }
+
+            document.getElementsByClassName(sectionToDisplay)[0].classList.remove('display-none');
+            document.getElementsByClassName('loading-ocp')[0].style.display = 'none'
+        });
+</script>
+
+{{/partial}}
+
+{{> layout/base}}

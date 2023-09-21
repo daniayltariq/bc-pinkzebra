@@ -1,0 +1,32 @@
+.suggestions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    &__container {
+        display: flex;
+        font-size: fontSize("base");
+        justify-content: center;
+        width: 50%;
+
+        .search-tips,
+        .more-help {
+            width: 100%;
+        }
+
+        .more-help {
+            margin-left: 3rem;
+        }
+
+        h1 {
+            font-size: fontSize("base");
+            letter-spacing: unset;
+            text-transform: uppercase;
+        }
+
+        a {
+            padding-left: remCalc(10px);
+            padding-right: remCalc(10px);
+        }
+    }
+}

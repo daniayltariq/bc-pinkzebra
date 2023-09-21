@@ -1,0 +1,608 @@
+// Page Navigation
+// -----------------------------------------------------------------------------
+//
+// Purpose: Contains the styles for the page navigation, deals with 2 viewsdue to
+// responsive layout of that navigation
+//
+// 1. It's not exactly a grid row, as it's a little further down the DOM tree, but
+// I use it here to grab the max width centering.
+// 2. Prevent document scrolling by clipping its body
+// 3. Prevent inertia scrolling of document
+//
+// -----------------------------------------------------------------------------
+
+
+//
+// Shared styles for sub page navigation
+// -----------------------------------------------------------------------------
+
+%navPage-childList {
+    border-left: 1px solid $navPage-childList-borderColor;
+    margin: spacing("quarter") spacing("half");
+    padding-left: spacing("half");
+}
+
+//
+// When navPages is open
+// -----------------------------------------------------------------------------
+
+.has-activeNavPages {
+    overflow: hidden; // 2
+    -webkit-overflow-scrolling: auto; // 3
+}
+
+//
+// Top level Pages navigation container
+// -----------------------------------------------------------------------------
+
+.isMobile .banners + .navPages-container {
+    height: $header-height-mobile + $banner-height-mobile;
+}
+
+.isMobile .navPages-container {
+    bottom: 0;
+    box-shadow: none;
+    height: auto;
+    left: 0;
+    padding-top: 0;
+    right: 0;
+    top: $header-height-mobile;
+    z-index: 1;
+
+    .navPages {
+        background-color: stencilColor(color-primaryLight);
+    }
+
+    .category-img-container {
+        border-radius: 50%;
+        height: 150px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        width: 150px;
+
+        .category-img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+.navPages-container {
+    border-top: container("border");
+    box-shadow: 0 -3px 4px -4px #000, 0 2px 5px -5px #000;
+    display: none;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    padding-top: $header-height-mobile;
+
+    @include breakpoint("large") {
+        background: transparent;
+        display: block;
+        height: auto;
+        padding: 0;
+        position: relative;
+    }
+
+    .category-img {
+        display: none;
+    }
+
+    &.is-open {
+        display: block;
+        position: fixed;
+
+        .navPages-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+      
+            &.navPages-list--user {
+                display: none;
+            }
+
+            .navPages-item {
+                margin-top: remCalc(30px);
+            }
+        }
+    }
+}
+
+//
+// Top level Pages navigation list styles
+// -----------------------------------------------------------------------------
+
+.navPages {
+    background-color: $navPages-backgroundColor;
+    height: 100%;
+    overflow-y: auto;
+    padding: 0 spacing("single");
+
+    // Modify padding to get more space for categories.
+    @include breakpoint("large") {
+        @include grid-row();
+        @include nav($style: "navBar", $wrapper: "nav");
+        background: none;
+        font-size: 0;
+        margin: 0 auto;
+        max-width: none;
+        overflow-y: visible;
+        padding: 0 100px;
+        text-align: center;
+        width: 100%;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .nav-pages-categories {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navPage-subMenu-list {
+        @extend %navPage-childList;
+
+        border-left: 0;
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+
+        @include breakpoint("medium") {
+            @include grid-row();
+            border-left: 0;
+            margin: auto;
+            padding-left: 0;
+        }
+    }
+}
+
+.navPages-list {
+    margin: 0;
+
+    @include breakpoint("large") {
+        display: inline-block;
+        float: none;
+    }
+
+    + .navPages-list {
+        border-top: 1px solid $navPages-list--user-borderColor;
+        margin-top: spacing("half");
+        padding-top: spacing("half");
+    }
+}
+
+.navPages-list-depth-max.subMenu-is-open {
+    .is-hidden {
+        display: none;
+
+        @include breakpoint("large") {
+            display: inline-block;
+        }
+    }
+
+    .navPages-item-page {
+        display: none;
+
+        // medium
+        @include breakpoint("large") {
+            display: inline-block;
+        }
+    }
+}
+
+.navPages-action-depth-max.has-subMenu.is-root.is-open {
+    .navPages-action-moreIcon {
+        @include breakpoint("large") {
+            transform: rotate(0);
+        }
+    }
+}
+
+.navPages-action-depth-max.has-subMenu.is-open {
+    border-bottom: 1px solid $navPages-list--user-borderColor;
+    text-align: center;
+
+    @include breakpoint("large") {
+        border-bottom: 0;
+        text-align: left;
+    }
+
+    .navPages-action-moreIcon {
+        border: solid 1px $navPages-action-moreIcon-borderColor;
+        border-radius: 4px;
+        float: left;
+        height: 35px;
+        margin-top: -10px;
+        padding: 11.7px; // (33 - 9.6) / 2
+        transform: rotate(90deg);
+        width: 35px;
+
+        // medium
+        @include breakpoint("large") {
+            @include square(8px);
+            border: 0;
+            border-radius: 0;
+            float: none;
+            margin-top: 0;
+            padding: 0;
+            transform: rotate(-90deg);
+        }
+    }
+
+    svg {
+        height: 9.6px;
+        width: 9.6px;
+
+        // medium
+        @include breakpoint("large") {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+.navPages-action {
+    align-items: center;
+    border-bottom: 5px solid transparent;
+    color: stencilColor("navPages-color");
+    display: flex;
+    flex-direction: column;
+    font-size: $h4-font-size;
+    font-weight: fontWeight("bold");
+    justify-content: space-between;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    // medium
+    @include breakpoint("large") {
+        display: inline-block;
+        font-size: fontSize("smaller");
+        padding: spacing("half") spacing("quarter") spacing("half");
+
+        &.is-open {
+            background-color: $navPage-subMenu-item--is-highlighted-background;
+        }
+    }
+
+    @include breakpoint("xlarge") {
+        font-size: fontSize("small");
+        padding: spacing("half") spacing("half") spacing("half");
+    }
+
+    @include breakpoint("xxlarge") {
+        padding: spacing("half") (spacing("half") + spacing("quarter")) spacing("half");
+    }
+
+    &.is-open {
+        p {
+            border-color: $navPage-subMenu-item--is-highlighted-color;
+            color: $navPage-subMenu-item--is-highlighted-color;
+        }
+    }
+
+    &.is-open,
+    .collapsible-icon-wrapper.is-open {
+        svg {
+            fill: $navPage-subMenu-item--is-highlighted-color;
+            stroke: $navPage-subMenu-item--is-highlighted-color;
+        }
+    }
+
+    &:hover,
+    &.activePage {
+        border-color: $navPage-subMenu-item--is-highlighted-color;
+        color: $navPage-subMenu-item--is-highlighted-color;
+
+        svg {
+            fill: $navPage-subMenu-item--is-highlighted-color;
+            stroke: $navPage-subMenu-item--is-highlighted-color;
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    svg {
+        fill: stencilColor("navPages-color");
+        stroke: stencilColor("navPages-color");
+        transition: all 0.15s ease;
+    }
+}
+
+.navPages-action--storeCredit {
+    color: stencilColor("color-textSecondary");
+}
+
+.navPages-action--compare {
+    display: none;
+
+    &.show {
+        display: block;
+    }
+}
+
+.navPages-action-moreIcon {
+    @include square(8px);
+    display: none;
+    margin-left: spacing("half");
+    transform: rotate(-90deg);
+
+    @include breakpoint("large") {
+        transform: none;
+    }
+
+    .has-subMenu.is-open &,
+    .collapsible-icon-wrapper.is-open & {
+        transform: rotate(0);
+    }
+
+    .navPages-list:not(.navPages-list-depth-max) & {
+        @include square(11px);
+        margin: 0 spacing("single");
+
+        // medium
+        @include breakpoint("large") {
+            @include square(8px);
+            margin: 0 0 0 spacing("half");
+        }
+    }
+}
+
+
+// Sub page navigation and children of sub pages
+// -----------------------------------------------------------------------------
+
+.navPage-childList {
+    @extend %navPage-childList;
+    display: none;
+
+    @include breakpoint("large") {
+        border: 0;
+        display: block;
+    }
+
+    &.is-open {
+        display: block;
+    }
+
+    .navPage-subMenu-action:not(.navPages-action-depth-max) + & {
+        margin-left: spacing("double"); //
+
+        // medium
+        @include breakpoint("large") {
+            margin-left: 0;
+        }
+    }
+}
+
+
+// Sub menu, first level down from top level categories
+// -----------------------------------------------------------------------------
+//
+// 1. navBar mixin has lots of decendant child selectors to deal with
+//
+// -----------------------------------------------------------------------------
+
+.isMobile .navPage-subMenu {
+    &.is-open {
+        display: block;
+    }
+
+    .navPage-subMenu-widget {
+        display: none;
+    }
+}
+
+.navPage-subMenu {
+    display: none;
+    outline: 0;
+
+    @include breakpoint("large") {
+        background-color: stencilColor("navPages-subMenu-backgroundColor");
+        left: 0;
+        padding: spacing("single") (spacing("single") + spacing("half")) spacing("half") !important;
+        position: absolute;
+        right: 0;
+
+        &.is-open {
+            box-shadow: 4px 15px 10px -15px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            margin: 0 auto;
+            width: 90%;
+            z-index: 2;
+        }
+
+        .navPages-action-moreIcon {
+            display: none;
+        }
+    }
+
+    .navPages-list:not(.navPages-list-depth-max) .navPages-action.has-subMenu + & {
+        .navPage-subMenu-list {
+            margin-right: 0;
+
+            // medium
+            @include breakpoint("large") {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                margin-right: auto;
+            }
+        }
+    }
+
+    .navPage-subMenu-widget {
+        align-items: center;
+        display: flex;
+        
+        .widget-cat-img-container {
+            border-radius: 50%;
+            height: 150px;
+            margin: 0 auto 10px;
+            overflow: hidden;
+            width: 150px;
+
+            @include breakpoint("large") {
+                height: 200px;
+                width: 200px;
+            }
+
+            .widget-cat-img {
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.has-subMenu.is-root + .navPage-subMenu-horizontal {
+    @include breakpoint("large") {
+        border-left: 0;
+        height: $navPage-subMenu-horizontal-height;
+        left: inherit;
+        margin: auto;
+        top: inherit;
+        width: $navPage-subMenu-horizontal-width;
+    }
+}
+
+.navPage-subMenu-horizontal {
+    &.is-open {
+        // medium
+        @include breakpoint("large") {
+            border-left: 1px solid stencilColor("navPages-subMenu-separatorColor");
+            display: inherit;
+            height: $navPage-subMenu-horizontal-height;
+            margin-left: $navPage-subMenu-horizontal-width;
+            padding: 0 !important;
+            top: 0;
+            width: $navPage-subMenu-horizontal-width + 1;
+        }
+    }
+
+    .navPages-action-moreIcon {
+        // medium
+        @include breakpoint("large") {
+            display: inline-block;
+            transform: rotate(-90deg);
+        }
+    }
+}
+
+.navPage-subMenu-item {
+    margin-bottom: remCalc(26px);
+
+    @include breakpoint("large") {
+        padding: 0 0.75rem !important;
+
+        .navPages-action {
+            text-transform: none;
+            width: 100%;
+        }
+
+        > .navPage-subMenu-action {
+            border-bottom: 1px solid stencilColor("navPages-subMenu-separatorColor");
+            margin-bottom: spacing("half") + spacing("quarter");
+            text-transform: uppercase;
+        }
+    }
+}
+
+.navPage-subMenu-item-child,
+.navPage-subMenu-item-parent {
+    width: 100%;
+
+    @include breakpoint("large") {
+        .navPage-subMenu-action {
+            padding-left: spacing("single");
+            padding-right: spacing("single");
+            width: 100%;
+        }
+    }
+}
+
+.navPage-subMenu-action {
+    @include breakpoint("large") {
+        padding: 0;
+        text-align: start;
+    }
+
+    .collapsible-icon-wrapper {
+        box-sizing: content-box;
+        display: inline-block;
+        height: 100%;
+        text-align: right;
+        width: 100%;
+
+        // medium
+        @include breakpoint("large") {
+            display: none;
+        }
+    }
+}
+
+.isMobile .navPages .navPage-subMenu-list {
+    margin-top: remCalc(20px);
+    position: relative;
+}
+
+.isMobile .navPages .navPages-item {
+    &:nth-child(odd) .navPage-subMenu-list {
+        left: 50%;
+    }
+
+    &:nth-child(even) .navPage-subMenu-list {
+        right: 50%;
+    }
+}
+
+
+//
+// Child pages of sub pages navigation lists
+// -----------------------------------------------------------------------------
+.navPage-childList-action {
+    font-weight: fontWeight("normal");
+    padding: 0 0 spacing("quarter");
+}
+
+
+//
+// Quick search inside the mobile nav
+// -----------------------------------------------------------------------------
+
+.navPages-quickSearch {
+    border-bottom: container("border");
+    margin-bottom: spacing("half");
+
+    @include breakpoint("large") {
+        display: none;
+    }
+
+    > .container {
+        padding: 0;
+    }
+
+    .form {
+        margin: 0;
+    }
+
+    .form-field {
+        margin-bottom: 0;
+    }
+}
+
+
+//
+// NavPages user section for mobile nav panel
+// -----------------------------------------------------------------------------
+
+.navPages-list--user {
+    @include breakpoint("large") {
+        display: none;
+    }
+}

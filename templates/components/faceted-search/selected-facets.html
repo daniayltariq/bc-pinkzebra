@@ -1,0 +1,31 @@
+<div class="facetedSearch-refineFilters sidebarBlock">
+    <p>
+        {{lang 'search.faceted.selected.title'}}
+    </p>
+
+    {{#if items}}
+        <ul class="inlineList inlineList--labels">
+            {{#each items}}
+                <li>
+                    <a href="{{url}}"
+                       class="facetLabel"
+                       rel="nofollow"
+                       data-faceted-search-facet
+                    >
+                        {{#if facet '===' 'rating'}}
+                            {{> components/products/ratings rating=title}}
+                        {{else}}
+                            {{{sanitize title}}}
+                        {{/if}}
+
+                        <svg class="icon">
+                            <use href="#icon-close" />
+                        </svg>
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>{{lang 'search.faceted.selected.no-filters'}}</p>
+    {{/if}}
+</div>

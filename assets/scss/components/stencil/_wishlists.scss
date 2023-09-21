@@ -1,0 +1,334 @@
+// =============================================================================
+// Wishlist List (CSS)
+// =============================================================================
+
+.lookbooks {
+    margin-top: 90px;
+
+    @include breakpoint("medium") {
+        margin-top: 130px;
+    }
+}
+
+.wishlist-heading {
+    color: stencilColor("color-primary");
+}
+
+.wishlists-table {
+    border: 0;
+
+    .table-thead {
+        display: grid;
+        font-size: fontSize("large");
+        font-weight: fontWeight("bold");
+        grid-template-columns: 1.5fr 1fr 1fr;
+        justify-items: center;
+        padding-bottom: remCalc(24px);
+
+        @include breakpoint("large") {
+            grid-template-columns: 1.5fr 1fr 1fr 3fr;
+            justify-items: start;
+        }
+    }
+
+    .table-tbody {
+        .table-row {
+            align-items: center;
+            border-bottom: 1px solid stencilColor(element-border-color);
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            grid-template-rows: 1fr 2fr;
+            justify-items: center;
+            padding: remCalc(24px) remCalc(5px);
+            row-gap: 20px;
+
+            @include breakpoint("large") {
+                grid-template-columns: 1.5fr 1fr 1fr 3fr;
+                grid-template-rows: none;
+                justify-items: start;
+            }
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .table-actions {
+            grid-column: 1 / span 3;
+            margin: 0;
+
+            @include breakpoint("large") {
+                grid-column: unset;
+                justify-self: end;
+            }
+
+            .form-fieldset {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                @include breakpoint("small") {
+                    [data-wishlist-delete] {
+                        align-self: auto;
+                    }
+                }
+
+                a.button + a.button {
+                    margin-left: remCalc(10px);
+                }
+
+                [data-wishlist-delete] {
+                    align-self: flex-end;
+                }
+            }
+
+            .button {
+                color: stencilColor(button--primary-color);
+                font-size: fontSize("smaller");
+                margin-bottom: 0;
+                min-width: 120px;
+                width: auto;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: white;
+                }
+            }
+
+            [data-wishlist-delete],
+            [data-lookbook-delete] {
+                color: #000;
+                font-size: 14px;
+                min-width: unset;
+                text-decoration: underline;
+                text-transform: none;
+
+                &:hover {
+                    color: stencilColor(button--primary-color);
+                }
+            }
+        }
+    }
+}
+
+.wishlist-header {
+    display: none;
+    text-align: center;
+}
+
+.modal .wishlist-header {
+    display: block;
+}
+
+.wishlist-form,
+.lookbook-form {
+    @include grid-row();
+
+    margin-left: auto;
+    margin-right: auto;
+    max-width: remCalc(550px);
+
+    .form-field {
+        @include grid-column(12);
+    }
+}
+
+.wishlist-add .wishlist-form,
+.wishlist-add .lookbook-form {
+    .form-field {
+        margin-bottom: remCalc(20px);
+    }
+}
+
+.share-wishlist {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: remCalc(800px);
+    text-align: center;
+
+    .panel-body {
+        background-color: $color-primaryLight;
+
+        h5 {
+            color: black;
+        }
+
+        .panel-body-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include breakpoint("medium") {
+                flex-direction: row;
+            }
+
+            label {
+                font-size: remCalc(10px);
+            }
+
+            .wishlist-copy-link {
+                color: stencilColor(color-primary);
+                font-size: 11px;
+                margin-left: remCalc(20px);
+                text-decoration: underline;
+                transition: all 0.15s ease;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: stencilColor(color-primaryDark);
+                }
+            }
+
+        }
+    }
+}
+
+.form.wishlist {
+    .form-actions {
+        a {
+            display: inline-block;
+        }
+
+        input.button {
+            color: #000;
+            display: block;
+            margin: 0 auto;
+            text-decoration: underline;
+            text-transform: none;
+        }
+    }
+}
+
+.account {
+    .card-figcaption-body {
+        top: initial;
+        transform: translate3d(30%, -50%, 0);
+    }
+}
+
+.form {
+    &.wishlist-item-list {
+        text-align: center;
+    }
+}
+
+.wishlistGrid {
+    &.productGrid {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: auto;
+        @include breakpoint("xsmall") {
+            flex-direction: row;
+        }
+    }
+
+    .product {
+        margin-bottom: remCalc(20px);
+
+        .card {
+            margin-bottom: initial;
+        }
+
+        .remove-item {
+            color: #000;
+            font-size: 12px;
+            margin-bottom: initial;
+            min-width: unset;
+            text-decoration: underline;
+            text-transform: none;
+
+            &:hover {
+                color: stencilColor(button--primary-color);
+            }
+        }
+    }
+}
+
+.lookbook-panel {
+    margin-bottom: 1rem;
+
+    &__content {
+        align-items: center;
+        background-color: stencilColor("color-primaryLight");
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin: auto;
+        max-width: 50rem;
+        padding-top: 1rem;
+
+        span {
+            color: stencilColor("color-textBase");
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .actions {
+            text-align: center;
+        }
+    }
+}
+
+.share-to-cart-page {
+    padding: 2rem;
+    text-align: center;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .message {
+        color: stencilColor("color-textBase");
+        z-index: zIndex("highest");
+    }
+}
+
+.share-to-cart__wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include breakpoint("large") {
+        margin: 0 4rem;
+    }
+
+    .title {
+        font-size: remCalc(18px);
+        letter-spacing: normal;
+
+        @include breakpoint("large") {
+            font-size: remCalc(22px);
+        }
+    }
+
+    form {
+        padding: 0 1.5rem;
+
+        @include breakpoint("large") {
+            padding: unset;
+        }
+    }
+
+    .form-actions {
+        margin-top: 2rem;
+        text-align: left;
+
+        input {
+            width: min-content;
+        }
+    }
+
+    .form-field+.form-field {
+        margin-top: 1rem;
+    }
+
+    textarea {
+        resize: none;
+    }
+}

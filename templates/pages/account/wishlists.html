@@ -1,0 +1,33 @@
+---
+gql: "query customerAttributes{
+    customer{
+        attributes {
+            attribute(entityId:6) {
+                value
+            }
+        }
+    }
+}"
+---
+{{#partial "page"}}
+{{inject 'lookbooks' (split gql.data.customer.attributes.attribute.value ',')}}
+{{#if settings.show_wishlist}}
+    <div class="account account--fixedLarge">
+        
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        
+        <h2 class="page-heading wishlist-heading">{{lang 'account.wishlists.heading' }}</h2>
+        {{#if customer.customer_group_name '==' 'Consultant'}}
+            {{> components/account/wishlist-list lookbooks=(split gql.data.customer.attributes.attribute.value ',')}}
+        {{else}}
+            {{> components/account/wishlist-list}}
+        {{/if}}
+
+        {{#if customer.customer_group_name '==' 'Consultant'}}
+            <h2 class="page-heading lookbooks wishlist-heading">{{lang 'account.wishlists.lookbook.heading' }}</h2>
+            {{> components/consultant/wishlist-list lookbooks=(split gql.data.customer.attributes.attribute.value ',')}}
+        {{/if}}
+    </div>
+{{/if}}
+{{/partial}}
+{{> layout/base}}

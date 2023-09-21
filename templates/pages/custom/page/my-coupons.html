@@ -1,0 +1,19 @@
+{{#partial "head"}}
+{{/partial}}
+
+{{#partial "page"}}
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<h1 class="page-heading">{{lang 'account.coupons.heading' }}</h1>
+
+<section class="page">
+    <div class="loadingOverlay"></div>
+    <div class="account account--fixedExtraLarge">
+        <div class="account-body">
+            <section class="account-content">
+                <div id="my-coupons"></div>
+            </section>
+        </div>
+    </div>
+</section>
+{{/partial}}
+{{> layout/base}}

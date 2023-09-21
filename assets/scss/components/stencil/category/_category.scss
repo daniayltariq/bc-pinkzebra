@@ -1,0 +1,84 @@
+// =============================================================================
+// CATEGORY (CSS)
+// =============================================================================
+
+
+// Category header
+// -----------------------------------------------------------------------------
+
+.category-header-image {
+    height: auto;
+    max-height: 250px;
+    width: 100%;
+}
+
+.category-page {
+    padding-top: 1rem;
+}
+
+#product-listing-container {
+    .actionBar {
+
+        @include breakpoint("small") {
+            margin: 1rem auto;
+            width: 50%;
+        }
+
+        @include breakpoint("medium") {
+            display: flex;
+
+            &-section {
+                margin: auto;
+                width: auto;
+            }
+        }
+
+        &-section {
+            .form-select {
+                &--small {
+                    width: 75%;
+                    @include breakpoint("xsmall") {
+                        width: 80%;
+                    }
+
+                    @include breakpoint("small") {
+                        width: 75%;
+                    }
+
+                    @include breakpoint("medium") {
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        &-section {
+            float: none;
+            width: 100%;
+
+            @include breakpoint("medium") {
+                width: auto;
+            }
+        }
+    }
+
+    .product {
+        height: remCalc(430px);
+        margin: auto;
+
+        @include breakpoint("large") {
+            height: remCalc(520px);
+        }
+
+        .card-action {
+            margin-top: auto;
+        }
+
+        .card-img-container {
+            @include breakpoint("large") {
+                max-height: remCalc(250px);
+                max-width: unset;
+            }
+        }
+    }
+}

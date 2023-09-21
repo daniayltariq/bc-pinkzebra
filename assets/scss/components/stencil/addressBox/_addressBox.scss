@@ -1,0 +1,186 @@
+// =============================================================================
+// ADDRESS BOX (CSS)
+// =============================================================================
+
+// Address layout
+// -----------------------------------------------------------------------------
+//
+// 1. Using display: inline-block; to vertically align blocks.
+//    Font-size gets redefined under the .address block.
+//
+// -----------------------------------------------------------------------------
+
+.addressList {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0; // 1
+    justify-content: center;
+    list-style: none;
+    margin-left: -(spacing("half"));
+    margin-right: -(spacing("half"));
+}
+
+.address {
+    display: inline-block;
+    padding: 0 spacing("half");
+    vertical-align: top;
+
+    @include breakpoint("small") {
+        width: grid-calc(6, $total-columns);
+    }
+
+    @include breakpoint("xlarge") {
+        width: grid-calc(4, $total-columns);
+    }
+}
+
+.addressList .address {
+    width: 320px;
+
+    @include breakpoint("xsmall") {
+        width: auto;
+    }
+}
+
+
+// Address
+// -----------------------------------------------------------------------------
+//
+// 1. Redefine the font-size as we're removing white-space on the parent by
+//    reducing the size to 0.
+// 2. Adding a min-height to improve the consistency of the address blocks.
+// 3. On larger screens we position: absolute; the .form-actions so they're
+//    consistently in line. We need to adjust padding to accommodate this.
+//
+// -----------------------------------------------------------------------------
+
+.panel--address {
+    font-size: fontSize("base");
+    position: relative;
+
+    .panel-body {
+        background-color: white;
+        border: container("border");
+        color: stencilColor(navPages-color);
+        min-height: remCalc(250px);
+        padding: spacing("single");
+
+        @include breakpoint("small") {
+            min-width: remCalc(346px);
+            padding: (spacing("double") + spacing("quarter")) spacing("single");
+        }
+
+        .address-title {
+            color: stencilColor(navPages-color);
+            font-size: fontSize("small");
+            text-transform: uppercase;
+        }
+
+        .address-details {
+            font-size: fontSize("small");
+            font-weight: 500;
+        }
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+        
+        &::before,
+        &::after {
+            content: none;
+        }
+
+        .button {
+            font-size: fontSize("smaller");
+            margin-bottom: spacing("half");
+            margin-bottom: 0;
+            min-width: remCalc(110px);
+
+            @include breakpoint("xsmall") {
+                min-width: remCalc(130px);
+            }
+
+            + .button {
+                margin-left: 0;
+                margin-top: 0;
+
+                @include breakpoint("small") {
+                    margin-left: spacing("quarter");
+                }
+            }
+        }
+
+        a {
+            margin-right: 10px;
+        }
+    }
+}
+
+.address-title {
+    margin: 0 0 spacing("half");
+    text-transform: none;
+}
+
+.address-details {
+    list-style: none;
+    margin: 0 0 spacing("half");
+}
+
+.address-details--postal {
+    font-size: fontSize("smaller");
+}
+
+.address-label,
+.address-description {
+    display: inline-block;
+    font-size: fontSize("base");
+    margin: 0;
+}
+
+.address-label {
+    color: stencilColor("color-textSecondary");
+    font-weight: fontWeight("normal");
+}
+
+.panel--newAddress {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+        .address-title {
+            color: stencilColor("color-textLink--hover");
+        }
+    }
+
+    .panel-body {
+        background-color: transparent;
+        border: container("border");
+        display: block;
+        min-height: remCalc(302px);
+        min-width: remCalc(286px);
+
+        @include breakpoint("small") {
+            min-width: remCalc(346px);
+        }
+    }
+
+    .address-title {
+        margin-bottom: 0;
+        transition: all 0.15s ease;
+    }
+}
+
+.address-addNew {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-55%);
+}
+
+.address-symbol {
+    font-size: fontSize("hero");
+    line-height: 1;
+}

@@ -1,0 +1,9 @@
+<!-- {{#each product.custom_fields}}
+    {{#if name '===' 'mpn'}}
+                <dt class="productView-info-name when-available {{#if outOfStockMessage}}show-field{{/if}}">{{lang 'products.availability'}}</dt>
+                <dd class="productView-info-value when-available {{#if outOfStockMessage}}show-field{{/if}}">{{{value}}}</dd>
+        {{else}}
+            <dt class="productView-info-name">{{name}}:</dt>
+            <dd class="productView-info-value">{{{value}}}</dd>
+    {{/if}}
+{{/each}} -->

@@ -1,0 +1,136 @@
+#contact-us-page {
+    text-align: center;
+
+    .form-row {
+        display: flex;
+
+        +.form-row {
+            margin-top: 1.5rem;
+        }
+    }
+
+    .contact-us {
+        &__forms {
+
+            margin-top: 4rem;
+
+            @include breakpoint("large") {
+                display: flex;
+                gap: 30px;
+            }
+
+            .form-label {
+                font-size: 11px;
+                text-transform: uppercase;
+
+                @include breakpoint("large") {
+                    font-size: 14px;
+                }
+            }
+
+            .contact-us-consultant-form,
+            .contact-us-form {
+                @include breakpoint("large") {
+                    width: 50%;
+                }
+            }
+
+            .contact-us-form {
+                .form-field+.form-field,
+                .g-recaptcha {
+                    margin-top: 1.5rem;
+                }
+            }
+
+            .form-actions {
+                text-align: left;
+            }
+
+            textarea {
+                resize: none;
+            }
+
+            .form-inlineMessage {
+                font-size: 12px;
+                padding: 0.5rem;
+            }
+
+            .form-select {
+                color: stencilColor("color-textBase");
+            }
+        }
+
+        &__form-description {
+            padding-bottom: 2rem;
+
+            span {
+                display: block;
+            }
+
+            span+span {
+                margin-top: 1rem;
+            }
+
+            h2 {
+                color: stencilColor("color-textBase");
+                font-size: remCalc(14px);
+                font-weight: 600;
+                letter-spacing: normal;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .helpful-links {
+        h2,
+        a {
+            font-size: remCalc(14px);
+            font-weight: 600;
+            letter-spacing: normal;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        a {
+            color: stencilColor("color-textBase");
+        }
+
+        h2 {
+            margin-top: unset;
+        }
+
+        .links {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .helpful-link {
+            @include breakpoint("large") {
+                width: 16%;
+            }
+        }
+    }
+
+    .margin-3 {
+        margin: 3rem auto;
+    }
+}
+
+.page-heading.contactUs {
+    margin: 0 auto;
+}
+
+.border {
+    border-top: 1px solid black;
+
+    @include breakpoint("large") {
+        border-left: 1px solid black;
+        border-top: unset;
+        margin: 3rem;
+    }
+}
+
+#contact-us-success {
+    margin-top: 2rem;
+}

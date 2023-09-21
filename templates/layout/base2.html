@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ locale_name }}">
+    <head>
+        <title>{{ head.title }}</title>
+        {{{ resourceHints }}}
+        {{{ head.meta_tags }}}
+        {{{ head.config }}}
+        {{#block "head"}} {{/block}}
+
+        <style type="text/css" media="screen, print">
+            @font-face {
+                font-family: "Northwell";
+                src: url("{{cdn 'fonts/Northwell.ttf'}}");
+            }
+            @font-face {
+                font-family: "Poppins-Regular";
+                src: url("{{cdn 'fonts/Poppins-Regular.ttf'}}");
+            }
+        </style>
+
+        <link href="{{ head.favicon }}" rel="shortcut icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+        <script>
+            {{!-- Change document class from no-js to js so we can detect this in css --}}
+            document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+        </script>
+
+        {{> components/common/polyfill-script }}
+        <script>window.consentManagerTranslations = `{{{langJson 'consent_manager'}}}`;</script>
+
+        {{!-- Load Lazysizes script ASAP so images will appear --}}
+        <script>
+            {{!-- Only load visible elements until the onload event fires, after which preload nearby elements. --}}
+            window.lazySizesConfig = window.lazySizesConfig || {};
+            window.lazySizesConfig.loadMode = 1;
+        </script>
+        <script async src="{{cdn 'assets/dist/theme-bundle.head_async.js' resourceHint='preload' as='script'}}"></script>
+        
+        {{getFontsCollection font-display='block'}}
+        
+        <script async src="{{cdn 'assets/dist/theme-bundle.font.js' resourceHint='preload' as='script'}}"></script>
+
+        {{{stylesheet '/assets/css/theme.css'}}}
+
+        {{{head.scripts}}}
+
+        {{~inject 'zoomSize' theme_settings.zoom_size}}
+        {{~inject 'productSize' theme_settings.product_size}}
+        {{~inject 'genericError' (lang 'common.generic_error')}}
+        {{~inject 'urls' urls}}
+        {{~inject 'secureBaseUrl' settings.secure_base_url}}
+        {{~inject 'cartId' cart_id}}
+        {{~inject 'template' template}}
+        {{~inject 'validationDictionaryJSON' (langJson 'validation_messages')}}
+        {{~inject 'validationFallbackDictionaryJSON' (langJson 'validation_fallback_messages')}}
+        {{~inject 'validationDefaultDictionaryJSON' (langJson 'validation_default_messages')}}
+        {{~inject 'carouselArrowAndDotAriaLabel' (lang 'carousel.arrow_and_dot_aria_label')}}
+        {{~inject 'carouselActiveDotAriaLabel' (lang 'carousel.active_dot_aria_label')}}
+        {{~inject 'carouselContentAnnounceMessage' (lang 'carousel.content_announce_message')}}
+        {{~inject 'themeSetting' theme_settings}}
+        {{~inject 'storefrontAPIToken' settings.storefront_api.token}}
+        {{~inject 'customer' customer}}
+        {{~inject 'pzAPIEndpoint' theme_settings.pz_api_endpoint}}
+        {{~inject 'productsResults' product_results.products}}
+        {{~inject 'productsFeatured' products.featured}}
+        {{~inject 'categoryProducts' category.products}}
+        {{~inject 'pageType' page_type}}
+        {{~inject 'outOfStock' (lang 'common.out_of_stock_message')}}
+        {{~inject 'product' product}}
+        {{~inject 'priceRange' theme_settings.facet_price_range}}
+        {{~inject 'subscription_products_ids' theme_settings.subscription_products_ids}}
+        {{~inject 'club_pink' (lang 'products.members_exclusivity.club_pink')}}
+        {{~inject 'preferred' (lang 'products.members_exclusivity.preferred')}}
+        {{~inject 'exclusive' (lang 'products.members_exclusivity.exclusive')}}
+        {{inject 'scentflirt_ids' theme_settings.scentflirt_products_ids}}
+    </head>
+    <body class="{{currency_selector.active_currency_code}}">
+        <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
+
+        <div id="fb-root"></div>
+        <script src="https://connect.facebook.net/en_US/sdk.js"></script>
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId            : {{theme_settings.facebook_app_id}},
+                    cookie           : true,
+                    autoLogAppEvents : true,
+                    xfbml            : true,
+                    version          : 'v17.0'
+                });
+            };
+        </script>
+
+        {{#block "pz_header"}}
+        {{> components/common/header }}
+        {{/block}}
+        {{> components/common/full-width-body }}
+        {{> components/common/footer }}
+
+        <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>
+        <script>
+            {{!-- Exported in app.js --}}
+            function onThemeBundleMain() {
+                window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
+            }
+        </script>
+        <script async defer src="{{cdn 'assets/dist/theme-bundle.main.js' resourceHint='preload' as='script'}}" onload="onThemeBundleMain()"></script>
+
+        {{{footer.scripts}}}
+
+        
+    </body>
+
+
+</html>

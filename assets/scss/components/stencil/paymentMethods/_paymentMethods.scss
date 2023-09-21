@@ -1,0 +1,250 @@
+// =============================================================================
+// PAYMENT METHODS (CSS)
+// =============================================================================
+
+.paymentMethodsTitle {
+    color: black;
+    font-size: remCalc(22px);
+    font-weight: fontWeight("bold");
+    margin: 0 0 spacing("single");
+    padding: 0;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.paymentMethodsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -(spacing("half"));
+    margin-bottom: spacing("single");
+
+    &-item {
+        padding: spacing("half");
+        width: 100%;
+
+        @include breakpoint("small") {
+            width: grid-calc(6, $total-columns);
+        }
+    }
+}
+
+.paymentMethod {
+    background-color: stencilColor(color-secondaryLighter);
+    border: container("border");
+    border-radius: remCalc(5px);
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+
+    &-row {
+        padding: 1.5rem;
+
+        &:first-child {
+            background-color: #fff;
+            border-radius: remCalc(5px);
+            padding: 1rem;
+        }
+
+        &:last-child {
+            margin-top: auto;
+        }
+
+        &:only-child {
+            height: 100%;
+        }
+    }
+
+    // fix
+    .button {
+        margin-bottom: 0;
+        min-width: 110px;
+    }
+}
+
+.methodHeader {
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+
+    &-icon {
+        margin-right: spacing("half");
+        width: remCalc(28px);
+
+        @include breakpoint("xlarge") {
+            width: remCalc(42px);
+        }
+    }
+
+    &-title {
+        font-size: fontSize("smallest");
+        font-weight: fontWeight("semibold");
+
+        @include breakpoint("xlarge") {
+            font-size: fontSize("base");
+        }
+    }
+
+    &-brand {
+        font-size: fontSize("smallest");
+        font-weight: fontWeight("semibold");
+
+        @include breakpoint("xlarge") {
+            font-size: fontSize("base");
+        }
+    }
+
+    &-meta {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-left: auto;
+        padding-left: spacing("half");
+    }
+
+    &-default {
+        fill: color("greys", "dark");
+        height: remCalc(18px);
+        margin-left: spacing("half");
+        width: remCalc(18px);
+
+        @include breakpoint("xlarge") {
+            height: remCalc(20px);
+            width: remCalc(20px);
+        }
+    }
+
+    &-expiry {
+        color: stencilColor(border-global-color-base);
+        font-size: fontSize("small");
+        text-transform: capitalize;
+    }
+}
+
+.methodDetails {
+    display: flex;
+    margin: 0;
+
+    &-label {
+        flex: 1;
+        font-weight: fontWeight("semibold");
+    }
+
+    &-description {
+        flex: 2;
+        font-size: fontSize("small");
+    }
+}
+
+.newPaymentMethod {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-items: center;
+    min-height: remCalc(186px);
+    text-decoration: none;
+
+    &-icon {
+        color: stencilColor(navPages-color);
+        font-size: 50px;
+        line-height: 1;
+        margin: auto 0 spacing("half");
+    }
+
+    &-title {
+        color: stencilColor(navPages-color);
+        font-weight: 500;
+        margin: 0 auto auto;
+        text-align: center;
+        text-transform: none;
+    }
+}
+
+// Payment Method Form - Add
+// -----------------------------------------------------------------------------
+
+.paymentMethodForm {
+    @include breakpoint("small") {
+        max-width: 60%;
+    }
+
+    &-column {
+        @include breakpoint("small") {
+            display: flex;
+
+            &:first-child .form-field {
+                margin-bottom: spacing("half");
+            }
+        }
+    }
+
+    &-heading {
+        color: color("greys", "darker");
+        font-family: fontFamily("sans");
+        margin-top: spacing("single");
+        text-transform: capitalize;
+    }
+
+    &-subheading {
+        display: flex;
+        font-weight: fontWeight("semibold");
+    }
+
+    &-cards {
+        @include breakpoint("small") {
+            margin-left: auto;
+        }
+    }
+
+    &-cards-icon {
+        margin-right: spacing("eighth");
+        width: remCalc(34px);
+    }
+
+    &-inputs {
+        position: relative;
+
+        @include breakpoint("small") {
+            &:last-child {
+                padding-left: spacing("single");
+                width: 30%;
+            }
+
+            &:first-child {
+                width: 70%;
+            }
+        }
+    }
+
+    &-inputs-icon {
+        position: absolute;
+        right: remCalc(9px);
+        top: remCalc(39px);
+
+        &.icon {
+            fill: color("greys", "light");
+            height: remCalc(21px);
+            width: remCalc(21px);
+        }
+    }
+
+    &-details {
+        margin-bottom: 0;
+
+        @include breakpoint("small") {
+            display: inline-block;
+            margin: 0 spacing("double") 0 0;
+        }
+    }
+
+    &-details-term {
+        font-weight: fontWeight("normal");
+        margin-bottom: spacing("half");
+    }
+
+    &-details-description {
+        font-size: fontSize("smaller");
+        font-weight: fontWeight("semibold");
+        letter-spacing: letterSpacing("large");
+    }
+}

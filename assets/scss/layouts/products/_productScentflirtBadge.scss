@@ -1,0 +1,22 @@
+.scentflirt-badge {
+    border: 2px solid stencilColor("color-primaryDark");
+    color: stencilColor("color-textBase");
+    margin: 1rem 0;
+    padding: 0.5rem;
+    width: fit-content;
+    
+    .product-type-value {
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+.product,
+.slick-track {
+    .scentflirt-badge {
+        border-radius: unset;
+        font-size: fontSize("smaller");
+        margin: 1rem auto;
+        padding: 0.5rem;
+    }
+}

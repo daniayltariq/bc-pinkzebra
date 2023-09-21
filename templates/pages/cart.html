@@ -1,0 +1,47 @@
+---
+cart: true
+---
+{{inject 'cancelButtonText' (lang 'common.cancel')}}
+{{#partial "page"}}
+{{inject 'invalidEntryMessage' (lang 'cart.invalid_entry_message')}}
+<div class="page">
+
+    <div class="page-content" data-cart>
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+        {{> components/cart/page-title}}
+
+        <div data-cart-status>
+            {{> components/cart/status-messages}}
+        </div>
+
+        {{#if cart.items.length}}
+            <div class="loadingOverlay"></div>
+
+            <div class="cart-header">
+                <div class="cart-header-elements-wrapper">
+                    <div class="cart-header-item" colspan="2">{{lang 'cart.checkout.product'}}</div>
+                    <div class="cart-header-item cart-header-quantity">{{lang 'cart.checkout.quantity'}}</div>
+                    <div class="cart-header-item">{{lang 'cart.checkout.total_price'}}</div>
+                </div>
+            </div>
+            <div class="cart-content-wrapper">
+                <div data-cart-content class="">
+                    {{> components/cart/content}}
+                </div>
+
+                <div data-cart-totals class="">
+                    {{> components/cart/totals}}
+                </div>
+            </div>
+
+            {{{region name="cart_below_totals"}}}
+
+        {{else}}
+            <h3 tabindex="0">{{lang 'cart.checkout.empty_cart'}}</h3>
+        {{/if}}
+
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}

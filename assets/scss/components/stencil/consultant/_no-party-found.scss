@@ -1,0 +1,10 @@
+.no-party-found {
+    color: stencilColor("color-blackLight");
+    display: flex;
+    font-size: fontSize("large");
+    font-weight: 600;
+    justify-content: center;
+    margin-top: 6rem;
+    text-align: center;
+    text-transform: uppercase;
+}

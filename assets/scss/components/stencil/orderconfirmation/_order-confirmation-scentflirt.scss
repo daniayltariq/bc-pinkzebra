@@ -1,0 +1,124 @@
+.order-confirmation-scentflirt {
+    &__header {
+
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            margin-left: auto;
+            margin-right: auto;
+
+            .specialFont-h2 {
+                font-size: 90px;
+                margin-top: remCalc(70px);
+                @include breakpoint("large") {
+                    font-size: 120px;
+                }
+            }
+
+            .subtitle {
+                font-size: remCalc(18px);
+                font-weight: 800;
+                @include breakpoint("large") {
+                    font-size: remCalc(24px);
+                    margin: -2rem auto auto;
+                }
+            }
+
+            hr {
+                border: solid 2px stencilColor("color-primary");
+                margin: remCalc(28px) auto;
+                width: 85%;
+            }
+        }
+        
+        .title-legend {
+            margin: 0 15% remCalc(60px);
+        }
+
+        .description {
+            font-size: remCalc(14px);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint("large") {
+            flex-direction: row;
+            gap: 100px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            text-align: left;
+
+            @include breakpoint("large") {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+
+            &-content {
+                display: flex;
+                flex-direction: column;
+
+                @include breakpoint("large") {
+                    display: block;
+                }
+            }
+        
+            .link-img {
+                border-radius: 50%;
+                height: remCalc(100px);
+                margin: auto;
+                width: remCalc(100px);
+            }
+
+            .card-content {
+                @include breakpoint("large") {
+                    margin-top: 1.5rem;
+                }
+
+                .link-header,
+                .description {
+                    color: stencilColor("color-blackLight");
+                    font-size: remCalc(14px);
+                    margin: 0 15% 1rem;
+                    text-decoration: none;
+                }
+    
+                .description {
+                    @include breakpoint("large") {
+                        margin: 1.5rem auto;
+                    }
+                }
+
+                .link-header {
+                    font-weight: 600;
+                }
+    
+                .get-started {
+                    margin: auto;
+                    @include breakpoint("large") {
+                        margin: auto;
+                    }
+                }
+            }
+            
+        }
+
+        .card:nth-child(odd) {
+            flex-flow: row-reverse;
+            @include breakpoint("large") {
+                flex-direction: column;
+            }
+        }
+    }
+}

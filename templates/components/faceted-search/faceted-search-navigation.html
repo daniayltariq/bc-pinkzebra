@@ -1,0 +1,29 @@
+<div class="accordion-nav-clear-holder">
+    <button type="button"
+         class="accordion-navigation toggleLink{{#unless start_collapsed}} is-open{{/unless}}"
+         data-collapsible="#facetedSearch-content--{{dashcase facet}}"
+         aria-label="{{lang 'search.faceted.toggleSection' title=title}}"
+    >
+        <span>
+            {{title}}
+        </span>
+
+        <span class="indicator--desktop">
+            <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                <use href="#arrow-dropdown-down-download" />
+            </svg>
+            <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on">
+                <use href="#arrow-dropdown-down-download" />
+            </svg>
+        </span>
+
+        <span class="indicator--mobile">
+            <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+                <use href="#icon-expand-plus" />
+            </svg>
+            <span class="accordion-indicator toggleLink-text toggleLink-text--on">
+                —
+            </span>
+        </span>
+    </button>
+</div>

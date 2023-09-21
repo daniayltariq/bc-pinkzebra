@@ -1,0 +1,50 @@
+.scentflirt {
+    .form-message {
+        font: italic normal normal 14px/20px Montserrat;
+
+    }
+
+    .input-description {
+        font-weight: 600;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        
+        gap: 20px;
+
+        @include breakpoint("large") {
+            flex-direction: row;
+        }
+
+        label {
+            width: 100%;
+        }
+
+        input {
+            color: stencilColor("color-textBase");
+        }
+    }
+
+    .form-section {
+        color: stencilColor("color-primary");
+        display: block;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        &__description {
+            display: block;
+            font-weight: 600;
+            padding-bottom: 1rem;
+        }
+    }
+
+    .form-checkbox {
+        display: none;
+    }
+
+    .form-input {
+        background-color: stencilColor("input-disabled-bg");
+    }
+}

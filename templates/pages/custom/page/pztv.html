@@ -1,0 +1,507 @@
+{{#partial "page"}}
+<!-- Add this to the <head> section of your HTML document -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<style>
+
+	.body {
+	    margin-top: 0 !important;
+	}
+	.section-live-shopping{
+		margin: 2rem 0;
+		padding: 2rem 0;
+	}
+	.body {
+	    margin-top: 0;
+	    margin-bottom: 0;
+	}
+	h1{
+		font-size: 1.8rem;
+	}
+	
+	.ls-text{
+		color: #ffffff;
+		text-transform: uppercase;
+
+	}
+	.img-ls{
+	    max-width: 15rem;
+	}
+	.ls-border-right{
+		border-right: 2px solid #ffffff;
+	}
+
+	@media (max-width: 768px) {
+		.info-box{
+			width: 100%;
+		}
+	}
+
+	.heading-with-line {
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    text-align: center;
+	    position: relative; 
+	}
+
+	.heading-with-line::after {
+	    content: ""; 
+	    position: absolute; 
+	    bottom: -20px;
+	    left: 50%;
+	    transform: translateX(-50%); 
+	    width: 100px;
+	    height: 4px;
+	    background-color: #000000;
+	}
+
+	.mt-4 {
+	    margin-top: 1.5rem;
+	}
+
+	.mt-5 {
+	    margin-top: 2rem;
+	}
+
+	.section-live-shopping{
+		background-color: #f45197;
+	}
+
+	.btn-primary {
+	    background: #ff1378;
+	    padding: 0.7rem 2.5rem;
+	    color: #fff;
+	    font-weight: bold;
+	    border-radius: 50px;
+	}
+
+	.btn-secondary {
+	    background-color: transparent;
+	    border: 2px solid #ff1378;
+	    padding: 0.4rem 1.4rem;
+	    color: #ff1378;
+	    font-weight: bold;
+	    border-radius: 50px;
+	    font-size: 10px;
+	}
+
+	.btn-primary-small {
+	    background: #ff1378;
+	    padding: 0.6rem 1.9rem;
+	    color: #fff;
+	    font-weight: bold;
+	    border-radius: 50px;
+	}
+
+	/*second section*/
+	.bg-custom-gray{
+		background-color: #f2f2f2;
+	}
+	.clr-light-pink{
+		color: #fcecf3;
+	}
+	.bg-light-pink{
+		background-color: #fcecf3;
+	}
+	.clr-pink{
+		color: #f45197;
+	}
+	.clr-black{
+		color: #000000;
+	}
+
+	.form-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .rounded-input {
+        border: 1px solid #c2c1c2;
+	    border-radius: 20px;
+	    padding: 2px 15px 5px 15px;
+	    width: 14rem;
+	    font-size: 16px;
+	    margin-right: 0.5rem;
+    }
+
+    .seasson-pass-img{
+    	max-width: 7rem;
+    }
+
+
+	.fw-6{
+	    font-weight: 600;
+	}
+	.font-15{
+		font-size: 15px;
+	}
+
+	.section-upcomming-shows{
+		margin: 0;
+		padding: 3rem 0;
+	}
+
+	.small, small {
+	    font-size: 70%;
+	    font-weight: 400;
+	}
+
+
+	@media (max-width: 768px) {
+	    .d-smn-none {
+	        display: none;
+	    }
+	}
+
+	@media (max-width: 768px) {
+	    .ls-text-wrap {
+	    	margin-top: 1rem;
+	    	justify-content: center;
+	    }
+	    .next-show .pl-5{
+	    	padding-left: 1rem !important;
+	    }
+	    .form-container {
+	        flex-direction: column; 
+	        text-align: center; 
+	    }
+	    .form-container input{
+	        margin-bottom: 1rem;
+	    }
+	}
+
+	.slick-dots{
+		display: none !important;
+	}
+
+	.slick-next, .slick-prev {
+	    top: 95% !important;
+	}
+	
+	.slick-next:before, .slick-prev:before {
+	    color: #fff0 !important;
+	}
+	.slick-prev {
+	    left: 0px;
+	}
+	.slick-next, .slick-prev {
+	    width: 20rem;
+	}
+
+</style>
+
+
+
+
+<div class="section-live-shopping">
+	<div class="row justify-content-center text-center">
+		<div class="col-sm-4 ls-border-right">
+			<img src="{{cdn 'assets/img/liveshopping.png'}}" class="img img-ls float-md-right" alt="live shopping">
+		</div>
+		<div class="col-sm-4 ls-text-wrap d-flex align-items-center">
+			<h4 class="ls-text ml-3">Season of Wonder</h4>
+		</div>
+	</div>
+</div>
+
+
+<div class="section section-tv">
+	<div class="row mt-4">
+		<div class="col-sm-7 ls-border-right">
+			<img src="{{cdn 'assets/img/video-banner.jpg'}}" class="img" alt="live shopping">
+		</div>
+		<div class="col-sm-5 d-flex align-items-center bg-custom-gray next-show">
+			<div class="pl-5 p-3">
+				<p class="clr-pink fw-6">
+					NEXT SHOW
+				</p>
+				<h3 class="clr-black">
+					<b>GET READY FOR THE FALL-IDAYS</b>
+				</h3>
+				<p>New fragrance & accessories perfect for all <br> your Fall decor</p>
+				<p>
+					<b>TUESDAY, AUGUST 8 <span style="font-size:1.5rem">•</span> 7 PM EST</b>
+				</p>
+
+				<button class="btn-secondary mt-3">ADD TO CALENDAR</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="section-live-shopping bg-light-pink text-center">
+	<div class="row justify-content-center">
+		<div class="col-sm-3">
+			<img src="{{cdn 'assets/img/pz-sp.png'}}" class="img seasson-pass-img float-md-right" alt="live shopping">
+		</div>
+		<div class="col-sm-5">
+			<p class="ls-text text-center ml-3 clr-black font-weight-bold font-15">Sign up to get an email reminder before every PZTV show and get a $5 coupon before every show</p>
+		 	<div class="form-container ml-3">
+		        <input type="email" class="rounded-input" placeholder="Enter your email">
+		        <button type="submit" class="submit-button btn-secondary">SIGN ME UP</button>
+		    </div>
+		</div>
+	</div>
+</div>
+
+
+<div class="section-upcomming-shows">
+	<div class="container text-center">
+		
+		<h1 class="font-weight-bold clr-pink">UPCOMING SHOWS</h1>
+		
+		<button class="btn-secondary mt-3">ADD TO CALENDAR</button>
+		
+		<div class="row mt-5 pt-3 d-smn-none">
+			<div class="col-sm-3 ">
+				<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<p class="text-center"><small>Featuring Fall and Holiday Decor</small></p>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<p class="text-center"><small>Featuring Fall and Holiday Decor</small></p>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<p class="text-center"><small>Featuring Fall and Holiday Decor</small></p>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<p class="text-center"><small>Featuring Fall and Holiday Decor</small></p>
+				</div>
+			</div>
+			
+			<div class="col-sm-3 ">
+				<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<p class="text-center"><small>Featuring Fall and Holiday Decor</small></p>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<p class="text-center"><small>Featuring Fall and Holiday Decor</small></p>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<p class="text-center"><small>Featuring Fall and Holiday Decor</small></p>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<p class="text-center"><small>Featuring Fall and Holiday Decor</small></p>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="mt-5 pt-3 slider slider1 d-md-none">
+	        <!-- Slick Carousel items -->
+	        <div class="slider-item m-2">
+	        	<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<p class="text-center"><small>Featuring Fall and Holiday Decor</small></p>
+				</div>
+	        </div>
+	        <div class="slider-item m-2">
+	        	<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<p class="text-center"><small>Featuring Fall and Holiday Decor</small></p>
+				</div>
+	        </div>
+	        <div class="slider-item m-2">
+	        	<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<p class="text-center"><small>Featuring Fall and Holiday Decor</small></p>
+				</div>
+	        </div>
+	        <div class="slider-item m-2">
+	        	<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<p class="text-center"><small>Featuring Fall and Holiday Decor</small></p>
+				</div>
+	        </div>
+	        <div class="slider-item m-2">
+	        	<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<p class="text-center"><small>Featuring Fall and Holiday Decor</small></p>
+				</div>
+	        </div>
+	    </div>
+	
+	</div>
+</div>
+
+<div class="section-upcomming-shows">
+	<div class="container text-center">
+		
+		<h1 class="font-weight-bold clr-pink">WATCH PAST SHOWS AND SHOP</h1>
+		
+		<div class="row mt-5 pt-5 d-smn-none">
+			<div class="col-sm-3 ">
+				<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<button class="btn-secondary mt-3">SHOP FEATURED PRODUCTS</button>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<button class="btn-secondary mt-3">SHOP FEATURED PRODUCTS</button>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<button class="btn-secondary mt-3">SHOP FEATURED PRODUCTS</button>
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<button class="btn-secondary mt-3">SHOP FEATURED PRODUCTS</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="slider slider2 d-md-none">
+	        <!-- Slick Carousel items -->
+	        <div class="slider-item m-2">
+	        	<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<button class="btn-secondary mt-3">SHOP FEATURED PRODUCTS</button>
+				</div>
+	        </div>
+	        <div class="slider-item m-2">
+	        	<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<button class="btn-secondary mt-3">SHOP FEATURED PRODUCTS</button>
+				</div>
+	        </div>
+	        <div class="slider-item m-2">
+	        	<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<button class="btn-secondary mt-3">SHOP FEATURED PRODUCTS</button>
+				</div>
+	        </div>
+	        <div class="slider-item m-2">
+	        	<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<button class="btn-secondary mt-3">SHOP FEATURED PRODUCTS</button>
+				</div>
+	        </div>
+	        <div class="slider-item m-2">
+	        	<div class="bg-custom-gray pb-2 mb-5">
+					<img src="{{cdn 'assets/img/rectangle576.png'}}" class="mb-3" alt="SOFT SOY WAX MELTS">
+					<h6 class="mb-2 font-weight-bold clr-pink">AUGUST 15 | 7 PM EST</h6>
+					<p class="mb-2 font-weight-bold">Whimsy and Wonderful</p>
+					<button class="btn-secondary mt-3">SHOP FEATURED PRODUCTS</button>
+				</div>
+	        </div>
+	    </div>
+
+	    <!-- <div class="slider-arrows">
+	        <span class="slider-arrow prev">&larr;</span>
+	        <span class="slider-arrow next">&rarr;</span>
+	    </div> -->
+		
+	
+	</div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('.slider2').slick({
+            variableWidth: true,
+            autoplay: true, 
+            autoplaySpeed: 2000,
+            arrows: true, 
+            dots: false 
+        });
+    });
+
+    $(document).ready(function(){
+        $('.slider1').slick({
+            variableWidth: true,
+            autoplay: true, 
+            autoplaySpeed: 2000,
+            arrows: true, 
+            dots: false 
+        });
+    });
+</script>
+{{/partial}}
+
+{{> layout/base}}

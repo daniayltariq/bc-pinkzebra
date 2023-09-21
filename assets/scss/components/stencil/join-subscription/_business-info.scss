@@ -1,0 +1,46 @@
+.business-information {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .business-section {
+        .row {
+            padding-top: 1rem;
+        }
+
+        .replicated-website-input {
+            display: flex;
+            flex-direction: column;
+
+            gap: 10px;
+
+            @include breakpoint("large") {
+                align-items: center;
+                flex-direction: row;
+            }
+        }
+
+        .download-agreement-title {
+            padding-top: 2rem;
+        }
+
+        .download-agreement {
+            color: stencilColor("color-textBase");
+            cursor: pointer;
+            display: block;
+            font-weight: 500;
+            padding-top: 0.5rem;
+
+            text-decoration: none;
+
+            + .download-agreement {
+                padding-top: 0.5rem;
+            }
+        }
+
+        .website-req {
+            display: block;
+            padding-top: 1rem;
+        }
+    }
+}

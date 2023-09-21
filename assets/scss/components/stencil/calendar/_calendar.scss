@@ -1,0 +1,73 @@
+.calendar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 1rem;
+
+    .pick-a-date {
+        .react-calendar {
+            border: 1px solid #707070;
+
+            button {
+                :focus {
+                    outline: unset !important;
+                }
+            }
+
+            &__tile {
+                font-weight: 600;
+
+                &--active {
+                    background: unset;
+                    color: stencilColor("color-primary") !important;
+
+                    abbr {
+                        border: solid 1px red;
+                        border-radius: 50%;
+                        color: stencilColor("color-primary") !important;
+                        padding: 5px;
+                    }
+
+                    &:enabled,
+                    &:hover {
+                        background: unset;
+                        color: stencilColor("color-primary") !important;
+                    }
+                }
+            }
+
+            &__navigation {
+                background-color: stencilColor("color-primary");
+
+                color: stencilColor("color-white");
+                font-weight: 600;
+
+                &__label {
+                    &__labelText--from {
+                        text-transform: uppercase;
+                    }
+                }
+
+                :hover {
+                    background-color: stencilColor("color-primary");
+                }
+
+                &__next2-button,
+                &__prev2-button {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .selected-date {
+        font-size: fontSize("large");
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .pick-a-date,
+    .selected-date {
+        margin: auto;
+    }
+}

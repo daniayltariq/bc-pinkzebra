@@ -1,0 +1,749 @@
+// =============================================================================
+// ACCOUNT (CSS)
+// =============================================================================
+
+
+// Account navigation
+// -----------------------------------------------------------------------------
+
+.navBar--account {
+    display: none;
+
+    @include breakpoint("medium") {
+        display: block;
+    }
+}
+
+
+// Account headings
+// -----------------------------------------------------------------------------
+.page-heading {
+    font-size: remCalc(22px);
+    letter-spacing: 0.75px;
+    margin: 30px auto 50px;
+    text-align: center;
+}
+
+.account-heading {
+    border-bottom: container("border");
+    color: black;
+    font-size: remCalc(22px);
+    margin: 0;
+    padding-bottom: spacing("base");
+    text-transform: uppercase;
+}
+
+.account-content--fixed .account-heading {
+    @include breakpoint("large") {
+        border-bottom: 0;
+    }
+}
+
+// Account list
+// -----------------------------------------------------------------------------
+
+.account-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.account-listItem {
+    border-bottom: container("border");
+    padding: spacing("double") 0;
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    .account-product-image {
+        @include lazy-loaded-img;
+
+        position: relative;
+    }
+}
+
+.account-content--fixed .account-listItem {
+    padding: spacing("double") remCalc(16px);
+}
+
+.account-list-header {
+    border-bottom: container("border");
+    border-top: container("border");
+    display: none;
+    font-size: fontSize("large");
+    font-weight: fontWeight("bold");
+    grid-template-columns: 30px 4fr 1fr 2fr;
+    padding: remCalc(20px) remCalc(16px);
+    text-transform: uppercase;
+
+    @include breakpoint("large") {
+        display: grid;
+    }
+}
+
+.account-listShipping {
+    border-bottom: container("border");
+    font-weight: fontWeight("bold");
+    padding: spacing("third") 0 spacing("third") remCalc(16px);
+
+    .account-listShipping-title {
+        margin: 0;
+        text-transform: inherit;
+    }
+}
+
+// Account product
+// -----------------------------------------------------------------------------
+
+.account-product {
+    @include media;
+}
+
+.account-product-figure {
+    @include lazy-loaded-padding("productthumb_size");
+    align-items: center;
+    border: 1px solid stencilColor(container-border-global-color-base);
+    display: flex;
+    flex-direction: column;
+    margin: 0 spacing("single") + spacing("third") 0 0;
+    padding: 20px;
+    position: relative;
+    width: 140px;
+
+    @include breakpoint("small") {
+        width: 168px;
+    }
+
+    &::after {
+        content: none;
+    }
+}
+
+.account-product-download {
+    border-radius: 50%;
+    height: remCalc(33px);
+    padding: 0;
+    position: absolute;
+    right: -(spacing("half"));
+    top: -(spacing("half"));
+    width: remCalc(33px);
+    z-index: 1;
+
+    .icon {
+        height: spacing("single");
+        margin-top: spacing("quarter");
+        width: spacing("single");
+    }
+
+    svg {
+        fill: color("whites", "bright");
+    }
+}
+
+.account-product-body {
+    overflow: hidden;
+    padding-bottom: spacing("double") + spacing("single");
+    position: relative;
+
+    @include breakpoint("small") {
+        padding-bottom: spacing("double") + spacing("double");
+    }
+
+    @include breakpoint("medium") {
+        padding-bottom: 0;
+    }
+
+    .definitionList {
+        font-size: fontSize("smaller");
+        margin-bottom: 0;
+    }
+
+    .button {
+        font-size: fontSize(smaller);
+        margin-bottom: 0;
+        margin-top: remCalc(30px);
+    }
+}
+
+.account-product-title {
+    color: black;
+    font-size: fontSize("large");
+    font-weight: 500;
+    margin: 0 0 spacing("eighth");
+    text-transform: inherit;
+
+    .title-detail {
+        margin-bottom: remCalc(10px);
+    }
+
+    > a {
+        color: stencilColor(color-primaryDark);
+        font-size: fontSize(large);
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    + .definitionList {
+        margin-top: spacing("half");
+    }
+}
+
+.account-product-subtitle {
+    color: color("greys", "light");
+    font-family: fontFamily("sans");
+    font-size: fontSize("smaller");
+    margin: -(spacing("eighth")) 0 spacing("base");
+    text-transform: inherit;
+}
+
+.account-product-price {
+    float: right;
+    font-size: fontSize("base");
+    font-weight: 500;
+}
+
+.account-product-description {
+    font-size: fontSize(large);
+    margin-bottom: remCalc(30px);
+}
+
+.account-product-description + .definitionList {
+    margin: -(spacing("base") + spacing("quarter")) 0 spacing("single");
+}
+
+.account-product-refundQty {
+    color: color("greys", "light");
+    margin-bottom: 0;
+}
+
+.account--fixedExtraLarge .account-product-details {
+    @include grid-row($behavior: "nest");
+}
+
+.order-tracking-number {
+    white-space: break-spaces;
+}
+
+.account-product-detail {
+    @include grid-column(12);
+
+    @include breakpoint("small") {
+        width: grid-calc(4, $total-columns);
+    }
+
+    @include breakpoint("xlarge") {
+        width: grid-calc(3, $total-columns);
+    }
+
+    + .account-product-detail {
+        margin-top: spacing("base");
+
+        @include breakpoint("small") {
+            margin-top: 0;
+        }
+    }
+
+    + .account-product-detail--full {
+
+        @include breakpoint("small") {
+            margin-top: spacing("single");
+        }
+    }
+
+    h6 + span {
+        font-size: fontSize(large);
+    }
+}
+
+.account-product-detail--large {
+    @include breakpoint("xlarge") {
+        width: grid-calc(6, $total-columns);
+    }
+}
+
+.account-product-detail--full {
+    width: 100%;
+}
+
+.account-product-detail-heading {
+    color: stencilColor("navPages-color");
+    font-family: fontFamily("sans");
+    font-size: fontSize("large");
+    letter-spacing: 2px;
+    margin: 0 0 spacing("quarter");
+}
+
+
+// Vertically aligned product view
+// -----------------------------------------------------------------------------
+
+.account-content--fixed {
+    .account-product {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint("large") {
+            align-items: center;
+            display: grid;
+            grid-template-columns: 30px 4fr 1fr 2fr;
+        }
+    
+        &::before,
+        &::after {
+            content: none;
+        }
+    
+        .account-product-checkItem {
+            margin-bottom: remCalc(15px);
+
+            @include breakpoint("large") {
+                align-self: start;
+                margin-bottom: 0;
+            }
+    
+            .form-label {
+                height: spacing("single");
+                margin: 0;
+                padding: 0;
+                width: spacing("single");
+            }
+        }
+    
+        .account-product-figure {
+            float: none;
+            height: 100%;
+            margin-right: 0;
+            max-width: 100px;
+            padding: remCalc(5px);
+            width: 100%;
+
+            @include breakpoint("medium") {
+                height: unset;
+                max-width: unset;
+                padding: remCalc(10px);
+                width: 168px;
+            }
+        }
+    
+        .account-product-details {
+            margin-left: remCalc(20px);
+        }
+    
+        .account-product-body {
+            display: flex;
+            overflow: auto;
+            padding-bottom: 0;
+            padding-left: 0;
+    
+            &::before {
+                content: none;
+            }
+            // vertical-align: middle;
+    
+            // @include breakpoint("xlarge") {
+            //     padding-left: 0;
+            // }
+        }
+
+        .account-product-price {
+            display: none;
+            
+            @include breakpoint("large") {
+                display: block;
+            }
+        }
+
+        .title-detail--price {
+            display: block;
+
+            @include breakpoint("large") {
+                display: none;
+            }
+        }
+    
+        .button {
+            align-self: flex-end;
+            font-size: fontSize("smallest");
+            margin-bottom: 0;
+
+            @include breakpoint("large") {
+                align-self: unset;
+            }
+
+            @include breakpoint("xlarge") {
+                font-size: fontSize("smaller");
+            }
+        }
+    }
+}
+
+.account-product--alignMiddle {
+    display: table;
+    width: 100%;
+
+    .account-product-checkItem {
+        display: table-cell;
+        position: relative;
+        vertical-align: middle;
+        width: 2rem;
+
+        @include breakpoint("xlarge") {
+            left: -2.5rem;
+        }
+
+        .form-label {
+            height: spacing("single");
+            margin: 0;
+            padding: 0;
+            width: spacing("single");
+        }
+    }
+
+    .account-product-figure,
+    .account-product-body {
+        display: table-cell;
+    }
+
+    .account-product-figure {
+        float: none;
+        margin-right: 0;
+
+        @include breakpoint("xlarge") {
+            left: -2rem;
+        }
+    }
+
+    .account-product-body {
+        padding-left: 2rem;
+        vertical-align: middle;
+
+        @include breakpoint("xlarge") {
+            padding-left: 0;
+        }
+    }
+}
+
+
+// Account product totals
+// -----------------------------------------------------------------------------
+
+.account-orderTotal {
+    display: none;
+    float: right;
+    font-size: fontSize("smaller");
+    margin-top: -(spacing("single"));
+    width: grid-calc(8, $total-columns);
+}
+
+.account-orderTotal-key,
+.account-orderTotal-value {
+    margin: 0;
+    padding: spacing("single") 0;
+}
+
+.account-orderTotal-key {
+    color: stencilColor("color-textSecondary");
+    float: left;
+    font-weight: fontWeight("normal");
+
+    &:last-of-type {
+        position: relative;
+        top: spacing("fifth");
+    }
+}
+
+.account-orderTotal-value {
+    border-bottom: container("border");
+    text-align: right;
+
+    &:last-child {
+        border-bottom: 0;
+        font-size: fontSize("small");
+    }
+}
+
+
+// Account status
+// -----------------------------------------------------------------------------
+
+.account-orderStatus {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+
+    @include breakpoint("small") {
+        position: inherit;
+        text-align: right;
+    }
+
+    @include breakpoint("medium") {
+        float: right;
+    }
+}
+
+.account-orderStatus-label {
+    background-color: stencilColor("color-secondaryLighter");
+    color: stencilColor("navPages-color");
+    display: inline-block;
+    font-size: fontSize("smaller");
+    font-weight: 500;
+    margin: 0 0 spacing("quarter");
+    padding: spacing("third") spacing("single");
+
+    @include breakpoint("small") {
+        font-size: fontSize("large");
+    }
+}
+
+.account-orderStatus-action {
+    color: stencilColor("color-textSecondary");
+    display: inline-block;
+    font-size: fontSize("tiny");
+    font-style: italic;
+    letter-spacing: letterSpacing("large");
+    margin-left: spacing("half");
+    text-align: right;
+    text-decoration: underline;
+    vertical-align: top;
+
+    @include breakpoint("small") {
+        display: block;
+        margin-left: 0;
+    }
+
+    &:hover {
+        color: stencilColor("color-textSecondary--hover");
+    }
+}
+
+
+// Account pagination & panel
+// -----------------------------------------------------------------------------
+
+.account {
+    .pagination {
+        color: color("greys", "light");
+        margin-top: spacing("double");
+        text-align: center;
+    }
+}
+
+
+// Account inbox
+// -----------------------------------------------------------------------------
+
+.account-message {
+    .is-read {
+        color: color("greys", "light");
+    }
+}
+
+
+// Sidebar blocks
+// -----------------------------------------------------------------------------
+
+.account-sidebar-block {
+    font-size: fontSize("smaller");
+
+    + .account-sidebar-block {
+        margin-top: spacing("double");
+    }
+
+    .heading-wrapper {
+        position: relative;
+    }
+
+    .account-heading {
+        margin-bottom: spacing("single");
+    }
+
+    .edit-button {
+        color: stencilColor("color-primaryDark");
+        font-size: fontSize("small");
+        font-weight: 500;
+        margin-left: remCalc(10px);
+        padding: 0;
+
+        &--address {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+
+    .definitionList {
+        font-size: fontSize("small");
+        margin-bottom: remCalc(32px);
+
+        .definitionList-key {
+            font-weight: fontWeight("bold");
+            text-transform: capitalize;
+        }
+    
+        .definitionList-value {
+            margin-left: remCalc(160px);
+        }
+
+        .order-payments-value {
+            margin-bottom: 0;
+        }
+
+        .consultant-value {
+            a {
+                color: stencilColor("color-textBase");
+                text-decoration: none;
+            }
+        }
+    }
+
+    .account-order-address {
+        li {
+            font-size: fontSize("small");
+            margin-bottom: remCalc(12px);
+        }
+    }
+
+    .order-details-info {
+        .account-reorder-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: remCalc(200px);
+
+            @include breakpoint("medium") {
+                justify-content: flex-start;
+                margin: 0;
+            }
+        }
+
+        input.button {
+            margin-right: 12px;
+            min-width: 124px;
+        }
+
+        a.button {
+            margin-left: 0;
+            width: max-content;
+        }
+
+        .button {
+            font-size: fontSize("smaller");
+        }
+    }
+
+    button {
+        font-size: fontSize("smaller");
+    }
+}
+
+.account-order-address {
+    @include u-listBullets("none");
+}
+
+.account-reorder-form {
+    display: inline-block;
+}
+
+.order-payments-description {
+    color: stencilColor("color-primary");
+    font-weight: fontWeight("normal");
+    margin-top: spacing("single");
+}
+
+
+// Product downloads
+// -----------------------------------------------------------------------------
+
+.account-downloads-summary {
+    border-bottom: container("border");
+    font-size: fontSize("smaller");
+    padding-bottom: spacing("single");
+}
+
+.account-downloadsList {
+    @include u-listBullets("none");
+}
+
+.account-downloadsItem {
+    margin-bottom: spacing("single");
+
+    > :first-child {
+        margin-top: 0;
+    }
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.account-downloadsItem-title {
+    color: stencilColor("color-textSecondary");
+    font-size: fontSize("smaller");
+    margin-bottom: spacing("eighth");
+    text-transform: inherit;
+}
+
+.account-downloadsItem-description {
+    margin-bottom: 0;
+}
+
+.account-downloadsItem-availability {
+    color: stencilColor("color-textSecondary");
+}
+
+// Settings
+// -----------------------------------------------------------------------------
+[data-edit-account-form] {
+    padding-top: 24px;
+
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .form-field {
+        margin-bottom: remCalc(20px);
+
+        .form-label {
+            font-size: fontSize("smaller");
+            font-weight: fontWeight("bold");
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+
+            small {
+                display: none;
+            }
+        }
+    }
+}
+
+.consultant-info-container {
+    display: flex;
+    padding-top: 24px;
+
+    .data-column:first-of-type {
+        margin-right: remCalc(40px);
+    }
+
+    .consultant-field {
+        margin-bottom: remCalc(20px);
+
+        &--name {
+            font-size: fontSize("smaller");
+            font-weight: fontWeight("bold");
+            letter-spacing: 1.2px;
+        }
+    }
+}
+
+// Addresses
+// -----------------------------------------------------------------------------
+[data-address-form] {
+    .form-field {
+        margin-bottom: remCalc(20px);
+    }
+}

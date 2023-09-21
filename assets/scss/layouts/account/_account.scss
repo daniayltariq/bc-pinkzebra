@@ -1,0 +1,130 @@
+// =============================================================================
+// ACCOUNT
+// =============================================================================
+
+
+// Account layouts
+// -----------------------------------------------------------------------------
+
+.account {
+    margin-bottom: spacing("single");
+}
+
+.account--fixed {
+    @include breakpoint("medium") {
+        margin: 0 auto;
+        width: grid-calc(8, $total-columns);
+    }
+}
+
+.account--fixedSmall {
+    @include breakpoint("medium") {
+        margin: 0 auto;
+        width: grid-calc(6, $total-columns);
+    }
+}
+
+.account--fixedLarge {
+    @include breakpoint("medium") {
+        margin: 0 auto;
+        width: grid-calc(10, $total-columns);
+    }
+}
+
+.account--fixedExtraLarge {
+    @include breakpoint("medium") {
+        margin: 0 auto;
+        width: grid-calc(12, $total-columns);
+    }
+}
+
+.account-head {
+    text-align: center;
+
+    @include breakpoint("large") {
+        margin-bottom: 1rem;
+    }
+
+    .alertBox {
+        padding-left: spacing("double");
+        padding-right: spacing("double");
+        text-align: left;
+    }
+}
+
+.account-body {
+    @include grid-row($behavior: "nest");
+}
+
+.account-content {
+    @include grid-column(12);
+}
+
+.account-content--fixed {
+    @include breakpoint("medium") {
+        width: grid-calc(8, $total-columns);
+    }
+}
+
+.account-content--fixedSmall {
+    @include breakpoint("medium") {
+        width: grid-calc(6, $total-columns);
+    }
+}
+
+.account-sidebar {
+    @include grid-column(12);
+
+    @include breakpoint("medium") {
+        width: grid-calc(4, $total-columns);
+        
+        .account-content--fixedSmall + & {
+            float: right;
+        }
+    }
+}
+
+.change-address-form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: remCalc(60px);
+
+    p {
+        font-size: fontSize("smaller");
+        font-weight: 500;
+    }
+
+    .input-wrapper {
+        margin-bottom: remCalc(30px);
+
+        .form-field {
+            margin-bottom: remCalc(20px);
+        }
+
+        .form-label {
+            font-size: fontSize("small");
+            font-weight: fontWeight("bold");
+            margin-right: remCalc(10px);
+            text-transform: uppercase;
+        }
+
+        .form-input {
+            border: 1px solid stencilColor(input-border-color);
+            border-radius: 20px;
+            height: remCalc(40px);
+            padding-left: remCalc(10px);
+        }
+
+        .alert-text {
+            color: red;
+            margin-bottom: 0;
+        }
+
+        .confirmation-text {
+            color: green;
+            margin-bottom: 0;
+        }
+    }
+}

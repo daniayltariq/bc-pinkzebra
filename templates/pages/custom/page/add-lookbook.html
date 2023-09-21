@@ -1,0 +1,12 @@
+{{#partial "page"}}
+<div class="account">
+    {{#if settings.show_wishlist}}
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        <h2 class="page-heading wishlist-heading">
+          {{lang 'account.wishlists.lookbook.new'}}
+        </h2>
+        {{> components/account/add-wishlist isLookbook='true'}}
+    {{/if}}
+</div>
+{{/partial}}
+{{> layout/base}}

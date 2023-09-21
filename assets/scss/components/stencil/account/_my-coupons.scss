@@ -1,0 +1,95 @@
+.coupon-status.desktop {
+    display: none;
+}
+
+.data-column.mobile {
+    display: block;
+}
+
+@include breakpoint("medium") {
+    .coupon-status.desktop {
+        display: block;
+    }
+
+    .data-column.mobile {
+        display: none;
+    }
+}
+
+.coupon-wrapper {
+    align-items: center;
+    border-bottom: container("border");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: spacing("single") spacing("single");
+    
+    &:first-of-type {
+        border-top: container("border");
+    }
+}
+
+.coupon-status {
+    background-color: stencilColor("color-secondaryLighter");
+    color: stencilColor("navPages-color");
+    display: inline-block;
+    font-size: fontSize("smaller");
+    font-weight: fontWeight(semibold);
+    padding: spacing("third") spacing("single");
+    text-transform: uppercase;
+}
+
+.coupon-info {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .coupon-id {
+        color: stencilColor(color-primary);
+        font-size: fontSize("large");
+        font-weight: 500;
+    }
+
+    .coupon-status {
+        margin: 0 0 spacing("quarter");
+    }
+}
+
+.coupon-table {
+    display: grid;
+    gap: remCalc(20px);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+
+    @include breakpoint("medium") {
+        display: flex;
+    }
+
+    .data-column {
+        @include breakpoint("medium") {
+            min-width: 180px;
+        }
+
+        @include breakpoint("large") {
+            min-width: 250px;
+        }
+
+        &.info {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            margin-top: remCalc(10px);
+        }
+    }
+
+    h6 {
+        color: stencilColor(navPages-color);
+        margin: 0;
+    }
+
+    button {
+        margin-bottom: 0;
+    }
+}

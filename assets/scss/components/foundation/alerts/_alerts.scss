@@ -1,0 +1,56 @@
+// =============================================================================
+// ALERTS
+// =============================================================================
+
+.alertBox {
+    border-radius: $alert-radius;
+    color: stencilColor("alert-color");
+}
+
+.alertBox-icon {
+    .icon {
+        @include square(25px);
+    }
+}
+
+.alertBox--info {
+    background-color: stencilColor("banner--deafault-backgroundColor");
+    color: stencilColor("alert-color-alt");
+
+    .alertBox-close {
+        svg {
+            fill: $color-infoLight;
+        }
+    }
+}
+
+.alertBox {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: remCalc(10px) remCalc(30px);
+
+    &.alertBox--error {
+        background-color: stencilColor("color-primaryLight");
+        color: stencilColor("color-primaryAccent");
+
+        svg {
+            fill: stencilColor("color-primaryAccent");
+        }
+    }
+
+    .alertBox-icon {
+        padding-right: remCalc(10px);
+
+        .icon {
+            height: remCalc(20px);
+            width: remCalc(20px);
+        }
+    }
+
+    .alertBox-message {
+        font-size: remCalc(12px);
+        line-height: remCalc(20px);
+        width: initial;
+    }
+}

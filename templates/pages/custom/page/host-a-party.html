@@ -1,0 +1,15 @@
+{{#partial "pz_header"}}
+{{> components/common/navigation-pz}}
+{{/partial}}
+
+{{#partial "page"}}
+{{inject 'pageTranslations' (langJson 'host_a_party')}}
+{{inject 'custom_page' 'host_a_party'}}
+{{~inject 'pzAPIEndpoint' theme_settings.pz_api_endpoint}}
+
+<div class="find-consultant-party-page">
+    {{> components/consultant/find-consultant}}
+</div>
+
+<div id="root"></div>
+{{/partial}} {{> layout/base}}

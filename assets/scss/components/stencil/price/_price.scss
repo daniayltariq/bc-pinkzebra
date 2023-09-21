@@ -1,0 +1,22 @@
+// =============================================================================
+// PRICE (CSS)
+// =============================================================================
+.price {
+    color: stencilColor(color-price);
+    font-weight: fontWeight("bold");
+}
+
+.price--rrp,
+.price--non-sale,
+.price--discounted {
+    text-decoration: line-through;
+}
+
+.price-section--minor {
+    color: color("greys", "light");
+}
+
+// .price-section {
+//     display: flex;
+//     flex-direction: column;
+// }

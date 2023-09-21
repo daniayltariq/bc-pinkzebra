@@ -1,0 +1,29 @@
+[data-test-id="product-set-widget-name"] {
+    color: stencilColor("color-dark") !important;
+    font-weight: 600 !important;
+    margin-top: remCalc(15px);
+}
+
+[data-test-id="product-set-widget-brand"],
+[data-test-id="product-set-widget-ratings"],
+[data-test-id="product-set-widget-price"] {
+    display: none !important;
+}
+
+.shop-now-link {
+    background-color: stencilColor("color-primary");
+    color: stencilColor("color-white");
+    font-weight: 600;
+    margin-top: remCalc(15px);
+    padding: 1rem;
+    text-decoration: none;
+
+    &:hover {
+        background-color: stencilColor("color-white");
+        color: stencilColor("color-primary");
+    }
+}
+
+div .shop-now-link::before {
+    padding: remCalc(40px) !important;
+}

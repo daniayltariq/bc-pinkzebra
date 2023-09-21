@@ -1,0 +1,1422 @@
+{
+  "name": "Custom_PZ_Cornerstone_w",
+  "version": "6.8.1",
+  "template_engine": "handlebars_v4",
+  "meta": {
+    "price": 0,
+    "documentation_url": "https://support.bigcommerce.com/articles/Public/Cornerstone-Theme-Manual",
+    "author_name": "BigCommerce",
+    "author_email": "support@bigcommerce.com",
+    "author_support_url": "https://support.bigcommerce.com/",
+    "composed_image": "composed.png",
+    "features": [
+      "fully_responsive",
+      "mega_navigation",
+      "multi_tiered_sidebar_menu",
+      "masonry_design",
+      "frontpage_slideshow",
+      "quick_add_to_cart",
+      "switchable_product_view",
+      "product_comparison_table",
+      "complex_search_filtering",
+      "customizable_product_selector",
+      "cart_suggested_products",
+      "free_customer_support",
+      "free_theme_upgrades",
+      "high_res_product_images",
+      "product_filtering",
+      "advanced_quick_view",
+      "product_showcase",
+      "persistent_cart",
+      "one_page_check_out",
+      "product_videos",
+      "customized_checkout",
+      "enhanced_ecommerce",
+      "csrf_protection",
+      "account_payment_methods_v2"
+    ]
+  },
+  "css_compiler": "scss",
+  "autoprefixer_cascade": true,
+  "autoprefixer_browsers": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR"
+  ],
+  "settings": {
+    "aws_cloudfront_url": "https://d2olgbsrw4fnsq.cloudfront.net/dev/",
+    "aws_url": "https://8qz6kpk3g8.execute-api.us-east-1.amazonaws.com/dev/",
+    "consultant": {
+      "label": {
+        "change_my_consultant": "Change my consultant",
+        "my_parties": "My parties"
+      },
+      "search": {
+        "title": "Search for a consultant",
+        "description": "Provide as much information as you can about a specific consultant to find them."
+      },
+      "find": {
+        "title": "Find a consultant in your area",
+        "description": "Shop with your local consultant"
+      },
+      "default_consultant": "ittest 1",
+      "default_consultant_attribute_key": "1"
+    },
+    "hide_breadcrumbs": false,
+    "hide_page_heading": false,
+    "hide_category_page_heading": true,
+    "hide_blog_page_heading": false,
+    "hide_contact_us_page_heading": false,
+    "homepage_new_products_count": 5,
+    "homepage_featured_products_count": 20,
+    "homepage_top_products_count": 4,
+    "homepage_show_carousel": true,
+    "homepage_show_carousel_arrows": false,
+    "homepage_show_carousel_play_pause_button": false,
+    "homepage_stretch_carousel_images": false,
+    "homepage_new_products_column_count": 4,
+    "homepage_featured_products_show_carousel_arrows": true,
+    "homepage_featured_products_column_count": 4,
+    "homepage_top_products_column_count": 4,
+    "homepage_blog_posts_count": 3,
+    "productpage_videos_count": 8,
+    "productpage_reviews_count": 9,
+    "productpage_related_products_count": 10,
+    "productpage_similar_by_views_count": 10,
+    "categorypage_products_per_page": 12,
+    "shop_by_price_visibility": true,
+    "brandpage_products_per_page": 12,
+    "searchpage_products_per_page": 12,
+    "scentflirt_products_ids": "[196,197,198,171]",
+    "scentflirt_products_img": {
+      "196": "/content/kit-detail-189.png",
+      "197": "/content/kit-detail-190.png",
+      "198": "/content/kit-detail-191.png"
+    },
+    "scentflirt_comparison_chart": "/content/chart_comparison.png",
+    "scentflirt_kit_ids": "[196,197,198]",
+    "scentflirt_addon_ids": "[171]",
+    "subscription_products_ids": "[171]",
+    "scentflirt_addon_option_ids": {
+      "171": {
+        "optionId": "122",
+        "optionValue": "119"
+      }
+    },
+    "scentflirt_subscriber_type_id": 4,
+    "club_pink_subscriber_id": 5,
+    "show_product_quick_view": false,
+    "show_powered_by": true,
+    "shop_by_brand_show_footer": true,
+    "show_copyright_footer": true,
+    "show_accept_amex": false,
+    "show_accept_discover": false,
+    "show_accept_mastercard": false,
+    "show_accept_paypal": false,
+    "show_accept_visa": false,
+    "show_accept_amazonpay": false,
+    "show_accept_googlepay": false,
+    "show_accept_klarna": false,
+    "show_product_details_tabs": true,
+    "show_product_reviews": true,
+    "show_quick_payment_buttons": true,
+    "show_custom_fields_tabs": false,
+    "show_product_weight": true,
+    "show_product_dimensions": false,
+    "show_product_quantity_box": true,
+    "show_product_swatch_names": true,
+    "product_list_display_mode": "grid",
+    "logo-position": "left",
+    "logo_size": "250x100",
+    "logo_fontSize": 28,
+    "brand_size": "190x250",
+    "gallery_size": "300x300",
+    "productgallery_size": "500x659",
+    "product_size": "500x659",
+    "productview_thumb_size": "50x50",
+    "productthumb_size": "100x100",
+    "thumb_size": "100x100",
+    "zoom_size": "1280x1280",
+    "blog_size": "190x250",
+    "default_image_brand": "img/BrandDefault.gif",
+    "default_image_product": "img/ProductDefault.gif",
+    "default_image_gift_certificate": "img/GiftCertificate.png",
+    "body-font": "Google_Montserrat_400",
+    "headings-font": "Google_Montserrat_700",
+    "special-font": "Northwell",
+    "fontSize-root": 16,
+    "fontSize-h1": 25,
+    "fontSize-h2": 21,
+    "fontSize-h3": 16,
+    "fontSize-h4": 14,
+    "fontSize-h5": 12,
+    "fontSize-h6": 11,
+    "applePay-button": "black",
+    "color-availability-text": "#008000",
+    "color-textBase": "#000000",
+    "color-textBase--hover": "#F45197",
+    "color-textBase--active": "#F45197",
+    "color-textSecondary": "#000000",
+    "color-textSecondary--hover": "#333333",
+    "color-textSecondary--active": "#333333",
+    "color-textLink": "#7B7B7B",
+    "color-textLink--hover": "#F45197",
+    "color-textLink--active": "#F45197",
+    "color-textHeading": "#F45197",
+    "color-primary": "#F45197",
+    "color-primaryDark": "#FF1378",
+    "color-primaryAccent": "#FF1378",
+    "color-primaryDarker": "",
+    "color-primaryLight": "#FFF0F7",
+    "color-secondary": "#ABCAE9",
+    "color-secondaryDark": "",
+    "color-secondaryDarker": "",
+    "color-secondaryLight": "#D5EAFF",
+    "color-secondaryLighter": "#F2F8FF",
+    "color-error": "#cc4749",
+    "color-errorLight": "#ffdddd",
+    "color-info": "#666666",
+    "color-infoLight": "#dfdfdf",
+    "color-success": "#008a06",
+    "color-successLight": "#d5ffd8",
+    "color-warning": "#f1a500",
+    "color-warningLight": "#fffdea",
+    "color-black": "#ffffff",
+    "color-blackLight": "#221f20",
+    "color-white": "#ffffff",
+    "color-whitesBase": "#e5e5e5",
+    "color-grey": "#999999",
+    "color-greyDarkest": "#000000",
+    "color-greyDarker": "#333333",
+    "color-greyDark": "#666666",
+    "color-greyMedium": "#757575",
+    "color-greyLight": "#999999",
+    "color-greyLighter": "#cccccc",
+    "color-greyLightest": "#e5e5e5",
+    "color-price": "#FF1378",
+    "color-price-pdp": "#000000",
+    "banner--deafault-backgroundColor": "#F45197",
+    "button--default-color": "#FF1378",
+    "button--default-colorHover": "#FFF0F7",
+    "button--default-colorActive": "#FFF0F7",
+    "button--default-borderColor": "transparent",
+    "button--default-borderColorHover": "transparent",
+    "button--default-borderColorActive": "transparent",
+    "button--primary-color": "#FF1378",
+    "button--primary-colorHover": "#ffffff",
+    "button--primary-colorActive": "#ffffff",
+    "button--primary-backgroundColor": "#ffffff",
+    "button--primary-backgroundColorHover": "#FF1378",
+    "button--primary-backgroundColorActive": "#FF1378",
+    "button--secondary-color": "#ffffff",
+    "button--secondary-colorHover": "#FF1378",
+    "button--secondary-colorActive": "#FF1378",
+    "button--secondary-backgroundColor": "#FF1378",
+    "button--secondary-backgroundColorHover": "#ffffff",
+    "button--secondary-backgroundColorActive": "#ffffff",
+    "button--disabled-color": "#9F9F9F",
+    "button--disabled-backgroundColor": "#FFFFFF",
+    "button--disabled-borderColor": "#9F9F9F",
+    "icon-color": "#FF1378",
+    "icon-color-hover": "#FF1378",
+    "button--icon-svg-color": "#FF1378",
+    "icon-ratingEmpty": "#FFFFFF",
+    "icon-ratingFull": "#FF1378",
+    "icon-ratingFullFilter": "#9F9F9F",
+    "carousel-bgColor": "transparent",
+    "carousel-title-color": "#FF1378",
+    "carousel-description-color": "#FFFFFF",
+    "carousel-dot-color": "#5D5D5D",
+    "carousel-dot-color-active": "#FF1378",
+    "carousel-dot-bgColor": "#ffffff",
+    "carousel-arrow-color": "#FF1378",
+    "carousel-arrow-color--hover": "#FF1378",
+    "carousel-arrow-bgColor": "transparent",
+    "carousel-arrow-borderColor": "transparent",
+    "carousel-play-pause-button-textColor": "8f8f8f",
+    "carousel-play-pause-button-textColor--hover": "#474747",
+    "carousel-play-pause-button-bgColor": "#ffffff",
+    "carousel-play-pause-button-borderColor": "#ffffff",
+    "card-title-color": "#000000",
+    "card-title-color-hover": "#FF1378",
+    "card-figcaption-button-background": "#FF1378",
+    "card-figcaption-button-color": "#ffffff",
+    "card--alternate-backgroundColor": "#ffffff",
+    "card--alternate-borderColor": "#FF1378",
+    "card--alternate-color--hover": "#ffffff",
+    "element-border-color": "#707070",
+    "form-label-font-color": "#000000",
+    "input-font-color": "#9F9F9F",
+    "input-border-color": "#9F9F9F",
+    "input-border-color-active": "#F45197",
+    "input-bg-color": "#ffffff",
+    "input-disabled-bg": "#F8F8F8",
+    "select-bg-color": "#ffffff",
+    "select-arrow-color": "#FF1378",
+    "checkRadio-color": "#FF1378",
+    "checkRadio-backgroundColor": "#ffffff",
+    "checkRadio-borderColor": "#9F9F9F",
+    "checkRadio-borderColor-checked": "#FF1378",
+    "tab-mobile-borderColor": "#9F9F9F",
+    "alert-backgroundColor": "#ffffff",
+    "alert-color": "#333333",
+    "alert-color-alt": "#ffffff",
+    "storeName-color": "#FF1378",
+    "body-bg": "#ffffff",
+    "header-backgroundColor": "#FFFFFF",
+    "footer-backgroundColor": "#FFF0F7",
+    "navUser-background-color": "#F2F8FF",
+    "navUser-color": "#000000",
+    "navUser-color-hover": "#F45197",
+    "navUser-dropdown-backgroundColor": "#ffffff",
+    "navUser-dropdown-borderColor": "#ffffff",
+    "navUser-indicator-backgroundColor": "#333333",
+    "navUser-main-background-color": "#ffffff",
+    "navUser-main-color": "#F45197",
+    "navUser-main-color-hover": "#000000",
+    "navUser-main-dropdown-backgroundColor": "#ffffff",
+    "navUser-main-dropdown-borderColor": "#ffffff",
+    "navUser-main-indicator-backgroundColor": "#333333",
+    "navPages-color": "#373737",
+    "navPages-color-hover": "#F45197",
+    "navPages-subMenu-backgroundColor": "#ffffff",
+    "navPages-subMenu-separatorColor": "#ffffff",
+    "dropdown--quickSearch-backgroundColor": "#ffffff",
+    "dropdown--wishList-backgroundColor": "#ffffff",
+    "blockquote-cite-font-color": "#999999",
+    "container-border-global-color-base": "#707070",
+    "container-fill-base": "#ffffff",
+    "modal-fill-base": "FFF7FA",
+    "container-fill-dark": "#e5e5e5",
+    "label-backgroundColor": "#cccccc",
+    "label-color": "#ffffff",
+    "overlay-backgroundColor": "#333333",
+    "loadingOverlay-backgroundColor": "#ffffff",
+    "pace-progress-backgroundColor": "#999999",
+    "spinner-borderColor-dark": "#999999",
+    "spinner-borderColor-light": "#ffffff",
+    "hide_content_navigation": false,
+    "optimizedCheckout-header-backgroundColor": "#F45197",
+    "optimizedCheckout-show-backgroundImage": false,
+    "optimizedCheckout-backgroundImage": "",
+    "optimizedCheckout-backgroundImage-size": "1000x400",
+    "optimizedCheckout-show-logo": "none",
+    "optimizedCheckout-logo": "",
+    "optimizedCheckout-logo-size": "250x100",
+    "optimizedCheckout-logo-position": "left",
+    "optimizedCheckout-headingPrimary-color": "#000000",
+    "optimizedCheckout-headingPrimary-font": "Google_Montserrat_700",
+    "optimizedCheckout-headingSecondary-color": "#000000",
+    "optimizedCheckout-headingSecondary-font": "Google_Montserrat_700",
+    "optimizedCheckout-body-backgroundColor": "#ffffff",
+    "optimizedCheckout-colorFocus": "#F45197",
+    "optimizedCheckout-contentPrimary-color": "#000000",
+    "optimizedCheckout-contentPrimary-font": "Google_Montserrat_400",
+    "optimizedCheckout-contentSecondary-color": "#757575",
+    "optimizedCheckout-contentSecondary-font": "Google_Montserrat_400",
+    "optimizedCheckout-buttonPrimary-font": "Google_Montserrat_500",
+    "optimizedCheckout-buttonPrimary-color": "#ffffff",
+    "optimizedCheckout-buttonPrimary-colorHover": "#ffffff",
+    "optimizedCheckout-buttonPrimary-colorActive": "#ffffff",
+    "optimizedCheckout-buttonPrimary-backgroundColor": "#333333",
+    "optimizedCheckout-buttonPrimary-backgroundColorHover": "#666666",
+    "optimizedCheckout-buttonPrimary-backgroundColorActive": "#000000",
+    "optimizedCheckout-buttonPrimary-borderColor": "#333333",
+    "optimizedCheckout-buttonPrimary-borderColorHover": "transparent",
+    "optimizedCheckout-buttonPrimary-borderColorActive": "transparent",
+    "optimizedCheckout-buttonPrimary-borderColorDisabled": "transparent",
+    "optimizedCheckout-buttonPrimary-backgroundColorDisabled": "#cccccc",
+    "optimizedCheckout-buttonPrimary-colorDisabled": "#ffffff",
+    "optimizedCheckout-formChecklist-backgroundColor": "#ffffff",
+    "optimizedCheckout-formChecklist-color": "#333333",
+    "optimizedCheckout-formChecklist-borderColor": "#cccccc",
+    "optimizedCheckout-formChecklist-backgroundColorSelected": "#f5f5f5",
+    "optimizedCheckout-buttonSecondary-font": "Google_Montserrat_500",
+    "optimizedCheckout-buttonSecondary-color": "#333333",
+    "optimizedCheckout-buttonSecondary-colorHover": "#333333",
+    "optimizedCheckout-buttonSecondary-colorActive": "#000000",
+    "optimizedCheckout-buttonSecondary-backgroundColor": "#ffffff",
+    "optimizedCheckout-buttonSecondary-borderColor": "#cccccc",
+    "optimizedCheckout-buttonSecondary-backgroundColorHover": "#f5f5f5",
+    "optimizedCheckout-buttonSecondary-backgroundColorActive": "#e5e5e5",
+    "optimizedCheckout-buttonSecondary-borderColorHover": "#999999",
+    "optimizedCheckout-buttonSecondary-borderColorActive": "#757575",
+    "optimizedCheckout-link-color": "#476bef",
+    "optimizedCheckout-link-font": "Google_Montserrat_500",
+    "optimizedCheckout-text-font": "Google_Montserrat_400",
+    "optimizedCheckout-discountBanner-backgroundColor": "#e5e5e5",
+    "optimizedCheckout-discountBanner-textColor": "#333333",
+    "optimizedCheckout-discountBanner-iconColor": "#333333",
+    "optimizedCheckout-orderSummary-backgroundColor": "#ffffff",
+    "optimizedCheckout-orderSummary-borderColor": "#707070",
+    "optimizedCheckout-step-backgroundColor": "#757575",
+    "optimizedCheckout-step-textColor": "#ffffff",
+    "optimizedCheckout-step-borderColor": "#dddddd",
+    "optimizedCheckout-form-textColor": "#666666",
+    "optimizedCheckout-formField-borderColor": "#cccccc",
+    "optimizedCheckout-formField-textColor": "#333333",
+    "optimizedCheckout-formField-shadowColor": "transparent",
+    "optimizedCheckout-formField-placeholderColor": "#999999",
+    "optimizedCheckout-formField-backgroundColor": "#ffffff",
+    "optimizedCheckout-formField-errorColor": "#d14343",
+    "optimizedCheckout-formField-inputControlColor": "#FFFFFF",
+    "optimizedCheckout-formField-shipping-inputControlColor": "#FF1378",
+    "optimizedCheckout-header-borderColor": "#dddddd",
+    "optimizedCheckout-header-textColor": "#333333",
+    "optimizedCheckout-loadingToaster-backgroundColor": "#333333",
+    "optimizedCheckout-loadingToaster-textColor": "#ffffff",
+    "optimizedCheckout-link-hoverColor": "#002fe1",
+    "product_sale_badges": "none",
+    "color_badge_product_sale_badges": "#007dc6",
+    "color_text_product_sale_badges": "#ffffff",
+    "color_hover_product_sale_badges": "#000000",
+    "product_sold_out_badges": "none",
+    "color_badge_product_sold_out_badges": "#007dc6",
+    "color_text_product_sold_out_badges": "#ffffff",
+    "color_hover_product_sold_out_badges": "#000000",
+    "focusTooltip-textColor": "#ffffff",
+    "focusTooltip-backgroundColor": "#313440",
+    "swatch_option_size": "22x22",
+    "social_icon_placement_top": false,
+    "social_icon_placement_bottom": "bottom_none",
+    "navigation_design": "simple",
+    "price_ranges": true,
+    "pdp-price-label": "",
+    "pdp_sale_badge_label": "",
+    "pdp_sold_out_label": "",
+    "pdp-sale-price-label": "",
+    "pdp-non-sale-price-label": "",
+    "pdp-retail-price-label": "",
+    "pdp-custom-fields-tab-label": "",
+    "paymentbuttons-paypal-accelerated-checkout-color": "#444",
+    "paymentbuttons-paypal-accelerated-content-font-family": "Montserrat, Arial, Helvetica, sans-serif",
+    "paymentbuttons-paypal-accelerated-content-font-weight": "400",
+    "paymentbuttons-paypal-accelerated-content-color": "white",
+    "paymentbuttons-paypal-accelerated-content-label": "checkout",
+    "paymentbuttons-paypal-accelerated-border-color": "black",
+    "paymentbuttons-paypal-color": "gold",
+    "paymentbuttons-paypal-shape": "rect",
+    "paymentbuttons-paypal-label": "checkout",
+    "paymentbanners-homepage-color": "white",
+    "paymentbanners-homepage-ratio": "8x1",
+    "paymentbanners-cartpage-text-color": "black",
+    "paymentbanners-cartpage-logo-position": "left",
+    "paymentbanners-cartpage-logo-type": "primary",
+    "paymentbanners-proddetailspage-color": "white",
+    "paymentbanners-proddetailspage-ratio": "8x1",
+    "paymentbuttons-container": "medium",
+    "supported_card_type_icons": [
+      "american_express",
+      "diners_club",
+      "discover",
+      "mastercard",
+      "unionpay",
+      "visa"
+    ],
+    "supported_payment_methods": [
+      "card",
+      "paypal",
+      "bank"
+    ],
+    "lazyload_mode": "lazyload+lqip",
+    "checkout-paymentbuttons-paypal-color": "black",
+    "checkout-paymentbuttons-paypal-shape": "rect",
+    "checkout-paymentbuttons-paypal-size": "large",
+    "checkout-paymentbuttons-paypal-label": "pay",
+    "paymentbuttons-number-of-buttons": 1,
+    "googlepay-button-color": "black",
+    "afterpay-button-color": "black-mint",
+    "amazon-button-color": "Gold",
+    "masterpass-button-color": "black",
+    "paymentbuttons-provider-sorting": [
+
+    ],
+    "free_shipping_on_order": "FREE SHIPPING ON ORDERS OF $60+",
+    "preview_catr_items_limit": 5,
+    "pz_api_endpoint": "https://api2.pzebra.com/pzCore",
+    "facebook_app_id": "270454785773283",
+    "USA_states": [
+      {
+        "name": "Alabama",
+        "abbreviation": "AL"
+      },
+      {
+        "name": "Alaska",
+        "abbreviation": "AK"
+      },
+      {
+        "name": "American Samoa",
+        "abbreviation": "AS"
+      },
+      {
+        "name": "Arizona",
+        "abbreviation": "AZ"
+      },
+      {
+        "name": "Arkansas",
+        "abbreviation": "AR"
+      },
+      {
+        "name": "California",
+        "abbreviation": "CA"
+      },
+      {
+        "name": "Colorado",
+        "abbreviation": "CO"
+      },
+      {
+        "name": "Connecticut",
+        "abbreviation": "CT"
+      },
+      {
+        "name": "Delaware",
+        "abbreviation": "DE"
+      },
+      {
+        "name": "District Of Columbia",
+        "abbreviation": "DC"
+      },
+      {
+        "name": "Federated States Of Micronesia",
+        "abbreviation": "FM"
+      },
+      {
+        "name": "Florida",
+        "abbreviation": "FL"
+      },
+      {
+        "name": "Georgia",
+        "abbreviation": "GA"
+      },
+      {
+        "name": "Guam",
+        "abbreviation": "GU"
+      },
+      {
+        "name": "Hawaii",
+        "abbreviation": "HI"
+      },
+      {
+        "name": "Idaho",
+        "abbreviation": "ID"
+      },
+      {
+        "name": "Illinois",
+        "abbreviation": "IL"
+      },
+      {
+        "name": "Indiana",
+        "abbreviation": "IN"
+      },
+      {
+        "name": "Iowa",
+        "abbreviation": "IA"
+      },
+      {
+        "name": "Kansas",
+        "abbreviation": "KS"
+      },
+      {
+        "name": "Kentucky",
+        "abbreviation": "KY"
+      },
+      {
+        "name": "Louisiana",
+        "abbreviation": "LA"
+      },
+      {
+        "name": "Maine",
+        "abbreviation": "ME"
+      },
+      {
+        "name": "Marshall Islands",
+        "abbreviation": "MH"
+      },
+      {
+        "name": "Maryland",
+        "abbreviation": "MD"
+      },
+      {
+        "name": "Massachusetts",
+        "abbreviation": "MA"
+      },
+      {
+        "name": "Michigan",
+        "abbreviation": "MI"
+      },
+      {
+        "name": "Minnesota",
+        "abbreviation": "MN"
+      },
+      {
+        "name": "Mississippi",
+        "abbreviation": "MS"
+      },
+      {
+        "name": "Missouri",
+        "abbreviation": "MO"
+      },
+      {
+        "name": "Montana",
+        "abbreviation": "MT"
+      },
+      {
+        "name": "Nebraska",
+        "abbreviation": "NE"
+      },
+      {
+        "name": "Nevada",
+        "abbreviation": "NV"
+      },
+      {
+        "name": "New Hampshire",
+        "abbreviation": "NH"
+      },
+      {
+        "name": "New Jersey",
+        "abbreviation": "NJ"
+      },
+      {
+        "name": "New Mexico",
+        "abbreviation": "NM"
+      },
+      {
+        "name": "New York",
+        "abbreviation": "NY"
+      },
+      {
+        "name": "North Carolina",
+        "abbreviation": "NC"
+      },
+      {
+        "name": "North Dakota",
+        "abbreviation": "ND"
+      },
+      {
+        "name": "Northern Mariana Islands",
+        "abbreviation": "MP"
+      },
+      {
+        "name": "Ohio",
+        "abbreviation": "OH"
+      },
+      {
+        "name": "Oklahoma",
+        "abbreviation": "OK"
+      },
+      {
+        "name": "Oregon",
+        "abbreviation": "OR"
+      },
+      {
+        "name": "Palau",
+        "abbreviation": "PW"
+      },
+      {
+        "name": "Pennsylvania",
+        "abbreviation": "PA"
+      },
+      {
+        "name": "Puerto Rico",
+        "abbreviation": "PR"
+      },
+      {
+        "name": "Rhode Island",
+        "abbreviation": "RI"
+      },
+      {
+        "name": "South Carolina",
+        "abbreviation": "SC"
+      },
+      {
+        "name": "South Dakota",
+        "abbreviation": "SD"
+      },
+      {
+        "name": "Tennessee",
+        "abbreviation": "TN"
+      },
+      {
+        "name": "Texas",
+        "abbreviation": "TX"
+      },
+      {
+        "name": "Utah",
+        "abbreviation": "UT"
+      },
+      {
+        "name": "Vermont",
+        "abbreviation": "VT"
+      },
+      {
+        "name": "Virgin Islands",
+        "abbreviation": "VI"
+      },
+      {
+        "name": "Virginia",
+        "abbreviation": "VA"
+      },
+      {
+        "name": "Washington",
+        "abbreviation": "WA"
+      },
+      {
+        "name": "West Virginia",
+        "abbreviation": "WV"
+      },
+      {
+        "name": "Wisconsin",
+        "abbreviation": "WI"
+      },
+      {
+        "name": "Wyoming",
+        "abbreviation": "WY"
+      }
+    ],
+    "facet_price_range": [
+      {
+        "min": 0,
+        "max": 15,
+        "label": "$0—$15"
+      },
+      {
+        "min": 15,
+        "max": 25,
+        "label": "$15—$25"
+      },
+      {
+        "min": 25,
+        "max": 40,
+        "label": "$25—$40"
+      },
+      {
+        "min": 40,
+        "max": 45,
+        "label": "$40—$45"
+      },
+      {
+        "min": 45,
+        "max": 50,
+        "label": "$45—$50"
+      },
+      {
+        "min": 50,
+        "max": 60,
+        "label": "$50—$60"
+      },
+      {
+        "min": 60,
+        "max": 10000,
+        "label": "$60 & UP"
+      }
+    ]
+  },
+  "read_only_files": [
+    "/assets/scss/components/citadel",
+    "/assets/scss/components/foundation",
+    "/assets/scss/components/vendor",
+    "/assets/scss/settings/citadel",
+    "/assets/scss/settings/foundation",
+    "/assets/scss/settings/normalize",
+    "/assets/scss/settings/vendor",
+    "/assets/scss/vendor"
+  ],
+  "resources": {
+    "cart": false,
+    "bulk_discount_rates": false,
+    "shop_by_brand": {
+      "limit": 10
+    }
+  },
+  "variations": [
+    {
+      "name": "Light",
+      "id": "light",
+      "meta": {
+        "desktop_screenshot": "desktop_light.png",
+        "mobile_screenshot": "mobile_light.png",
+        "description": "Ideal for a wide range of businesses and brands, this design is fully responsive, simple, and ready for you to add your branding, logo, and products. It comes ready to build a clean looking and beautiful store with features such as homepage carousel, social media icons, featured and top selling products, and faceted search (which is available on select BigCommerce plans). Fully express your brand by using our Theme Editor to quickly and easily style your site's fonts and colors, all without the need to write code.",
+        "demo_url": "https://cornerstone-light-demo.mybigcommerce.com",
+        "optimized_for": [
+          "multi_purpose",
+          "mobile_tablet_desktop",
+          "sales_discounts",
+          "large_catalog"
+        ],
+        "industries": [
+          "home_garden"
+        ]
+      },
+      "images": {
+      },
+      "settings": {
+        "aws_cloudfront_url": "https://d2olgbsrw4fnsq.cloudfront.net/dev/",
+        "aws_url": "https://8qz6kpk3g8.execute-api.us-east-1.amazonaws.com/dev/",
+        "consultant": {
+          "label": {
+            "change_my_consultant": "Change my consultant",
+            "my_parties": "My parties"
+          },
+          "search": {
+            "title": "Search for a consultant",
+            "description": "Provide as much information as you can about a specific consultant to find them."
+          },
+          "find": {
+            "title": "Find a consultant in your area",
+            "description": "Shop with your local consultant"
+          },
+          "default_consultant": "ittest 1",
+          "default_consultant_attribute_key": "1"
+        },
+        "hide_breadcrumbs": false,
+        "hide_page_heading": false,
+        "hide_category_page_heading": true,
+        "hide_blog_page_heading": false,
+        "hide_contact_us_page_heading": false,
+        "homepage_new_products_count": 5,
+        "homepage_featured_products_count": 20,
+        "homepage_top_products_count": 4,
+        "homepage_show_carousel": true,
+        "homepage_show_carousel_arrows": false,
+        "homepage_show_carousel_play_pause_button": false,
+        "homepage_stretch_carousel_images": false,
+        "homepage_new_products_column_count": 4,
+        "homepage_featured_products_show_carousel_arrows": true,
+        "homepage_featured_products_column_count": 4,
+        "homepage_top_products_column_count": 4,
+        "homepage_blog_posts_count": 3,
+        "productpage_videos_count": 8,
+        "productpage_reviews_count": 9,
+        "productpage_related_products_count": 10,
+        "productpage_similar_by_views_count": 10,
+        "categorypage_products_per_page": 12,
+        "shop_by_price_visibility": true,
+        "brandpage_products_per_page": 12,
+        "searchpage_products_per_page": 12,
+        "scentflirt_products_ids": "[196,197,198,171]",
+        "scentflirt_products_img": {
+          "196": "/content/kit-detail-189.png",
+          "197": "/content/kit-detail-190.png",
+          "198": "/content/kit-detail-191.png"
+        },
+        "scentflirt_comparison_chart": "/content/chart_comparison.png",
+        "scentflirt_kit_ids": "[196,197,198]",
+        "scentflirt_addon_ids": "[171]",
+        "subscription_products_ids": "[171]",
+        "scentflirt_addon_option_ids": {
+          "171": {
+            "optionId": "122",
+            "optionValue": "119"
+          }
+        },
+        "scentflirt_subscriber_type_id": 4,
+        "club_pink_subscriber_id": 5,
+        "show_product_quick_view": false,
+        "show_powered_by": true,
+        "shop_by_brand_show_footer": true,
+        "show_copyright_footer": true,
+        "show_accept_amex": false,
+        "show_accept_discover": false,
+        "show_accept_mastercard": false,
+        "show_accept_paypal": false,
+        "show_accept_visa": false,
+        "show_accept_amazonpay": false,
+        "show_accept_googlepay": false,
+        "show_accept_klarna": false,
+        "show_product_details_tabs": true,
+        "show_product_reviews": true,
+        "show_quick_payment_buttons": true,
+        "show_custom_fields_tabs": false,
+        "show_product_weight": true,
+        "show_product_dimensions": false,
+        "show_product_quantity_box": true,
+        "show_product_swatch_names": true,
+        "product_list_display_mode": "grid",
+        "logo-position": "left",
+        "logo_size": "250x100",
+        "logo_fontSize": 28,
+        "brand_size": "190x250",
+        "gallery_size": "300x300",
+        "productgallery_size": "500x659",
+        "product_size": "500x659",
+        "productview_thumb_size": "50x50",
+        "productthumb_size": "100x100",
+        "thumb_size": "100x100",
+        "zoom_size": "1280x1280",
+        "blog_size": "190x250",
+        "default_image_brand": "img/BrandDefault.gif",
+        "default_image_product": "img/ProductDefault.gif",
+        "default_image_gift_certificate": "img/GiftCertificate.png",
+        "body-font": "Google_Montserrat_400",
+        "headings-font": "Google_Montserrat_700",
+        "special-font": "Northwell",
+        "fontSize-root": 16,
+        "fontSize-h1": 25,
+        "fontSize-h2": 21,
+        "fontSize-h3": 16,
+        "fontSize-h4": 14,
+        "fontSize-h5": 12,
+        "fontSize-h6": 11,
+        "applePay-button": "black",
+        "color-availability-text": "#008000",
+        "color-textBase": "#000000",
+        "color-textBase--hover": "#F45197",
+        "color-textBase--active": "#F45197",
+        "color-textSecondary": "#000000",
+        "color-textSecondary--hover": "#333333",
+        "color-textSecondary--active": "#333333",
+        "color-textLink": "#7B7B7B",
+        "color-textLink--hover": "#F45197",
+        "color-textLink--active": "#F45197",
+        "color-textHeading": "#F45197",
+        "color-primary": "#F45197",
+        "color-primaryDark": "#FF1378",
+        "color-primaryAccent": "#FF1378",
+        "color-primaryDarker": "",
+        "color-primaryLight": "#FFF0F7",
+        "color-secondary": "#ABCAE9",
+        "color-secondaryDark": "",
+        "color-secondaryDarker": "",
+        "color-secondaryLight": "#D5EAFF",
+        "color-secondaryLighter": "#F2F8FF",
+        "color-error": "#cc4749",
+        "color-errorLight": "#ffdddd",
+        "color-info": "#666666",
+        "color-infoLight": "#dfdfdf",
+        "color-success": "#008a06",
+        "color-successLight": "#d5ffd8",
+        "color-warning": "#f1a500",
+        "color-warningLight": "#fffdea",
+        "color-black": "#ffffff",
+        "color-blackLight": "#221f20",
+        "color-white": "#ffffff",
+        "color-whitesBase": "#e5e5e5",
+        "color-grey": "#999999",
+        "color-greyDarkest": "#000000",
+        "color-greyDarker": "#333333",
+        "color-greyDark": "#666666",
+        "color-greyMedium": "#757575",
+        "color-greyLight": "#999999",
+        "color-greyLighter": "#cccccc",
+        "color-greyLightest": "#e5e5e5",
+        "color-price": "#FF1378",
+        "color-price-pdp": "#000000",
+        "banner--deafault-backgroundColor": "#F45197",
+        "button--default-color": "#FF1378",
+        "button--default-colorHover": "#FFF0F7",
+        "button--default-colorActive": "#FFF0F7",
+        "button--default-borderColor": "transparent",
+        "button--default-borderColorHover": "transparent",
+        "button--default-borderColorActive": "transparent",
+        "button--primary-color": "#FF1378",
+        "button--primary-colorHover": "#ffffff",
+        "button--primary-colorActive": "#ffffff",
+        "button--primary-backgroundColor": "#ffffff",
+        "button--primary-backgroundColorHover": "#FF1378",
+        "button--primary-backgroundColorActive": "#FF1378",
+        "button--secondary-color": "#ffffff",
+        "button--secondary-colorHover": "#FF1378",
+        "button--secondary-colorActive": "#FF1378",
+        "button--secondary-backgroundColor": "#FF1378",
+        "button--secondary-backgroundColorHover": "#ffffff",
+        "button--secondary-backgroundColorActive": "#ffffff",
+        "button--disabled-color": "#9F9F9F",
+        "button--disabled-backgroundColor": "#FFFFFF",
+        "button--disabled-borderColor": "#9F9F9F",
+        "icon-color": "#FF1378",
+        "icon-color-hover": "#FF1378",
+        "button--icon-svg-color": "#FF1378",
+        "icon-ratingEmpty": "#FFFFFF",
+        "icon-ratingFull": "#FF1378",
+        "icon-ratingFullFilter": "#9F9F9F",
+        "carousel-bgColor": "transparent",
+        "carousel-title-color": "#FF1378",
+        "carousel-description-color": "#FFFFFF",
+        "carousel-dot-color": "#5D5D5D",
+        "carousel-dot-color-active": "#FF1378",
+        "carousel-dot-bgColor": "#ffffff",
+        "carousel-arrow-color": "#FF1378",
+        "carousel-arrow-color--hover": "#FF1378",
+        "carousel-arrow-bgColor": "transparent",
+        "carousel-arrow-borderColor": "transparent",
+        "carousel-play-pause-button-textColor": "8f8f8f",
+        "carousel-play-pause-button-textColor--hover": "#474747",
+        "carousel-play-pause-button-bgColor": "#ffffff",
+        "carousel-play-pause-button-borderColor": "#ffffff",
+        "card-title-color": "#000000",
+        "card-title-color-hover": "#FF1378",
+        "card-figcaption-button-background": "#FF1378",
+        "card-figcaption-button-color": "#ffffff",
+        "card--alternate-backgroundColor": "#ffffff",
+        "card--alternate-borderColor": "#FF1378",
+        "card--alternate-color--hover": "#ffffff",
+        "element-border-color": "#707070",
+        "form-label-font-color": "#000000",
+        "input-font-color": "#9F9F9F",
+        "input-border-color": "#9F9F9F",
+        "input-border-color-active": "#F45197",
+        "input-bg-color": "#ffffff",
+        "input-disabled-bg": "#F8F8F8",
+        "select-bg-color": "#ffffff",
+        "select-arrow-color": "#FF1378",
+        "checkRadio-color": "#FF1378",
+        "checkRadio-backgroundColor": "#ffffff",
+        "checkRadio-borderColor": "#9F9F9F",
+        "checkRadio-borderColor-checked": "#FF1378",
+        "tab-mobile-borderColor": "#9F9F9F",
+        "alert-backgroundColor": "#ffffff",
+        "alert-color": "#333333",
+        "alert-color-alt": "#ffffff",
+        "storeName-color": "#FF1378",
+        "body-bg": "#ffffff",
+        "header-backgroundColor": "#FFFFFF",
+        "footer-backgroundColor": "#FFF0F7",
+        "navUser-background-color": "#F2F8FF",
+        "navUser-color": "#000000",
+        "navUser-color-hover": "#F45197",
+        "navUser-dropdown-backgroundColor": "#ffffff",
+        "navUser-dropdown-borderColor": "#ffffff",
+        "navUser-indicator-backgroundColor": "#333333",
+        "navUser-main-background-color": "#ffffff",
+        "navUser-main-color": "#F45197",
+        "navUser-main-color-hover": "#000000",
+        "navUser-main-dropdown-backgroundColor": "#ffffff",
+        "navUser-main-dropdown-borderColor": "#ffffff",
+        "navUser-main-indicator-backgroundColor": "#333333",
+        "navPages-color": "#373737",
+        "navPages-color-hover": "#F45197",
+        "navPages-subMenu-backgroundColor": "#ffffff",
+        "navPages-subMenu-separatorColor": "#ffffff",
+        "dropdown--quickSearch-backgroundColor": "#ffffff",
+        "dropdown--wishList-backgroundColor": "#ffffff",
+        "blockquote-cite-font-color": "#999999",
+        "container-border-global-color-base": "#707070",
+        "container-fill-base": "#ffffff",
+        "modal-fill-base": "FFF7FA",
+        "container-fill-dark": "#e5e5e5",
+        "label-backgroundColor": "#cccccc",
+        "label-color": "#ffffff",
+        "overlay-backgroundColor": "#333333",
+        "loadingOverlay-backgroundColor": "#ffffff",
+        "pace-progress-backgroundColor": "#999999",
+        "spinner-borderColor-dark": "#999999",
+        "spinner-borderColor-light": "#ffffff",
+        "hide_content_navigation": false,
+        "optimizedCheckout-header-backgroundColor": "#F45197",
+        "optimizedCheckout-show-backgroundImage": false,
+        "optimizedCheckout-backgroundImage": "",
+        "optimizedCheckout-backgroundImage-size": "1000x400",
+        "optimizedCheckout-show-logo": "none",
+        "optimizedCheckout-logo": "",
+        "optimizedCheckout-logo-size": "250x100",
+        "optimizedCheckout-logo-position": "left",
+        "optimizedCheckout-headingPrimary-color": "#000000",
+        "optimizedCheckout-headingPrimary-font": "Google_Montserrat_700",
+        "optimizedCheckout-headingSecondary-color": "#000000",
+        "optimizedCheckout-headingSecondary-font": "Google_Montserrat_700",
+        "optimizedCheckout-body-backgroundColor": "#ffffff",
+        "optimizedCheckout-colorFocus": "#F45197",
+        "optimizedCheckout-contentPrimary-color": "#000000",
+        "optimizedCheckout-contentPrimary-font": "Google_Montserrat_400",
+        "optimizedCheckout-contentSecondary-color": "#757575",
+        "optimizedCheckout-contentSecondary-font": "Google_Montserrat_400",
+        "optimizedCheckout-buttonPrimary-font": "Google_Montserrat_500",
+        "optimizedCheckout-buttonPrimary-color": "#ffffff",
+        "optimizedCheckout-buttonPrimary-colorHover": "#ffffff",
+        "optimizedCheckout-buttonPrimary-colorActive": "#ffffff",
+        "optimizedCheckout-buttonPrimary-backgroundColor": "#333333",
+        "optimizedCheckout-buttonPrimary-backgroundColorHover": "#666666",
+        "optimizedCheckout-buttonPrimary-backgroundColorActive": "#000000",
+        "optimizedCheckout-buttonPrimary-borderColor": "#333333",
+        "optimizedCheckout-buttonPrimary-borderColorHover": "transparent",
+        "optimizedCheckout-buttonPrimary-borderColorActive": "transparent",
+        "optimizedCheckout-buttonPrimary-borderColorDisabled": "transparent",
+        "optimizedCheckout-buttonPrimary-backgroundColorDisabled": "#cccccc",
+        "optimizedCheckout-buttonPrimary-colorDisabled": "#ffffff",
+        "optimizedCheckout-formChecklist-backgroundColor": "#ffffff",
+        "optimizedCheckout-formChecklist-color": "#333333",
+        "optimizedCheckout-formChecklist-borderColor": "#cccccc",
+        "optimizedCheckout-formChecklist-backgroundColorSelected": "#f5f5f5",
+        "optimizedCheckout-buttonSecondary-font": "Google_Montserrat_500",
+        "optimizedCheckout-buttonSecondary-color": "#333333",
+        "optimizedCheckout-buttonSecondary-colorHover": "#333333",
+        "optimizedCheckout-buttonSecondary-colorActive": "#000000",
+        "optimizedCheckout-buttonSecondary-backgroundColor": "#ffffff",
+        "optimizedCheckout-buttonSecondary-borderColor": "#cccccc",
+        "optimizedCheckout-buttonSecondary-backgroundColorHover": "#f5f5f5",
+        "optimizedCheckout-buttonSecondary-backgroundColorActive": "#e5e5e5",
+        "optimizedCheckout-buttonSecondary-borderColorHover": "#999999",
+        "optimizedCheckout-buttonSecondary-borderColorActive": "#757575",
+        "optimizedCheckout-link-color": "#476bef",
+        "optimizedCheckout-link-font": "Google_Montserrat_500",
+        "optimizedCheckout-text-font": "Google_Montserrat_400",
+        "optimizedCheckout-discountBanner-backgroundColor": "#e5e5e5",
+        "optimizedCheckout-discountBanner-textColor": "#333333",
+        "optimizedCheckout-discountBanner-iconColor": "#333333",
+        "optimizedCheckout-orderSummary-backgroundColor": "#ffffff",
+        "optimizedCheckout-orderSummary-borderColor": "#707070",
+        "optimizedCheckout-step-backgroundColor": "#757575",
+        "optimizedCheckout-step-textColor": "#ffffff",
+        "optimizedCheckout-step-borderColor": "#dddddd",
+        "optimizedCheckout-form-textColor": "#666666",
+        "optimizedCheckout-formField-borderColor": "#cccccc",
+        "optimizedCheckout-formField-textColor": "#333333",
+        "optimizedCheckout-formField-shadowColor": "transparent",
+        "optimizedCheckout-formField-placeholderColor": "#999999",
+        "optimizedCheckout-formField-backgroundColor": "#ffffff",
+        "optimizedCheckout-formField-errorColor": "#d14343",
+        "optimizedCheckout-formField-inputControlColor": "#FFFFFF",
+        "optimizedCheckout-formField-shipping-inputControlColor": "#FF1378",
+        "optimizedCheckout-header-borderColor": "#dddddd",
+        "optimizedCheckout-header-textColor": "#333333",
+        "optimizedCheckout-loadingToaster-backgroundColor": "#333333",
+        "optimizedCheckout-loadingToaster-textColor": "#ffffff",
+        "optimizedCheckout-link-hoverColor": "#002fe1",
+        "product_sale_badges": "none",
+        "color_badge_product_sale_badges": "#007dc6",
+        "color_text_product_sale_badges": "#ffffff",
+        "color_hover_product_sale_badges": "#000000",
+        "product_sold_out_badges": "none",
+        "color_badge_product_sold_out_badges": "#007dc6",
+        "color_text_product_sold_out_badges": "#ffffff",
+        "color_hover_product_sold_out_badges": "#000000",
+        "focusTooltip-textColor": "#ffffff",
+        "focusTooltip-backgroundColor": "#313440",
+        "swatch_option_size": "22x22",
+        "social_icon_placement_top": false,
+        "social_icon_placement_bottom": "bottom_none",
+        "navigation_design": "simple",
+        "price_ranges": true,
+        "pdp-price-label": "",
+        "pdp_sale_badge_label": "",
+        "pdp_sold_out_label": "",
+        "pdp-sale-price-label": "",
+        "pdp-non-sale-price-label": "",
+        "pdp-retail-price-label": "",
+        "pdp-custom-fields-tab-label": "",
+        "paymentbuttons-paypal-accelerated-checkout-color": "#444",
+        "paymentbuttons-paypal-accelerated-content-font-family": "Montserrat, Arial, Helvetica, sans-serif",
+        "paymentbuttons-paypal-accelerated-content-font-weight": "400",
+        "paymentbuttons-paypal-accelerated-content-color": "white",
+        "paymentbuttons-paypal-accelerated-content-label": "checkout",
+        "paymentbuttons-paypal-accelerated-border-color": "black",
+        "paymentbuttons-paypal-color": "gold",
+        "paymentbuttons-paypal-shape": "rect",
+        "paymentbuttons-paypal-label": "checkout",
+        "paymentbanners-homepage-color": "white",
+        "paymentbanners-homepage-ratio": "8x1",
+        "paymentbanners-cartpage-text-color": "black",
+        "paymentbanners-cartpage-logo-position": "left",
+        "paymentbanners-cartpage-logo-type": "primary",
+        "paymentbanners-proddetailspage-color": "white",
+        "paymentbanners-proddetailspage-ratio": "8x1",
+        "paymentbuttons-container": "medium",
+        "supported_card_type_icons": [
+          "american_express",
+          "diners_club",
+          "discover",
+          "mastercard",
+          "unionpay",
+          "visa"
+        ],
+        "supported_payment_methods": [
+          "card",
+          "paypal",
+          "bank"
+        ],
+        "lazyload_mode": "lazyload+lqip",
+        "checkout-paymentbuttons-paypal-color": "black",
+        "checkout-paymentbuttons-paypal-shape": "rect",
+        "checkout-paymentbuttons-paypal-size": "large",
+        "checkout-paymentbuttons-paypal-label": "pay",
+        "paymentbuttons-number-of-buttons": 1,
+        "googlepay-button-color": "black",
+        "afterpay-button-color": "black-mint",
+        "amazon-button-color": "Gold",
+        "masterpass-button-color": "black",
+        "paymentbuttons-provider-sorting": [
+          "paypal"
+        ],
+        "free_shipping_on_order": "FREE SHIPPING ON ORDERS OF $60+",
+        "preview_catr_items_limit": 5,
+        "pz_api_endpoint": "https://api2.pzebra.com/pzCore",
+        "facebook_app_id": "270454785773283",
+        "USA_states": [
+          {
+            "name": "Alabama",
+            "abbreviation": "AL"
+          },
+          {
+            "name": "Alaska",
+            "abbreviation": "AK"
+          },
+          {
+            "name": "American Samoa",
+            "abbreviation": "AS"
+          },
+          {
+            "name": "Arizona",
+            "abbreviation": "AZ"
+          },
+          {
+            "name": "Arkansas",
+            "abbreviation": "AR"
+          },
+          {
+            "name": "California",
+            "abbreviation": "CA"
+          },
+          {
+            "name": "Colorado",
+            "abbreviation": "CO"
+          },
+          {
+            "name": "Connecticut",
+            "abbreviation": "CT"
+          },
+          {
+            "name": "Delaware",
+            "abbreviation": "DE"
+          },
+          {
+            "name": "District Of Columbia",
+            "abbreviation": "DC"
+          },
+          {
+            "name": "Federated States Of Micronesia",
+            "abbreviation": "FM"
+          },
+          {
+            "name": "Florida",
+            "abbreviation": "FL"
+          },
+          {
+            "name": "Georgia",
+            "abbreviation": "GA"
+          },
+          {
+            "name": "Guam",
+            "abbreviation": "GU"
+          },
+          {
+            "name": "Hawaii",
+            "abbreviation": "HI"
+          },
+          {
+            "name": "Idaho",
+            "abbreviation": "ID"
+          },
+          {
+            "name": "Illinois",
+            "abbreviation": "IL"
+          },
+          {
+            "name": "Indiana",
+            "abbreviation": "IN"
+          },
+          {
+            "name": "Iowa",
+            "abbreviation": "IA"
+          },
+          {
+            "name": "Kansas",
+            "abbreviation": "KS"
+          },
+          {
+            "name": "Kentucky",
+            "abbreviation": "KY"
+          },
+          {
+            "name": "Louisiana",
+            "abbreviation": "LA"
+          },
+          {
+            "name": "Maine",
+            "abbreviation": "ME"
+          },
+          {
+            "name": "Marshall Islands",
+            "abbreviation": "MH"
+          },
+          {
+            "name": "Maryland",
+            "abbreviation": "MD"
+          },
+          {
+            "name": "Massachusetts",
+            "abbreviation": "MA"
+          },
+          {
+            "name": "Michigan",
+            "abbreviation": "MI"
+          },
+          {
+            "name": "Minnesota",
+            "abbreviation": "MN"
+          },
+          {
+            "name": "Mississippi",
+            "abbreviation": "MS"
+          },
+          {
+            "name": "Missouri",
+            "abbreviation": "MO"
+          },
+          {
+            "name": "Montana",
+            "abbreviation": "MT"
+          },
+          {
+            "name": "Nebraska",
+            "abbreviation": "NE"
+          },
+          {
+            "name": "Nevada",
+            "abbreviation": "NV"
+          },
+          {
+            "name": "New Hampshire",
+            "abbreviation": "NH"
+          },
+          {
+            "name": "New Jersey",
+            "abbreviation": "NJ"
+          },
+          {
+            "name": "New Mexico",
+            "abbreviation": "NM"
+          },
+          {
+            "name": "New York",
+            "abbreviation": "NY"
+          },
+          {
+            "name": "North Carolina",
+            "abbreviation": "NC"
+          },
+          {
+            "name": "North Dakota",
+            "abbreviation": "ND"
+          },
+          {
+            "name": "Northern Mariana Islands",
+            "abbreviation": "MP"
+          },
+          {
+            "name": "Ohio",
+            "abbreviation": "OH"
+          },
+          {
+            "name": "Oklahoma",
+            "abbreviation": "OK"
+          },
+          {
+            "name": "Oregon",
+            "abbreviation": "OR"
+          },
+          {
+            "name": "Palau",
+            "abbreviation": "PW"
+          },
+          {
+            "name": "Pennsylvania",
+            "abbreviation": "PA"
+          },
+          {
+            "name": "Puerto Rico",
+            "abbreviation": "PR"
+          },
+          {
+            "name": "Rhode Island",
+            "abbreviation": "RI"
+          },
+          {
+            "name": "South Carolina",
+            "abbreviation": "SC"
+          },
+          {
+            "name": "South Dakota",
+            "abbreviation": "SD"
+          },
+          {
+            "name": "Tennessee",
+            "abbreviation": "TN"
+          },
+          {
+            "name": "Texas",
+            "abbreviation": "TX"
+          },
+          {
+            "name": "Utah",
+            "abbreviation": "UT"
+          },
+          {
+            "name": "Vermont",
+            "abbreviation": "VT"
+          },
+          {
+            "name": "Virgin Islands",
+            "abbreviation": "VI"
+          },
+          {
+            "name": "Virginia",
+            "abbreviation": "VA"
+          },
+          {
+            "name": "Washington",
+            "abbreviation": "WA"
+          },
+          {
+            "name": "West Virginia",
+            "abbreviation": "WV"
+          },
+          {
+            "name": "Wisconsin",
+            "abbreviation": "WI"
+          },
+          {
+            "name": "Wyoming",
+            "abbreviation": "WY"
+          }
+        ],
+        "facet_price_range": [
+          {
+            "min": 0,
+            "max": 15,
+            "label": "$0—$15"
+          },
+          {
+            "min": 15,
+            "max": 25,
+            "label": "$15—$25"
+          },
+          {
+            "min": 25,
+            "max": 40,
+            "label": "$25—$40"
+          },
+          {
+            "min": 40,
+            "max": 45,
+            "label": "$40—$45"
+          },
+          {
+            "min": 45,
+            "max": 50,
+            "label": "$45—$50"
+          },
+          {
+            "min": 50,
+            "max": 60,
+            "label": "$50—$60"
+          },
+          {
+            "min": 60,
+            "max": 10000,
+            "label": "$60 & UP"
+          }
+        ]
+      }
+    }
+  ]
+}

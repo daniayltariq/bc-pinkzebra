@@ -1,0 +1,234 @@
+// =============================================================================
+// CARDS (CSS)
+// =============================================================================
+//
+// 1. Allow users to click the anchor tag on the image in the figcaption empty
+//    space. This provides a much larger and simpler hit state for navigating
+//    to the product details page. (Does not work in IE10 or earlier).
+// 2. Using translate3d to counter a chrome specific bug: When using a masonry
+//    styled layout via CSS column-count etc, transforms applied to descendants
+//    are made invisible, except for 3d transforms...
+//
+// -----------------------------------------------------------------------------
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: space-between;
+
+    &:focus-within {
+        .card-figcaption {
+            opacity: 1;
+        }
+    }
+
+    &.focus-within {
+        .card-figcaption {
+            opacity: 1;
+        }
+    }
+}
+
+.card-figure {
+    margin-top: $card-figure-marginTop;
+    overflow: hidden;
+    padding: 3px;
+    position: relative;
+
+    &:hover {
+        .card-figcaption {
+            opacity: 1;
+        }
+    }
+
+    &__link {
+        display: block;
+        position: relative;
+    }
+}
+
+.card-img-container {
+
+    @include lazy-loaded-padding("productgallery_size");
+    margin: 0 auto;
+    max-height: 120px;
+    max-width: get-width(stencilString("productgallery_size"));
+    max-width: 120px;
+
+    @include breakpoint("large") {
+        max-height: 200px;
+    }
+}
+
+.card-figcaption {
+    display: none;
+    margin: $card-figcaption-margin;
+    pointer-events: none; // 1
+
+    @include breakpoint("medium") {
+        align-items: flex-end;
+        // display: block;
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+.card-figcaption-body {
+    display: $card-figcaption-body-display;
+    pointer-events: all; // 1
+    transform: translate3d(0, -50%, 0); // 2
+}
+
+#quickSearch {
+    .card-figcaption-body {
+        margin-left: auto;
+        margin-right: auto;
+        top: unset;
+    }
+}
+
+.card-image {
+    @include lazy-loaded-img;
+    border: 0;
+    /* Object-fit polyfill */
+    font-family: "object-fit: contain;";
+    max-height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+
+.card-title {
+    flex-grow: 1;
+    font-size: $card-title-fontSize;
+    margin: $card-title-margin;
+
+    @include breakpoint("large") {
+        font-size: fontSize("large");
+    }
+
+    > a {
+        color: $card-title-color;
+        display: block;
+        text-decoration: $card-title-textDecoration;
+        text-transform: uppercase;
+
+        &:hover {
+            color: $card-title-color-hover;
+        }
+    }
+}
+
+.card-leggend {
+    font-size: fontSize("smaller");
+
+    @include breakpoint("large") {
+        font-size: fontSize("small");
+    }
+}
+
+.card-text {
+    margin-bottom: $card-text-marginBottom;
+    // flex-grow: 1;
+
+    abbr {
+        border: 0;
+        color: inherit;
+        font-size: inherit;
+    }
+
+    &-brand {
+        color: $color-primary;
+        font-size: fontSize("smaller");
+        font-weight: bold;
+        margin-bottom: 0;
+        text-transform: uppercase;
+    }
+
+    .price-section--withoutTax {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.card-action {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.card-figcaption-button {
+    display: $card-figcaption-button-display;
+    margin: $card-figcaption-button-margin;
+
+    &:active {
+        background-color: $card-figcaption-button-backgroundHover;
+    }
+
+    .card-figcaption-body & {
+        &:focus {
+            background-color: $card-figcaption-button-backgroundHover;
+            outline: revert;
+        }
+    }
+
+    + .card-figcaption-button {
+        margin: $card-figcaption-button-margin;
+    }
+
+    &.disabled-button {
+        background: stencilColor("color-white");
+        border: solid remCalc(2px) stencilColor("button--disabled-color");
+        color: stencilColor("button--disabled-color");
+        pointer-events: none;
+    }
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+
+    .attribute-tbd {
+        color: stencilColor("color-primaryDark");
+        font-size: fontSize("smaller");
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}
+
+
+//
+// Alternate card
+//
+// Purpose: Used to give the card alternative styling
+// -----------------------------------------------------------------------------
+
+.card--alternate {
+    // border: 3px solid stencilColor("card--alternate-borderColor");
+    transition: all 0.15s ease;
+
+    .card-figure {
+        .card-img-container {
+            &::after {
+                padding-bottom: 77%;
+            }
+
+            img {
+                margin: 0 auto;
+                width: 150px;
+            }
+        }
+    }
+
+    .card-body {
+        background-color: stencilColor("card--alternate-backgroundColor");
+        padding: spacing("half");
+        transition: all 0.15s ease;
+
+        @include breakpoint("small") {
+            padding: spacing("half");
+        }
+    }
+}

@@ -1,0 +1,170 @@
+{{#partial "head"}}
+    {{{ checkout.checkout_head }}}
+    {{{ stylesheet '/assets/css/optimized-checkout.css' }}}
+    {{{ stylesheet '/assets/css/layouts/checkout/checkout.css' }}}
+    {{ getFontsCollection }}
+    {{inject 'pageType' page_type}}
+
+    <script type="text/javascript">
+        window.language = {{{langJson 'optimized_checkout'}}};
+    </script>
+
+    {{{head.scripts}}}
+{{/partial}}
+
+{{#partial "page"}}
+
+    <style type="text/css">
+        .navUser--pz{
+            display: none;
+        }
+    </style>
+    {{> components/common/navigation-pz}}
+    
+    {{{ checkout.checkout_content }}}
+
+    <script>
+        // Imported snipped to listen to checkout steps when ready
+        (function(win) {
+            'use strict';
+            var listeners = [],
+            doc = win.document,
+            MutationObserver = win.MutationObserver || win.WebKitMutationObserver,
+            observer;
+
+            function ready(selector, fn) {
+                // Store the selector and callback to be monitored
+                listeners.push({
+                    selector: selector,
+                    fn: fn
+                });
+                if (!observer) {
+                    // Watch for changes in the document
+                    observer = new MutationObserver(check);
+                    observer.observe(doc.documentElement, {
+                        childList: true,
+                        subtree: true
+                    });
+                }
+                // Check if the element is currently in the DOM
+                check();
+            }
+
+            function check() {
+                // Check the DOM for elements matching a stored selector
+                for (var i = 0, len = listeners.length, listener, elements; i < len; i++) {
+                    listener = listeners[i];
+                    // Query for elements matching the specified selector
+                    elements = doc.querySelectorAll(listener.selector);
+                    for (var j = 0, jLen = elements.length, element; j < jLen; j++) {
+                        element = elements[j];
+                        // Make sure the callback isn't invoked with the
+                        // same element more than once
+                        if (!element.ready) {
+                            element.ready = true;
+                            // Invoke the callback with the element
+                            listener.fn.call(element, element);
+                        }
+                    }
+                }
+            }
+
+            // Expose `ready`
+            win.ready = ready;
+        })(this);
+
+        // When checkout step form is ready
+        ready('.checkout-step form', function(form) {
+            const checkoutStepNumbers = document.querySelector('.remove-checkout-step-numbers');
+            const customerStep = document.getElementById('checkout-customer-guest');
+            const shippingContinueBtn = document.getElementById('checkout-shipping-continue');
+            const billingContinueBtn = document.getElementById('checkout-billing-continue');
+            const placeOrderBtn = document.getElementById('checkout-payment-continue');
+            const paymentStep = document.querySelector('.checkout-step--payment .checkout-view-content');
+            const cartDrawer = document.querySelector('.cartDrawer.optimizedCheckout-orderSummary');
+
+            if (cartDrawer) {
+                const cartDrawerPrice = cartDrawer.querySelector('.cartDrawer-actions');
+                const title = document.createElement('h3');
+                title.className = 'cartDrawer-total optimizedCheckout-headingPrimary';
+                title.innerHTML = 'Total';
+                cartDrawerPrice.prepend(title);
+            }
+
+            if (checkoutStepNumbers) {
+                checkoutStepNumbers.className = '';
+            }
+
+            if (customerStep) {
+                document.getElementById('checkout-customer-continue').innerHTML = 'Continue as guest';
+                document.getElementById('email-label').innerHTML = 'Email (for your confirmation)';
+            }
+
+            if (shippingContinueBtn) {
+                shippingContinueBtn.innerHTML = 'Continue to billing';
+            }
+            
+            if (billingContinueBtn) {
+                billingContinueBtn.innerHTML = 'Continue to payment';
+            }
+
+            if (placeOrderBtn) {
+                placeOrderBtn.classList.add('button--primary');
+            }
+
+            if (paymentStep) {
+                const paymentForm = paymentStep.querySelector('.checkout-form');
+                const div = document.createElement('div');
+                div.className = 'form-legend-container';
+                const legend = document.createElement('legend');
+                legend.className = 'form-legend optimizedCheckout-headingSecondary';
+                legend.setAttribute('data-test', 'payment-heading');
+                legend.innerHTML = 'Payment Method';
+                paymentForm.prepend(legend);
+            }
+
+        });
+        
+        ready('.checkout-address', function() {
+            const shippingStep = document.getElementById('checkoutShippingAddress');
+            const billingStep = document.getElementById('checkoutBillingAddress');
+            const addressesInputs = document.querySelector('.checkout-address');
+            const provinceOpt1 = document.getElementById('provinceInput-label');
+            const provinceOpt2 = document.getElementById('provinceCodeInput-label');
+
+            if (shippingStep || billingStep) {
+                const allowedCountries = ['canada', 'ca', 'us', 'united states'];
+                const selectElement = document.querySelector('#countryCodeInput');
+                for (let i = selectElement.options.length - 1; i > 0; i--) {
+                    const option = selectElement.options[i];
+                    const optionValue = option.value;
+                    if (optionValue && !allowedCountries.includes(optionValue.toLowerCase())) {
+                        selectElement.remove(i);
+                    }
+                }
+
+                if (addressesInputs) {
+                    document.getElementById('addressLine2Input-label').innerHTML = 'Apartment/Suite/Building (optional)';
+                    document.getElementById('companyInput-label').innerHTML = 'Company name (optional)';
+                    document.getElementById('phoneInput-label').innerHTML = 'Phone number';
+    
+                    if (provinceOpt1) {
+                        if (provinceOpt1.querySelector('.optimizedCheckout-contentSecondary')) {
+                            provinceOpt1.querySelector('.optimizedCheckout-contentSecondary').className = 'u-hidden' ;
+                        }
+                    } else {
+                        if (provinceOpt2.querySelector('.optimizedCheckout-contentSecondary')) {
+                            provinceOpt2.querySelector('.optimizedCheckout-contentSecondary').className = 'u-hidden' ;
+                        }
+                    } 
+    
+                    document.getElementById('postCodeInput-label').innerHTML = 'Zip/Post Code';
+                }
+            }
+        })
+    </script>
+
+    {{{ footer.scripts }}}
+{{/partial}}
+
+{{> layout/base}}

@@ -1,0 +1,238 @@
+// =============================================================================
+// CREATE ACCOUNT
+// =============================================================================
+
+
+// Account layouts
+// -----------------------------------------------------------------------------
+
+.create-account {
+    margin: remCalc(50px) auto;
+    max-width: remCalc(1060px);
+
+    @include breakpoint("medium") {
+        margin: remCalc(120px) auto;
+    }
+
+    .page-heading {
+        color: stencilColor("color-primaryAccent");
+        font-size: remCalc(25px);
+        letter-spacing: remCalc(2.5px);
+        margin: 0 auto remCalc(35px);
+
+        @include breakpoint("medium") {
+            margin: 0 auto remCalc(60px);
+        }
+    }
+}
+
+.create-account-form {
+    margin: 0;
+
+    .form-row {
+        display: grid;
+        grid-row-gap: remCalc(35px);
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        
+        @include breakpoint("xxsmall") {
+            .form-field[data-type="EmailAddress"] { grid-area: 1 / 1 / 1 / 1; }
+            .form-field[data-type="Phone"] { grid-area: 2 / 1 / 2 / 1; }
+            .form-field[data-type="Password"] { grid-area: 3 / 1 / 3 / 1; }
+            .form-field[data-type="ConfirmPassword"] { grid-area: 4 / 1 / 4 / 1; }
+            .form-field[data-type="FirstName"] { grid-area: 5 / 1 / 5 / 1; }
+            .form-field[data-type="LastName"] { grid-area: 6 / 1 / 6 / 1; }
+            .form-field[data-type="AddressLine1"] { grid-area: 7 / 1 / 7 / 1; }
+            .form-field[data-type="AddressLine2"] { grid-area: 8 / 1 / 8 / 1; }
+            .form-field[data-type="CompanyName"] { grid-area: 9 / 1 / 9 / 1; }
+            .form-field[data-type="Country"] { grid-area: 10 / 1 / 10 / 1; }
+        }
+
+        @include breakpoint("medium") {
+            grid-column-gap: remCalc(30px);
+            grid-row-gap: remCalc(40px);
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+
+            .form-field[data-type="EmailAddress"] { grid-area: 1 / 1 / 1 / 4; }
+            .form-field[data-type="Phone"] { grid-area: 1 / 4 / 1 / 7; }
+            .form-field[data-type="Password"] { grid-area: 2 / 1 / 2 / 4; }
+            .form-field[data-type="ConfirmPassword"] { grid-area: 2 / 4 / 2 / 7; }
+            .form-field[data-type="FirstName"] { grid-area: 3 / 1 / 3 / 4; }
+            .form-field[data-type="LastName"] { grid-area: 3 / 4 / 3 / 7; }
+            .form-field[data-type="AddressLine1"] { grid-area: 4 / 1 / 4 / 4; }
+            .form-field[data-type="AddressLine2"] { grid-area: 4 / 4 / 4 / 7; }
+            .form-field[data-type="CompanyName"] { grid-area: 5 / 1 / 5 / 4; }
+            .form-field[data-type="Country"] { grid-area: 5 / 4 / 5 / 7; }
+        }
+        
+    }
+
+    .form-field {
+        width: 100%;
+
+        .form-select {
+            background-position: right remCalc(15px) top remCalc(15px);
+        }
+    }
+    
+    .form-label {
+        font-size: remCalc(14px);
+        font-weight: 700;
+        letter-spacing: remCalc(1.4px);
+        line-height: 1;
+        margin-bottom: remCalc(10px);
+        text-transform: uppercase;
+    
+        small {
+            display: none !important;
+        }
+    }
+
+    .account-form-bottom {
+        clear: both;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        grid-area: 11 / 1 / 12 / 2;
+        @include breakpoint("medium") {
+            flex-direction: row;
+            gap: 30px;
+            grid-area: 6 / 1 / 7 / 7;
+        }
+    }
+
+    .g-recaptcha {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-actions {
+        margin: remCalc(20px) 0 0 0;
+
+        .button {
+            width: 100%;
+
+            @include breakpoint("medium") {
+                width: auto;
+            }
+        }
+    }
+}
+
+.account-created {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: remCalc(160px) auto;
+
+    .page-heading {
+        color: stencilColor("color-primaryAccent");
+        font-size: remCalc(25px);
+        letter-spacing: remCalc(2.5px);
+        margin: 0 0 remCalc(25px);
+
+        @include breakpoint("medium") {
+            margin: 0 auto remCalc(40px);
+        }
+    }
+
+    .account-created-message {
+        font-size: remCalc(16px);
+        line-height: 1.6;
+        margin: 0 0 remCalc(50px);
+        max-width: remCalc(530px);
+        text-align: center;
+
+        @include breakpoint("medium") {
+            margin: 0 auto remCalc(55px);
+        }
+
+        span {
+            color: stencilColor("color-primaryAccent");
+        }
+    }
+
+    .button {
+        width: 100%;
+
+        @include breakpoint("medium") {
+            width: auto;
+        }
+    }
+}
+
+.reset-password {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: remCalc(160px) auto;
+
+    .page-heading {
+        color: stencilColor("color-primaryAccent");
+        font-size: remCalc(25px);
+        letter-spacing: remCalc(2.5px);
+        margin: 0 0 remCalc(40px);
+    }
+
+    .reset-password-message {
+        font-size: remCalc(16px);
+        line-height: 1.6;
+        margin: 0 0 remCalc(60px);
+        max-width: remCalc(660px);
+        text-align: center;
+    }
+
+    .forgot-password-form {
+        width: 100%;
+
+        .forgot-password-form-wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: remCalc(756px);
+
+            @include breakpoint("medium") {
+                flex-direction: row;
+            }
+
+            .form-field {
+                width: 100%;
+
+                @include breakpoint("medium") {
+                    margin-right: remCalc(40px);
+                }
+            }
+
+            .form-label {
+                font-size: remCalc(14px);
+                font-weight: 700;
+                letter-spacing: remCalc(1.4px);
+                line-height: 1;
+                margin-bottom: remCalc(10px);
+                text-transform: uppercase;
+            
+                small {
+                    display: none !important;
+                }
+            }
+
+            .form-actions {
+                margin-top: spacing("single");
+
+                @include breakpoint("medium") {
+                    width: auto;
+                }
+
+                .button {
+                    width: 100%;
+            
+                    @include breakpoint("medium") {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}

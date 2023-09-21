@@ -1,0 +1,13 @@
+<ul class="productGrid wishlistGrid">
+    {{#each wishlist.items}}
+        <li class="product">
+            {{> components/products/card id=product_id theme_settings=../theme_settings addToCart_always_visible=true hide_brand='True' show_availability_text=true show_custom_attr=true show_rating=true}}
+            {{#if ../show_remove}}
+                <form action="{{remove_url}}" class="form wishlist-item-list" method="post">
+                    <input type="submit" class="button remove-item" value="{{lang 'account.wishlists.remove_item'}}" />
+                </form>
+            {{/if}}
+        </li>
+    {{/each}}
+</ul>
+{{> components/common/paginator wishlist.pagination}}

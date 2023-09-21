@@ -1,0 +1,33 @@
+.react-modal {
+    background-color: stencilColor("modal-fill-base");
+    border: 1px solid stencilColor("container-border-global-color-base");
+    height: auto;
+    left: 0;
+    padding: 2rem 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: zIndex("highest");
+
+    @include breakpoint("large") {
+        left: unset;
+        padding: 2rem;
+        width: 80%;
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+
+        .close-button {
+            color: stencilColor("container-border-global-color-base");
+            font-size: remCalc(21px);
+            font-weight: 500;
+            margin-left: auto;
+            padding: 0 2rem;
+            @include breakpoint("large") {
+                padding: unset;
+            }
+        }
+    }
+}

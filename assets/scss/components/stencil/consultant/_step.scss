@@ -1,0 +1,237 @@
+.step {
+    border: 1px solid stencilColor("color-greyLight");
+
+    border-radius: remCalc(39px);
+    padding: 1rem 3rem;
+
+    &.active,
+    &.completed {
+        border: 1px solid stencilColor("color-primary");
+
+        h1 {
+            color: stencilColor("color-primary");
+        }
+
+        .toggle-step {
+            color: stencilColor("color-primary");
+        }
+    }
+
+    &-header {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        .toggle-step {
+            color: stencilColor("color-greyLight");
+            cursor: pointer;
+            font-size: fontSize("largest");
+            font-weight: 700;
+            justify-self: flex-end;
+        }
+    }
+
+    &-actions {
+        display: flex;
+        justify-content: center;
+
+        @include breakpoint("large") {
+            justify-content: flex-start;
+        }
+    }
+
+    h1 {
+        color: stencilColor("color-greyLight");
+        font-size: remCalc(18px);
+        letter-spacing: remCalc(1.8px);
+        margin: unset;
+        text-transform: uppercase;
+    }
+
+    .new-party-form {
+        .theme-option {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+
+            .new-party-form__description {
+                .extra {
+                    margin: 0.4rem 0;
+                }
+            }
+
+            +.theme-option {
+                margin-top: 3rem;
+            }
+
+            .option-content {
+                width: 100%;
+
+                @include breakpoint("large") {
+                    width: 60%;
+                }
+            }
+
+            .option-img {
+
+                width: remCalc(210px);
+
+                &-desktop {
+                    display: none;
+
+                    @include breakpoint("large") {
+                        display: block;
+                    }
+                }
+
+                &-mobile {
+                    display: block;
+                    margin: auto;
+                    padding: 1rem 0;
+
+                    @include breakpoint("large") {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &__description {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+
+        &__input {
+            .name {
+                margin-left: remCalc(10px);
+            }
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            +.new-party-form__wrapper {
+                margin-top: remCalc(10px);
+            }
+
+            .see-fragances {
+                color: stencilColor("color-textLink");
+                cursor: pointer;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+        }
+
+        .address-form {
+            width: 100%;
+
+            label {
+                color: stencilColor("color-blackLight");
+                font-weight: 700;
+                text-transform: uppercase;
+
+                input,
+                select {
+                    font-weight: 100;
+                    margin: 1rem 0;
+                }
+
+            }
+        }
+
+        .name {
+            font-weight: 600;
+        }
+    }
+
+    .confirm-your-consultant {
+        padding-top: 1rem;
+
+        span,
+        a {
+            font-weight: 600;
+        }
+
+        .change-consultant {
+            color: stencilColor("color-primary");
+            margin-left: remCalc(10px);
+            text-decoration: none;
+        }
+
+        .consultant {
+            display: flex;
+            flex-direction: column;
+            gap: remCalc(5px);
+            margin: 1rem 0 2rem;
+
+            @include breakpoint("small") {
+                flex-direction: row;
+                gap: remCalc(35px);
+            }
+
+            .image {
+                border-radius: 50%;
+                height: 50px;
+                margin: auto;
+                overflow: hidden;
+                width: 50px;
+
+                @include breakpoint("small") {
+                    margin: unset;
+                }
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    width: 100%;
+                }
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+
+                .location {
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+
+    .button {
+        margin-top: 2rem;
+    }
+
+    .form-select {
+        background-position: right 1rem top 1rem;
+    }
+
+    .radio-round {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: stencilColor("color-white");
+        border: 1px solid stencilColor("color-blackLight");
+        border-radius: 50%;
+        cursor: pointer;
+        height: 1.3em;
+        outline: none;
+        vertical-align: middle;
+        width: 1.3em;
+    }
+
+    .radio-round:checked {
+        background-color: stencilColor("color-primary");
+    }
+
+    .error {
+        color: stencilColor("color-error");
+        font-weight: 600;
+        margin-bottom: unset;
+        margin-top: 1rem;
+    }
+}

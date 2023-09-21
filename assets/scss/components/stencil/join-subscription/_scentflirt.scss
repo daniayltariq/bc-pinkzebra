@@ -1,0 +1,30 @@
+.scentflirt {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    
+    @include breakpoint("large") {
+        flex-direction: row;
+    }
+    
+    .is-mobile {
+        @include breakpoint("large") {
+            display: none;
+        }
+    }
+
+    .loadingOverlay {
+        display: block;
+    }
+
+    .join-form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        min-width: 60%;
+    }
+
+    .order-summary-react {
+        min-width: 40%;
+    }
+}

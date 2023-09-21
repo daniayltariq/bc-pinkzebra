@@ -1,0 +1,85 @@
+.consultant-header {
+    &.hidden {
+        display: none;
+    }
+
+    &--container {
+        display: flex;
+        justify-content: center;
+
+        .image {
+            align-self: center;
+            border-radius: 50%;
+            height: 50px;
+            overflow: hidden;
+            width: 50px;
+
+            img {
+                height: 100%;
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+
+        .information {
+            align-self: center;
+            padding: 10px 15px;
+            text-align: left;
+
+            span,
+            a {
+                color: stencilColor("color-white");
+
+                display: block;
+                font-size: 14px;
+                font-weight: 700;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                @include breakpoint("large") {
+                    color: stencilColor("color-primary");
+                }
+            }
+
+            .my-parties {
+                &::after {
+                    content: var(--my-after-content, "+");
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+
+    &--mobile {
+        background-color: stencilColor("color-primary");
+        font-size: 14px;
+        height: auto;
+        text-align: center;
+
+        width: 100%;
+
+        @include breakpoint("large") {
+            display: none;
+        }
+
+        a {
+            color: stencilColor("color-white");
+        }
+
+        .change-my-consultant {
+            background-color: stencilColor("color-white");
+            color: stencilColor("color-primary");
+            font-size: 14px;
+            font-weight: 700;
+            height: 45px;
+            line-height: 50px;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

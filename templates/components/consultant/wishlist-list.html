@@ -1,0 +1,51 @@
+<div class="table table--line wishlists-table">
+    <div class="table-thead">
+        <div>{{lang 'account.wishlists.lookbook.name'}}</div>
+        <div>{{lang 'account.wishlists.num_items'}}</div>
+        <div>{{lang 'account.wishlists.shared'}}</div>
+    </div>
+    <div class="table-tbody">
+        {{#each customer.wishlists}}
+            {{#inArray ../lookbooks (json id)}}
+                <div class="table-row">
+                    <a href="{{view_url}}&lookbook=true">{{name}}</a>
+                    <div>{{num_items}}</div>
+                    <div>
+                        {{#if is_public }}
+                            {{lang 'common.yes'}}
+                        {{else}}
+                            {{lang 'common.no'}}
+                        {{/if}}
+                    </div>
+                    <div class="table-actions">
+                        <form method="post" action="{{delete_url}}" class="form">
+                        <fieldset class="form-fieldset">
+                            {{#if is_public}}
+                                <a href="{{share_url}}&lookbook=true" class="button button--primary" role="button">{{lang 'common.share'}}</a>
+                            {{/if}}
+                            <a href="{{edit_url}}" class="button button--primary" data-wishlist>{{lang 'common.edit'}}</a>
+                            <input type="submit" value="{{lang 'common.delete'}}" class="button" data-lookbook-delete="{{id}}">
+                        </fieldset>
+                        </form>
+                    </div>
+                </div>
+            {{/inArray}}
+        {{/each}}
+    </div>
+</div>
+<form method="post" action="{{this.urls.account.wishlists.delete}}" class="form wishlist">
+  {{#unless lookbooks}}
+    <p class="form-actions">{{> components/common/alert/alert-info (lang 'account.wishlists.lookbook.you_have_none')}}</p>
+  {{/unless}}
+  
+  <div class="form-actions">
+    <a href="/my-account/add-lookbook" class="button button--primary" role="button" data-wishlist>{{lang 'account.wishlists.lookbook.new'}}</a>
+    {{inject 'lookbookDelete' (lang 'account.wishlists.lookbook.delete_alert')}}
+    {{#if lookbooks}}
+      {{#each lookbooks}}
+        <input type="hidden" value="{{this}}" name="deletewishlist[]">
+      {{/each}}
+        <input type="submit" value="{{lang 'account.wishlists.lookbook.delete_all'}}" class="button" data-lookbook-delete>
+      {{/if}}
+  </div>
+</form>

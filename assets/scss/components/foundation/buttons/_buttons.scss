@@ -1,0 +1,116 @@
+// =============================================================================
+// BUTTONS (CSS)
+// =============================================================================
+
+.button {
+    border-width: 2px;
+    font-size: remCalc(12px);
+    height: 40px;
+    line-height: 10px;
+    min-width: 150px;
+    padding-left: remCalc(29px);
+    padding-right: remCalc(29px);
+    text-transform: uppercase;
+    transition: all 0.15s ease;
+
+    + .button {
+        margin-left: 0;
+
+        @include breakpoint("medium") {
+            margin-left: spacing("half");
+        }
+    }
+}
+
+.button[disabled] {
+    cursor: not-allowed;
+}
+
+.button--icon {
+    svg {
+        fill: stencilColor("button--icon-svg-color");
+    }
+}
+
+.button--default {
+    background-color: $buttonStyle-default-backgroundColor;
+    color: $buttonStyle-default-color;
+    font-weight: $fontWeight-bold;
+
+    &:hover,
+    &:focus,
+    &.is-active,
+    &:active {
+        background-color: $buttonStyle-default-backgroundColorHover;
+        color: $buttonStyle-default-colorHover;
+    }
+}
+
+.button--primary {
+    background-color: $buttonStyle-primary-backgroundColor;
+    border-color: $buttonStyle-primary-borderColor;
+    color: $buttonStyle-primary-color;
+    font-weight: $fontWeight-bold;
+
+    &:hover,
+    &:focus,
+    &.is-active,
+    &:active {
+        background-color: $buttonStyle-primary-backgroundColorHover;
+        border-color: $buttonStyle-primary-borderColor;
+        border-width: 2px;
+        color: $buttonStyle-primary-colorHover;
+    }
+
+    &.disabled-button {
+        border: solid remCalc(2px) stencilColor("button--disabled-color");
+        color: stencilColor("button--disabled-color");
+        pointer-events: none;
+    }
+}
+
+.button--secondary {
+    background-color: $buttonStyle-secondary-backgroundColor;
+    border-color: $buttonStyle-secondary-borderColor;
+    color: $buttonStyle-secondary-color;
+    font-weight: $fontWeight-bold;
+    
+    &:hover,
+    &:focus,
+    &.is-active,
+    &:active {
+        background-color: $buttonStyle-secondary-backgroundColorHover;
+        border-color: $buttonStyle-secondary-borderColorHover;
+        border-width: 2px;
+        color: $buttonStyle-secondary-colorHover;
+    }
+
+    &[disabled] {
+        &:hover,
+        &:focus,
+        &:active {
+            // background-color: $buttonStyle-secondary-backgroundColorHover;
+            border-color: stencilColor("button--disabled-color");
+            color: stencilColor("button--disabled-color");
+        }
+    }
+
+    &.disabled-button {
+        background: stencilColor("color-white");
+        border: solid remCalc(2px) stencilColor("button--disabled-color");
+        color: stencilColor("button--disabled-color");
+        pointer-events: none;
+    }
+}
+
+.disabled-button {
+    border: solid 0.125rem #9f9f9f;
+    color: stencilColor("button--disabled-color");
+    pointer-events: none;
+}
+
+.button--options,
+.button--outofstock {
+    padding-left: remCalc(12px);
+    padding-right: remCalc(12px);
+}

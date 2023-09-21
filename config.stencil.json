@@ -1,0 +1,17 @@
+{
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {
+      "sprinkles-overview.html": "/sprinkles-overview/",
+      "fragrance-details.html": "/fragrance-details/",
+      "warmers-overview.html": "/warmers-overview/",
+      "scent-flirt-member.html": "/scent-flirt-member/",
+      "scent-flirt-subscription.html": "/scent-flirt-subscription/",
+      "pztv.html": "/pztv/"
+    },
+    "product": {}
+  },
+  "normalStoreUrl": "https://store-hs0ei5ji1f.mybigcommerce.com/",
+  "port": "3000"
+}

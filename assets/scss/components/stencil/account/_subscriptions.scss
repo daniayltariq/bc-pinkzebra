@@ -1,0 +1,31 @@
+// Subscriptions
+// -----------------------------------------------------------------------------
+[data-id] {
+    h1 {
+        color: #ff1378;
+    }
+
+    h2,
+    h3,
+    div,
+    span {
+        color: black;
+    }
+
+    button {
+        background-color: #fff;
+        border-color: #ff1378;
+        color: #ff1378;
+        font-weight: 600;
+
+        &:hover,
+        &:focus,
+        &.is-active,
+        &:active {
+            background-color: #ff1378;
+            border-color: #ff1378;
+            border-width: 2px;
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,135 @@
+{{#if banners.bottom}}
+    {{#if settings.data_tag_enabled}}
+        <div class="banners" data-banner-location="bottom">
+            {{#each (limit banners.bottom_metadata 1)}}
+                <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
+                    <div data-event-type="promotion-click">
+                        {{{this.content}}}
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <div class="banners" data-banner-location="bottom">
+            <div class="banner">
+                {{{limit banners.bottom 1}}}
+            </div>
+        </div>
+    {{/if}}
+
+{{/if}}
+<footer class="footer" role="contentinfo">
+    <h2 class="footer-title-sr-only">{{lang 'footer.title'}}</h2>
+    <div class="container">
+        {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
+            <article class="footer-info-col
+                footer-info-col--social
+                footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
+                data-section-type="footer-webPages">
+                    <h3 class="footer-info-heading">{{lang 'social.connect'}}</h3>
+                    {{> components/common/social-links}}
+            </article>
+        {{/if}}
+        <section class="footer-info">
+            <div class="footer-info-wrapper">
+                <article class="footer-info-col info-col-subscribe mobile-version" data-section-type="newsletterSubscription">
+                    {{#if settings.show_newsletter_box}}
+                        {{> components/common/subscription-form}}
+                    {{/if}}
+                </article>
+            <article class="footer-info-col footer-info-col--small logo-section-wrapper" data-section-type="footer-categories">
+                    <div class="logo-section">
+                        <svg class="footer--logo"></svg>
+                        <p class="footer-logo-down-text">{{lang 'footer.how_founded'}}</p>
+                    </div>
+            </article>
+            <div class="mobile-version">
+                {{> components/common/social-links position="footer"}}
+            </div>
+            
+            <article class="footer-info-col footer-info-col--small links-section mobile-version" data-section-type="footer-categories">
+                <div class="have-questions-block">
+                    <h3 class="footer-info-heading">{{lang 'footer.have_questions.title'}}</h3>
+                    {{> components/common/have-questions-items-wrapper}}
+                </div>
+            </article>
+            <article class="footer-info-col footer-info-col--small links-section" data-section-type="footer-categories">
+                {{> components/common/footer-mobile-button name=(lang 'footer.links_section.buttons_titles.quick_links')}}
+                <div class="content">
+                    {{{region name="footer-info-col-1--global"}}}
+                </div>
+            </article>
+            <article class="footer-info-col footer-info-col--small links-section" data-section-type="footer-categories">
+                {{> components/common/footer-mobile-button name=(lang 'footer.links_section.buttons_titles.customer_care')}}
+                <div class="content">
+                    {{{region name="footer-info-col-2--global"}}}
+                </div>
+            </article>
+            <article class="footer-info-col footer-info-col--small links-section" data-section-type="footer-categories">
+                {{> components/common/footer-mobile-button name=(lang 'footer.links_section.buttons_titles.company')}}
+                <div class="content">
+                    {{{region name="footer-info-col-3--global"}}}
+                </div>
+            </article>
+            <article class="footer-info-col info-col-subscribe web-version" data-section-type="newsletterSubscription">
+                {{#if settings.show_newsletter_box}}
+                    {{> components/common/subscription-form}}
+                {{/if}}
+            </article>        
+            </div>
+        </section>
+    </div>
+    <div class="web-version">
+        {{> components/common/social-links position="footer"}}
+    </div>
+    <div class="copyright-wrapper">
+        {{#if settings.paypal_commerce_credit_message}}
+        <div class="footer-copyright">
+            <p class="paypal-credit">{{nl2br settings.paypal_commerce_credit_message}}</p>
+        </div>
+        {{/if}}
+        <div class="footer-copyright">
+            <div class="footer-copyright-paragraphs-wrapper">
+            {{#if theme_settings.show_copyright_footer}}
+                <div class="footer-copyright">
+                    <p class="powered-by">{{lang 'footer.copyright_content'}} &copy; {{moment format="YYYY"}} {{settings.store_name}} {{lang 'footer.all_rights_reserved'}}</p>
+                </div>
+            {{/if}}
+            </div>
+        </div>
+    </div>
+    </div>
+    {{{region name="ssl_site_seal--global"}}}
+</footer>
+<a  class="back-to-top-button-wrapper" href="#">
+    <span class="back-to-top-button">
+        <span class="to-top-button-span">{{lang 'footer.top_button'}}</span>
+        <svg class="arrow-up">
+            <use href="#icon-north"/>
+        </svg>
+    </span>
+</a>
+<script>
+    const coll = document.getElementsByClassName("collapsible");
+    for (let i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        const content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    };
+    
+    const phone = `{{> components/common/phone-link-item}}`;
+    const email = `{{> components/common/email-link-item}}`;
+    const headingLink = document.querySelector('.custom-care');
+    const phoneElement = document.createElement("li");
+    phoneElement.innerHTML = phone;
+    headingLink?.after(phoneElement);
+    const emailElement = document.createElement("li");
+    emailElement.innerHTML = email;
+    phoneElement.after(emailElement);
+</script>

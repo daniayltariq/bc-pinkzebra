@@ -1,0 +1,21 @@
+{{#partial "head"}}
+
+{{/partial}}
+
+{{#partial "page"}}
+
+{{~inject 'cartId' cart_id}}
+{{inject 'scentflirt_ids' theme_settings.scentflirt_products_ids}}
+{{~inject 'storefrontAPIToken' settings.storefront_api.token}}
+{{~inject 'themeSetting' theme_settings}}
+{{inject 'customer' customer}}
+
+<section class="page share-to-cart-page">
+    <div class="content">
+        <span class="message">Sharing to cart...</span>
+        <div class="loadingOverlay visible"></div>
+    </div>
+</section>
+
+{{/partial}}
+{{> layout/base}}

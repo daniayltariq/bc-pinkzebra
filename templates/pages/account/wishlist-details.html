@@ -1,0 +1,43 @@
+{{#partial "page"}}
+{{inject 'wishlistItems' wishlist.items}}
+<div class="account" data-pagination-wishlist>
+    {{#if wishlist.is_editable}}
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    {{/if}}    
+    
+    <h2 class="page-heading wishlist-heading">{{wishlist.name}}</h2>
+
+    {{#if wishlist.is_editable}}
+        {{#if wishlist.is_public '>' 0}}
+            <div class="panel share-wishlist">
+                <div class="panel-body">
+                    <h5>{{lang 'account.wishlists.share_intro'}}</h5>
+                    <div class="panel-body-content">
+                        <label>{{settings.base_url}}{{wishlist.share_url}}</label>
+                        <input type="hidden" class="wishlist-share-link" value="{{settings.base_url}}{{wishlist.share_url}}">
+                        <button class="wishlist-copy-link">Copy Link</button>
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+    {{/if}}
+
+    <div class="lookbook-panel" style="display: none;">
+        <div class="lookbook-panel__content">
+            <span> Share with Customer </span>
+            <div class="actions">
+                <a href="" data-href="{{wishlist.share_url}}" class="button button--primary share-lookbook">Share List</a>
+                <a href="" class="button button--primary share-to-cart-lookbook">Share To Cart</a>
+            </div>
+        </div>
+    </div>
+
+    {{#if wishlist.items}}
+        {{> components/account/wishlist-item-list show_remove=wishlist.is_editable}}
+    {{else}}
+        {{> components/common/alert/alert-info (lang 'account.wishlists.empty_wishlist')}}
+    {{/if}}
+
+</div>
+{{/partial}}
+{{> layout/base}}

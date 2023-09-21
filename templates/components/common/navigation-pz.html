@@ -1,0 +1,63 @@
+<nav class="navUser--pz">
+  <ul>
+    <li class="nav--item">
+      <a href="{{urls.home}}" class="header-logo__link" data-header-logo-link>
+        <img class="header-logo-image" src="{{getImage settings.store_logo.image 'logo_size'}}"
+          srcset="{{getImageSrcset1x2x settings.store_logo.image theme_settings.logo_size}}"
+          alt="{{settings.store_logo.title}}" title="{{settings.store_logo.title}}">
+      </a>
+    </li>
+
+    <!-- Consultant TBD -->
+    <li class="nav--item consultant--container">
+      <img class="image consultant-preview" src="">
+      <div class="information">
+        <span>{{lang 'header.pz.shopping_with'}}</span>
+        <span class="consultant-name"></span>
+        <div class="location">
+          <svg class="pz-phone-icon">
+            <use href="#icon-PZ_Phone"></use>
+          </svg>
+          <span class="consultant-location"></span>
+        </div>
+      </div>
+
+      <!-- Change consultant -->
+      {{#if page_type '!=' 'orderconfirmation'}}
+      <div class="action">
+        <a class="button button--primary button--large open-find-consultant" tabindex="0">{{lang 'header.pz.change_my_consultant'}}</a>
+      </div>
+      {{/if}}
+    </li>
+
+  </ul>
+</nav>
+
+<script>
+  function setConsultant(consultant) {
+    const nameElement = document.querySelector('.consultant-name');
+    if (nameElement)
+      nameElement.innerHTML = consultant.value.name;
+    
+    const locationElement = document.querySelector('.consultant-location');
+    if (locationElement)
+      if (!consultant.value.state)
+        locationElement.remove();
+      else
+        locationElement.innerHTML = consultant.value.state;
+
+    const imageElement = document.querySelector('.image.consultant-preview');
+    if (imageElement) {
+      if (!consultant.value.img)
+        imageElement.remove();
+      else
+        imageElement.src = consultant.value.img;
+    }
+  };
+
+  const consultant = JSON.parse(localStorage.getItem('consultant'));
+  if (consultant) {
+    setConsultant(consultant);
+  }
+
+</script>

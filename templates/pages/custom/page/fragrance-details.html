@@ -1,0 +1,1555 @@
+{{#partial "page"}}
+<!-- Add this to the <head> section of your HTML document -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+	.body {
+	    margin-top: 0 !important;
+	}
+	.section{
+		margin-top: 0;
+	}
+
+	.section-sprinkle-overview{
+		margin: 0;
+		padding: 8rem 0;
+	}
+	.body {
+	    margin-top: 0;
+	    margin-bottom: 0;
+	}
+	h1{
+		font-size: 1.8rem;
+	}
+	.clr-black{
+		color: #000000;
+	}
+	.text-center{
+		text-align: center;
+	}
+	.info-box{
+		width: 70%;
+		display: block;
+		margin: auto;
+	}
+	.heading-with-line {
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    text-align: center;
+	    position: relative; 
+	}
+
+	.heading-with-line::after {
+	    content: ""; 
+	    position: absolute; 
+	    bottom: -20px;
+	    left: 50%;
+	    transform: translateX(-50%); 
+	    width: 100px;
+	    height: 4px;
+	    background-color: #000000;
+	}
+
+	.mt-4 {
+	    margin-top: 1.5rem;
+	}
+
+	.mt-5 {
+	    margin-top: 2rem;
+	}
+
+	.section-sprinkle-overview{
+		background-color: #dbdbdb;
+	}
+
+	.btn-primary {
+	    background: #ff1378;
+	    padding: 0.7rem 2.5rem;
+	    color: #fff;
+	    font-weight: bold;
+	    border-radius: 50px;
+	}
+
+	.btn-secondary {
+		background-color: transparent;
+	    border: 2px solid #ff1378;
+	    padding: 0.4rem 2.5rem;
+	    color: #ff1378;
+	    font-weight: bold;
+	    border-radius: 50px;
+	}
+
+	.btn-primary-small {
+	    background: #ff1378;
+	    padding: 0.6rem 1.9rem;
+	    color: #fff;
+	    font-weight: bold;
+	    border-radius: 50px;
+	}
+
+	/*second section*/
+	.section-frag-experience{
+		margin: 0;
+		padding: 6rem 0;
+	}
+
+
+	/*Third section*/
+	.section-discover-frag{
+		margin: 0;
+		padding: 5rem 0;
+		background-color: #fff0f7;
+	}
+
+	.nav-link {
+		color: #495057;
+	}
+
+	.nav-tabs .nav-link.active svg, .nav-tabs .nav-link.active rect, .nav-tabs .nav-link.active path{
+	    fill: #ff2381;
+
+	}
+	.nav-tabs .nav-link.active {
+	    color: #ff2381;
+		background-color: unset; 
+		border-color: transparent; 
+	}
+
+	.nav-link{
+		display: flex;
+	    flex-direction: column;
+		justify-content: center; /* Center horizontally */
+	    align-items: center; /* Center vertically */
+	}
+	.nav-item{
+		width: 16.6%;
+	}
+
+	.nav-tabs {
+	    border-bottom: 0px solid #dee2e6;
+	}
+
+	.tab-content{
+		display: block;
+	}
+
+	.nav-tabs .nav-link:hover {
+	    border-color: transparent; 
+	    color: #ff2381;
+	}
+
+	.nav-tabs .nav-link:hover svg, .nav-tabs .nav-link:hover rect, .nav-tabs .nav-link:hover path{
+	    fill: #ff2381;
+
+	}
+	/*.custom-col {
+	    width: 20%;
+	}*/
+
+
+	/*Fourth section*/
+	.cross-wrap{
+		display: flex; 
+	    justify-content: center; 
+	    align-items: center;    
+	    height: 15vh;
+
+	}
+
+	.frag-text{
+		font-size: 1.6rem;
+		letter-spacing: 6px;
+		line-height: 1.3;
+		text-align: left;
+
+	}
+
+	.unique-img{
+		position: absolute;
+		top: -8px;
+	    left: -13px;
+	}
+
+	.tab-content img.placeholder-img {
+	    max-width: 160px;
+	}
+
+	.tab-content div.col {
+		display: flex;
+	    flex-direction: column;
+		justify-content: center; /* Center horizontally */
+	    align-items: center; /* Center vertically */
+	    margin-top: 1rem;
+	}
+
+
+	/*Fifth Section*/
+
+	.section-adventure-frag{
+		margin: 0;
+		padding: 5rem 0;
+		background-color: #f2f8ff;
+	}
+
+	.paisleypick {
+		display: flex;
+	    flex-direction: column;
+		justify-content: center; /* Center horizontally */
+	    align-items: flex-start; /* Center vertically */
+	    margin-top: 1rem;
+	}
+
+	.paisleypick span{
+		position: relative;
+	    top: -20px;
+	}
+	.paisleypick .adventure-img {
+	    position: relative;
+		top: -25px;
+	    left: -12px;
+	    max-width: 15.4rem;
+	}
+	.paisleypick p{
+		margin-top: -2rem;
+	}
+
+	.adventure .nav-tabs{
+	/*	margin: 0;*/
+	}
+
+	.adventure .nav-link{
+		padding-left: 0;
+		align-items: flex-start;
+	}
+
+	.adventure .nav-item{
+		width: 33%;
+	}
+
+	.adventure .tab-content{
+		margin-left: 1.15rem;
+	}
+
+	.adventure h2{
+		font-size: 22px;
+		font-weight: bold;
+	}
+
+	.adventure p{
+		font-size: 15px;
+	}
+
+	.adventure h4{
+		font-size: 16px;
+		font-weight: bold;
+		color: #000000;
+	}
+
+	.adventure .nav-tabs .nav-link.active b{
+	    border-bottom: 2px solid #ff2381;
+	}
+
+	.adventure-sec-2 div.col {
+		display: flex;
+	    flex-direction: column;
+		justify-content: center; /* Center horizontally */
+	    align-items: center; /* Center vertically */
+	    margin-top: 1rem;
+	}
+
+	.clr-primary{
+		color: #ff1378;
+	}
+
+	.btn-small-text {
+	    font-size: 12px;
+	}
+
+	.adventure-sec-2 img {
+	    max-width: 12rem;
+	}
+
+	/*Fifth section*/
+	.section-frag-video{
+		margin: 0;
+		padding: 5rem 0;
+	}
+
+	.video-container {
+	    position: relative;
+	}
+
+	.custom-play-button svg{
+		position: relative;
+	    top: 14px;
+	    left: 5px;
+	}
+
+	.video-container {
+	    position: relative;
+	    padding-bottom: 56.25%; /* 16:9 aspect ratio, adjust as needed */
+	    overflow: hidden;
+	}
+
+	video {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	}
+
+	.custom-play-button {
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    width: 80px;
+	    height: 80px;
+	    background-color: #ff1378;
+	    border-radius: 50%;
+	    cursor: pointer;
+	}
+
+
+	/*Sixth section*/
+	.section-frag-expert{
+		background-color: #fff0f7;
+		padding: 3rem 0;
+	}
+
+
+	/*Seventh section*/
+
+	.fraglife .nav-link{
+		padding-left: 0;
+	}
+
+	.fraglife .nav-item{
+		width: 50%;
+	}
+
+	.fraglife .tab-content{
+		margin-left: 1.15rem;
+	}
+
+	.fraglife .nav-tabs .nav-link.active b{
+	    border-bottom: 2px solid #ff2381;
+	}
+
+	.section-frag-life{
+		background-color: #ffffff;
+		padding: 3rem 0;
+	}
+
+	.fraglife .nav-link{
+		display: block;
+	}
+
+	@media (max-width: 768px) {
+		.fraglife .nav-item .nav-link{
+			text-align: center !important;
+			padding: 2rem 0;
+		}
+		.fraglife .nav-item{
+			width: 100%
+		}
+	}
+
+	/*Eighth section*/
+	.section-herd{
+		background-color: #f8f8f8;
+		padding: 3rem 0;
+	}
+
+
+
+	/*Product detail page*/
+
+	.section-hero-tabs {
+	    background: #f8f8f8;
+	}
+
+	.hero-heading {
+		color: #000000;
+		text-align: left;
+	}
+
+	.hero-heading::after {
+	    content: "";
+	    position: absolute;
+	    top: 3rem;
+	    left: 16.5%;
+	    transform: translateX(-50%);
+	    width: 100px;
+	    height: 3px;
+	    background-color: #ffffff;
+	}
+
+	.designer-expert {
+		display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    text-align: center;
+	    position: relative; 
+	    letter-spacing: 2px;
+	}
+
+	.designer-expert::after {
+	    content: "";
+	    position: absolute;
+	    top: 2.5rem;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    width: 150px;
+	    height: 2px;
+	    background-color: #000000;
+	}
+
+	.btn-primary-square {
+	    background: #f45197;
+	    padding: 0.7rem 2.5rem;
+	    color: #fff;
+	}
+
+	.hero-icons{
+		font-size: 10px;
+	}
+
+	.section-hero-tabs .nav-tabs {
+	    border-bottom: 0px solid #dee2e6;
+	    width: 90%;
+	    margin: auto;
+	}
+
+	.section-hero-tabs .nav-tabs .nav-item {
+	    width: 20%;
+	}
+
+	@media (max-width: 768px) {
+	    .section-hero-tabs .nav-tabs .nav-item {
+		    width: 50%;
+		}
+		.section-hero-tabs .nav-tabs {
+		    width: 100%;
+		}
+		.section-hero-tabs .nav-link {
+		    padding: 0.5rem 0rem;
+		}
+	}
+
+	.section-hero-tabs .nav-tabs .nav-item a{
+	    color: #000000;
+	}
+
+	.section-suggest-blends{
+		background-color: #f8f8f8;
+		padding: 5rem 0;
+	}
+
+	.btn-square-small{
+		padding: 0.5rem 1.4rem;
+		background-color: #f45197;
+	}
+
+	.quote-text::before{
+
+	}
+	.quote-text::after{
+
+	}
+
+	.quote-container {
+	    display: flex;
+	    align-items: center; 
+	}
+
+	.quote-icon {
+	    min-width: 30px;
+	}
+
+	.quote-icon {
+	    min-width: 30px;
+	}
+
+	.quote-text {
+	    font-size: 16px;
+	    font-style: italic;
+	}
+
+
+	@media (max-width: 768px) {
+		.quote-icon{
+			height: 5rem;
+		}
+
+		.product-resp {
+			display: flex;
+		    flex-direction: column;
+			justify-content: center; /* Center horizontally */
+		    align-items: center; /* Center vertically */
+		    margin-top: 1rem;
+		}
+		.p-6{
+			padding: 4rem !important;
+		}
+	}
+
+
+	.section-shop-collection{
+		background-color: #ffffff;
+		padding: 4rem 0;
+	}
+
+	.section-shop-collection .product-section {
+	    display: flex;
+	    flex-direction: column;
+	    height: 353px; /* Adjust the fixed height as needed */
+	}
+
+	.section-shop-collection .product-image {
+	    flex: 1; 
+	    text-align: center; 
+	}
+
+	.section-shop-collection .product-image img {
+	    max-height: 100%;
+	    max-width: 100%;
+	}
+
+	.section-shop-collection .product-details b{
+		font-size: 14px;
+	}
+
+	.section-shop-collection .product-details {
+	    text-align: center;
+	    flex: 1; 
+	}
+
+	.section-shop-collection .product-price p{
+		margin-bottom: 0;
+	}
+
+	.section-shop-collection .product-price {
+	    text-align: center;
+	}
+
+	.section-shop-collection .shop-now-button {
+	    text-align: center;
+	    padding: 10px;
+	}
+
+	.section-shop-collection .product-details p {
+	    margin-bottom: 0;
+	}
+
+
+	.nav-tabs .tab51 .nav-link.active {
+	    border-bottom: 4px solid #3892c5;
+	}
+	.nav-tabs .tab52 .nav-link.active {
+	    border-bottom: 4px solid #72c2ca;
+	}
+	.nav-tabs .tab53 .nav-link.active {
+	    border-bottom: 4px solid #d77ed4;
+	}
+	.nav-tabs .tab54 .nav-link.active {
+	    border-bottom: 4px solid #24a5b4;
+	}
+	.nav-tabs .tab55 .nav-link.active {
+	    border-bottom: 4px solid #d2ba79;
+	}
+
+	@media (max-width: 768px) {
+	    .d-smmm-none {
+	        display: none;
+	    }
+	}
+
+
+	.carousel-control-prev-icon {
+	 background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff1378' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+	}
+
+	.carousel-control-next-icon {
+	  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff1378' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+	}
+
+	.carousel-control-next, .carousel-control-next:focus, .carousel-control-next, .carousel-control-next:hover, .carousel-control-prev:focus, .carousel-control-prev:hover {
+	    opacity: 1;
+	}
+
+	/* Style the carousel indicators as dots */
+	.carousel-indicators li {
+	    width: 12px;
+	    height: 12px;
+	    border-radius: 50%;
+	    margin-right: 5px; /* Adjust the spacing between dots if needed */
+	    background-color: #f45197; /* Set the background color of the dots */
+	    border: 2px solid #fff; /* Add a border around the dots if desired */
+	    cursor: pointer;
+	}
+
+	/* Style the active indicator */
+	.carousel-indicators .active {
+	    background-color: #fff; /* Set the background color of the active dot */
+	}
+
+	.carousel-indicators {
+	    bottom: -2.2rem;
+	}
+
+
+	@media (max-width: 768px) {
+	    .d-smmm-none {
+	        display: none;
+	    }
+	}
+
+</style>
+
+
+<div class="section section-hero-tabs">
+
+	<div class="tab-content pt-0 pb-0" id="myTabsContent">
+		<div class="tab-pane fade show active pb-5 pt-5" style="background: #5cbef7;" id="tab51" role="tabpanel" aria-labelledby="tab51-tab">
+		    
+		    <div class="container">
+		    	<div class="row">
+		        
+			        <div class="col-sm-6">
+			        	<h1 class="hero-heading d-md-none mb-5"><b>AQUA MARINE</b></h1>
+			        	<img src="{{cdn 'assets/img/group2209.png'}}">
+			        </div>
+			        
+			        <div class="col-sm-1"></div>
+			        <div class="col-sm-4 mt-4">
+			        	
+			        	<h1 class="hero-heading d-smmm-none"><b>AQUA MARINE</b></h1>
+			        	
+			        	<p class="pt-4"><b>NOTES:</b> aqua waters | bright citrus | smooth coconut</p>
+			        	<p><b>MOOD:</b> smooth coconut</p>
+			        	<p><b>SENSITIVITIES:</b> smooth coconut</p>
+			        	<p><b>INTENSITY:</b> smooth coconut</p>
+			        	
+			        	<p class="text-white">AVAILABLE IN:</p>
+			        	<div class="row hero-icons">
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="39" height="33" viewBox="0 0 39 33">
+									<g id="Group_2204" data-name="Group 2204" transform="translate(0.066 -0.368)">
+									<g id="Ellipse_185" data-name="Ellipse 185" transform="translate(-0.066 9.368)" fill="none" stroke="#000" stroke-width="2">
+									  <circle cx="12" cy="12" r="12" stroke="none"/>
+									  <circle cx="12" cy="12" r="11" fill="none"/>
+									</g>
+									<g id="Ellipse_186" data-name="Ellipse 186" transform="translate(14.934 0.368)" fill="none" stroke="#000" stroke-width="2">
+									  <circle cx="12" cy="12" r="12" stroke="none"/>
+									  <circle cx="12" cy="12" r="11" fill="none"/>
+									</g>
+									</g>
+								</svg>
+								<br>
+								<b>WAX MELTS</b>
+			        		</div>
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="45.138" height="45.138" viewBox="0 0 45.138 45.138">
+									<g id="Group_2190" data-name="Group 2190" transform="translate(0 22.706) rotate(-45)">
+									<path id="Path_2944" data-name="Path 2944" d="M3.695,28.06A12.733,12.733,0,0,0,24.649,23.2l7.4-21.9a.929.929,0,0,0-.234-1A.951.951,0,0,0,30.8.062L8.68,7.389A12.548,12.548,0,0,0,.345,16.414,12.274,12.274,0,0,0,3.695,28.06ZM9.3,9.163l20.254-6.71L22.779,22.507A10.753,10.753,0,0,1,5.1,26.672h0A10.56,10.56,0,0,1,9.3,9.163Z" transform="translate(0 0)"/>
+									<path id="Path_2945" data-name="Path 2945" d="M3.264,11.694a.971.971,0,0,0,0-1.388C1.084,8.146,1.706,3.055,5.29,1.9A.947.947,0,0,0,5.913.664.96.96,0,0,0,4.667.047,6.8,6.8,0,0,0,.226,5.06a7.081,7.081,0,0,0,1.636,6.633A.993.993,0,0,0,3.264,11.694Z" transform="translate(4.481 11.662)"/>
+									<path id="Path_2946" data-name="Path 2946" d="M2.415,1.235,1.169,0,0,1.235,1.169,2.468Z" transform="translate(20.831 6.309)"/>
+									<path id="Path_2947" data-name="Path 2947" d="M2.415,1.234,1.168,0,0,1.234,1.168,2.391Z" transform="translate(17.17 7.544)"/>
+									<path id="Path_2948" data-name="Path 2948" d="M0,1.2,1.212,0,2.423,1.2,1.212,2.4Z" transform="translate(13.533 8.724)"/>
+									</g>
+								</svg>
+								<br>
+								<b>DIFFUSER OIL</b>
+
+			        		</div>
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="42.611" height="37.34" viewBox="0 0 42.611 37.34">
+									<g id="Group_2196" data-name="Group 2196" transform="translate(0)">
+									<path id="Path_2966" data-name="Path 2966" d="M114.046,602.4a1.285,1.285,0,0,0,2.063.435,2.187,2.187,0,0,0,.343-2.613s-2.177-3.919-.113-6.968c2.864-4.21,1.261-9.435.113-11.613a1.283,1.283,0,0,0-2.062-.436,2.189,2.189,0,0,0-.344,2.613s2.178,3.919.115,6.968C111.18,595.144,112.785,600.224,114.046,602.4Z" transform="translate(-96.793 -565.845)"/>
+									<path id="Path_2971" data-name="Path 2971" d="M114.046,602.4a1.285,1.285,0,0,0,2.063.435,2.187,2.187,0,0,0,.343-2.613s-2.177-3.919-.113-6.968c2.864-4.21,1.261-9.435.113-11.613a1.283,1.283,0,0,0-2.062-.436,2.189,2.189,0,0,0-.344,2.613s2.178,3.919.115,6.968C111.18,595.144,112.785,600.224,114.046,602.4Z" transform="translate(-90.523 -565.845)"/>
+									<path id="Path_2968" data-name="Path 2968" d="M484.554,209.9a3.15,3.15,0,1,0-3.181-3.15A3.164,3.164,0,0,0,484.554,209.9Zm0-4.228a1.078,1.078,0,1,1-1.089,1.078A1.1,1.1,0,0,1,484.554,205.672Z" transform="translate(-445.124 -191.082)"/>
+									<path id="Path_2969" data-name="Path 2969" d="M473.829,204.062a4.031,4.031,0,1,0-4.07-4.031A4.049,4.049,0,0,0,473.829,204.062Zm0-5.41a1.379,1.379,0,1,1-1.393,1.379A1.345,1.345,0,0,1,473.829,198.652Z" transform="translate(-449.145 -196)"/>
+									<path id="Path_2970" data-name="Path 2970" d="M498.693,212.5a3.15,3.15,0,1,0-3.181-3.15A3.164,3.164,0,0,0,498.693,212.5Zm0-4.228a1.078,1.078,0,1,1-1.089,1.078A1.051,1.051,0,0,1,498.693,208.272Z" transform="translate(-495.512 -180.022)"/>
+									</g>
+								</svg>
+								<br>
+								<b>ROOM SPRAY</b>
+
+			        		</div>
+			        	</div>
+
+			        	<button class="btn-primary-square mt-4">SHOP THE COLLECTION</button>
+
+
+			        </div>
+
+			    </div>
+		    </div>
+
+		</div>
+		<div class="tab-pane fade pb-5 pt-5" style="background: #aaf7ff;" id="tab52" role="tabpanel" aria-labelledby="tab52-tab">
+		    <div class="container">
+		    	<div class="row">
+		        
+			        <div class="col-sm-6">
+			        	<img src="{{cdn 'assets/img/group2209.png'}}">
+			        </div>
+			        
+			        <div class="col-sm-1"></div>
+			        <div class="col-sm-4 mt-4">
+			        	
+			        	<h1 class="hero-heading d-smmm-none"><b>AQUA MARINE</b></h1>
+			        	
+			        	<p class="pt-4"><b>NOTES:</b> aqua waters | bright citrus | smooth coconut</p>
+			        	<p><b>MOOD:</b> smooth coconut</p>
+			        	<p><b>SENSITIVITIES:</b> smooth coconut</p>
+			        	<p><b>INTENSITY:</b> smooth coconut</p>
+			        	
+			        	<p class="text-white">AVAILABLE IN:</p>
+			        	<div class="row hero-icons">
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="39" height="33" viewBox="0 0 39 33">
+									<g id="Group_2204" data-name="Group 2204" transform="translate(0.066 -0.368)">
+									<g id="Ellipse_185" data-name="Ellipse 185" transform="translate(-0.066 9.368)" fill="none" stroke="#000" stroke-width="2">
+									  <circle cx="12" cy="12" r="12" stroke="none"/>
+									  <circle cx="12" cy="12" r="11" fill="none"/>
+									</g>
+									<g id="Ellipse_186" data-name="Ellipse 186" transform="translate(14.934 0.368)" fill="none" stroke="#000" stroke-width="2">
+									  <circle cx="12" cy="12" r="12" stroke="none"/>
+									  <circle cx="12" cy="12" r="11" fill="none"/>
+									</g>
+									</g>
+								</svg>
+								<br>
+								<b>WAX MELTS</b>
+			        		</div>
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="45.138" height="45.138" viewBox="0 0 45.138 45.138">
+									<g id="Group_2190" data-name="Group 2190" transform="translate(0 22.706) rotate(-45)">
+									<path id="Path_2944" data-name="Path 2944" d="M3.695,28.06A12.733,12.733,0,0,0,24.649,23.2l7.4-21.9a.929.929,0,0,0-.234-1A.951.951,0,0,0,30.8.062L8.68,7.389A12.548,12.548,0,0,0,.345,16.414,12.274,12.274,0,0,0,3.695,28.06ZM9.3,9.163l20.254-6.71L22.779,22.507A10.753,10.753,0,0,1,5.1,26.672h0A10.56,10.56,0,0,1,9.3,9.163Z" transform="translate(0 0)"/>
+									<path id="Path_2945" data-name="Path 2945" d="M3.264,11.694a.971.971,0,0,0,0-1.388C1.084,8.146,1.706,3.055,5.29,1.9A.947.947,0,0,0,5.913.664.96.96,0,0,0,4.667.047,6.8,6.8,0,0,0,.226,5.06a7.081,7.081,0,0,0,1.636,6.633A.993.993,0,0,0,3.264,11.694Z" transform="translate(4.481 11.662)"/>
+									<path id="Path_2946" data-name="Path 2946" d="M2.415,1.235,1.169,0,0,1.235,1.169,2.468Z" transform="translate(20.831 6.309)"/>
+									<path id="Path_2947" data-name="Path 2947" d="M2.415,1.234,1.168,0,0,1.234,1.168,2.391Z" transform="translate(17.17 7.544)"/>
+									<path id="Path_2948" data-name="Path 2948" d="M0,1.2,1.212,0,2.423,1.2,1.212,2.4Z" transform="translate(13.533 8.724)"/>
+									</g>
+								</svg>
+								<br>
+								<b>DIFFUSER OIL</b>
+
+			        		</div>
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="42.611" height="37.34" viewBox="0 0 42.611 37.34">
+									<g id="Group_2196" data-name="Group 2196" transform="translate(0)">
+									<path id="Path_2966" data-name="Path 2966" d="M114.046,602.4a1.285,1.285,0,0,0,2.063.435,2.187,2.187,0,0,0,.343-2.613s-2.177-3.919-.113-6.968c2.864-4.21,1.261-9.435.113-11.613a1.283,1.283,0,0,0-2.062-.436,2.189,2.189,0,0,0-.344,2.613s2.178,3.919.115,6.968C111.18,595.144,112.785,600.224,114.046,602.4Z" transform="translate(-96.793 -565.845)"/>
+									<path id="Path_2971" data-name="Path 2971" d="M114.046,602.4a1.285,1.285,0,0,0,2.063.435,2.187,2.187,0,0,0,.343-2.613s-2.177-3.919-.113-6.968c2.864-4.21,1.261-9.435.113-11.613a1.283,1.283,0,0,0-2.062-.436,2.189,2.189,0,0,0-.344,2.613s2.178,3.919.115,6.968C111.18,595.144,112.785,600.224,114.046,602.4Z" transform="translate(-90.523 -565.845)"/>
+									<path id="Path_2968" data-name="Path 2968" d="M484.554,209.9a3.15,3.15,0,1,0-3.181-3.15A3.164,3.164,0,0,0,484.554,209.9Zm0-4.228a1.078,1.078,0,1,1-1.089,1.078A1.1,1.1,0,0,1,484.554,205.672Z" transform="translate(-445.124 -191.082)"/>
+									<path id="Path_2969" data-name="Path 2969" d="M473.829,204.062a4.031,4.031,0,1,0-4.07-4.031A4.049,4.049,0,0,0,473.829,204.062Zm0-5.41a1.379,1.379,0,1,1-1.393,1.379A1.345,1.345,0,0,1,473.829,198.652Z" transform="translate(-449.145 -196)"/>
+									<path id="Path_2970" data-name="Path 2970" d="M498.693,212.5a3.15,3.15,0,1,0-3.181-3.15A3.164,3.164,0,0,0,498.693,212.5Zm0-4.228a1.078,1.078,0,1,1-1.089,1.078A1.051,1.051,0,0,1,498.693,208.272Z" transform="translate(-495.512 -180.022)"/>
+									</g>
+								</svg>
+								<br>
+								<b>ROOM SPRAY</b>
+
+			        		</div>
+			        	</div>
+
+			        	<button class="btn-primary-square mt-4">SHOP THE COLLECTION</button>
+
+
+			        </div>
+
+			    </div>
+		    </div>
+		</div>
+
+		<div class="tab-pane fade pb-5 pt-5" style="background: #ffaefc;" id="tab53" role="tabpanel" aria-labelledby="tab53-tab">
+		    <div class="container">
+		    	<div class="row">
+		        
+			        <div class="col-sm-6">
+			        	<img src="{{cdn 'assets/img/group2209.png'}}">
+			        </div>
+			        
+			        <div class="col-sm-1"></div>
+			        <div class="col-sm-4 mt-4">
+			        	
+			        	<h1 class="hero-heading d-smmm-none"><b>AQUA MARINE</b></h1>
+			        	
+			        	<p class="pt-4"><b>NOTES:</b> aqua waters | bright citrus | smooth coconut</p>
+			        	<p><b>MOOD:</b> smooth coconut</p>
+			        	<p><b>SENSITIVITIES:</b> smooth coconut</p>
+			        	<p><b>INTENSITY:</b> smooth coconut</p>
+			        	
+			        	<p class="text-white">AVAILABLE IN:</p>
+			        	<div class="row hero-icons">
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="39" height="33" viewBox="0 0 39 33">
+									<g id="Group_2204" data-name="Group 2204" transform="translate(0.066 -0.368)">
+									<g id="Ellipse_185" data-name="Ellipse 185" transform="translate(-0.066 9.368)" fill="none" stroke="#000" stroke-width="2">
+									  <circle cx="12" cy="12" r="12" stroke="none"/>
+									  <circle cx="12" cy="12" r="11" fill="none"/>
+									</g>
+									<g id="Ellipse_186" data-name="Ellipse 186" transform="translate(14.934 0.368)" fill="none" stroke="#000" stroke-width="2">
+									  <circle cx="12" cy="12" r="12" stroke="none"/>
+									  <circle cx="12" cy="12" r="11" fill="none"/>
+									</g>
+									</g>
+								</svg>
+								<br>
+								<b>WAX MELTS</b>
+			        		</div>
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="45.138" height="45.138" viewBox="0 0 45.138 45.138">
+									<g id="Group_2190" data-name="Group 2190" transform="translate(0 22.706) rotate(-45)">
+									<path id="Path_2944" data-name="Path 2944" d="M3.695,28.06A12.733,12.733,0,0,0,24.649,23.2l7.4-21.9a.929.929,0,0,0-.234-1A.951.951,0,0,0,30.8.062L8.68,7.389A12.548,12.548,0,0,0,.345,16.414,12.274,12.274,0,0,0,3.695,28.06ZM9.3,9.163l20.254-6.71L22.779,22.507A10.753,10.753,0,0,1,5.1,26.672h0A10.56,10.56,0,0,1,9.3,9.163Z" transform="translate(0 0)"/>
+									<path id="Path_2945" data-name="Path 2945" d="M3.264,11.694a.971.971,0,0,0,0-1.388C1.084,8.146,1.706,3.055,5.29,1.9A.947.947,0,0,0,5.913.664.96.96,0,0,0,4.667.047,6.8,6.8,0,0,0,.226,5.06a7.081,7.081,0,0,0,1.636,6.633A.993.993,0,0,0,3.264,11.694Z" transform="translate(4.481 11.662)"/>
+									<path id="Path_2946" data-name="Path 2946" d="M2.415,1.235,1.169,0,0,1.235,1.169,2.468Z" transform="translate(20.831 6.309)"/>
+									<path id="Path_2947" data-name="Path 2947" d="M2.415,1.234,1.168,0,0,1.234,1.168,2.391Z" transform="translate(17.17 7.544)"/>
+									<path id="Path_2948" data-name="Path 2948" d="M0,1.2,1.212,0,2.423,1.2,1.212,2.4Z" transform="translate(13.533 8.724)"/>
+									</g>
+								</svg>
+								<br>
+								<b>DIFFUSER OIL</b>
+
+			        		</div>
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="42.611" height="37.34" viewBox="0 0 42.611 37.34">
+									<g id="Group_2196" data-name="Group 2196" transform="translate(0)">
+									<path id="Path_2966" data-name="Path 2966" d="M114.046,602.4a1.285,1.285,0,0,0,2.063.435,2.187,2.187,0,0,0,.343-2.613s-2.177-3.919-.113-6.968c2.864-4.21,1.261-9.435.113-11.613a1.283,1.283,0,0,0-2.062-.436,2.189,2.189,0,0,0-.344,2.613s2.178,3.919.115,6.968C111.18,595.144,112.785,600.224,114.046,602.4Z" transform="translate(-96.793 -565.845)"/>
+									<path id="Path_2971" data-name="Path 2971" d="M114.046,602.4a1.285,1.285,0,0,0,2.063.435,2.187,2.187,0,0,0,.343-2.613s-2.177-3.919-.113-6.968c2.864-4.21,1.261-9.435.113-11.613a1.283,1.283,0,0,0-2.062-.436,2.189,2.189,0,0,0-.344,2.613s2.178,3.919.115,6.968C111.18,595.144,112.785,600.224,114.046,602.4Z" transform="translate(-90.523 -565.845)"/>
+									<path id="Path_2968" data-name="Path 2968" d="M484.554,209.9a3.15,3.15,0,1,0-3.181-3.15A3.164,3.164,0,0,0,484.554,209.9Zm0-4.228a1.078,1.078,0,1,1-1.089,1.078A1.1,1.1,0,0,1,484.554,205.672Z" transform="translate(-445.124 -191.082)"/>
+									<path id="Path_2969" data-name="Path 2969" d="M473.829,204.062a4.031,4.031,0,1,0-4.07-4.031A4.049,4.049,0,0,0,473.829,204.062Zm0-5.41a1.379,1.379,0,1,1-1.393,1.379A1.345,1.345,0,0,1,473.829,198.652Z" transform="translate(-449.145 -196)"/>
+									<path id="Path_2970" data-name="Path 2970" d="M498.693,212.5a3.15,3.15,0,1,0-3.181-3.15A3.164,3.164,0,0,0,498.693,212.5Zm0-4.228a1.078,1.078,0,1,1-1.089,1.078A1.051,1.051,0,0,1,498.693,208.272Z" transform="translate(-495.512 -180.022)"/>
+									</g>
+								</svg>
+								<br>
+								<b>ROOM SPRAY</b>
+
+			        		</div>
+			        	</div>
+
+			        	<button class="btn-primary-square mt-4">SHOP THE COLLECTION</button>
+
+
+			        </div>
+
+			    </div>
+		    </div>
+		</div>
+
+		<div class="tab-pane fade pb-5 pt-5" style="background: #78d5e1;" id="tab54" role="tabpanel" aria-labelledby="tab54-tab">
+		    <div class="container">
+		    	<div class="row">
+		        
+			        <div class="col-sm-6">
+			        	<img src="{{cdn 'assets/img/group2209.png'}}">
+			        </div>
+			        
+			        <div class="col-sm-1"></div>
+			        <div class="col-sm-4 mt-4">
+			        	
+			        	<h1 class="hero-heading d-smmm-none"><b>AQUA MARINE</b></h1>
+			        	
+			        	<p class="pt-4"><b>NOTES:</b> aqua waters | bright citrus | smooth coconut</p>
+			        	<p><b>MOOD:</b> smooth coconut</p>
+			        	<p><b>SENSITIVITIES:</b> smooth coconut</p>
+			        	<p><b>INTENSITY:</b> smooth coconut</p>
+			        	
+			        	<p class="text-white">AVAILABLE IN:</p>
+			        	<div class="row hero-icons">
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="39" height="33" viewBox="0 0 39 33">
+									<g id="Group_2204" data-name="Group 2204" transform="translate(0.066 -0.368)">
+									<g id="Ellipse_185" data-name="Ellipse 185" transform="translate(-0.066 9.368)" fill="none" stroke="#000" stroke-width="2">
+									  <circle cx="12" cy="12" r="12" stroke="none"/>
+									  <circle cx="12" cy="12" r="11" fill="none"/>
+									</g>
+									<g id="Ellipse_186" data-name="Ellipse 186" transform="translate(14.934 0.368)" fill="none" stroke="#000" stroke-width="2">
+									  <circle cx="12" cy="12" r="12" stroke="none"/>
+									  <circle cx="12" cy="12" r="11" fill="none"/>
+									</g>
+									</g>
+								</svg>
+								<br>
+								<b>WAX MELTS</b>
+			        		</div>
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="45.138" height="45.138" viewBox="0 0 45.138 45.138">
+									<g id="Group_2190" data-name="Group 2190" transform="translate(0 22.706) rotate(-45)">
+									<path id="Path_2944" data-name="Path 2944" d="M3.695,28.06A12.733,12.733,0,0,0,24.649,23.2l7.4-21.9a.929.929,0,0,0-.234-1A.951.951,0,0,0,30.8.062L8.68,7.389A12.548,12.548,0,0,0,.345,16.414,12.274,12.274,0,0,0,3.695,28.06ZM9.3,9.163l20.254-6.71L22.779,22.507A10.753,10.753,0,0,1,5.1,26.672h0A10.56,10.56,0,0,1,9.3,9.163Z" transform="translate(0 0)"/>
+									<path id="Path_2945" data-name="Path 2945" d="M3.264,11.694a.971.971,0,0,0,0-1.388C1.084,8.146,1.706,3.055,5.29,1.9A.947.947,0,0,0,5.913.664.96.96,0,0,0,4.667.047,6.8,6.8,0,0,0,.226,5.06a7.081,7.081,0,0,0,1.636,6.633A.993.993,0,0,0,3.264,11.694Z" transform="translate(4.481 11.662)"/>
+									<path id="Path_2946" data-name="Path 2946" d="M2.415,1.235,1.169,0,0,1.235,1.169,2.468Z" transform="translate(20.831 6.309)"/>
+									<path id="Path_2947" data-name="Path 2947" d="M2.415,1.234,1.168,0,0,1.234,1.168,2.391Z" transform="translate(17.17 7.544)"/>
+									<path id="Path_2948" data-name="Path 2948" d="M0,1.2,1.212,0,2.423,1.2,1.212,2.4Z" transform="translate(13.533 8.724)"/>
+									</g>
+								</svg>
+								<br>
+								<b>DIFFUSER OIL</b>
+
+			        		</div>
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="42.611" height="37.34" viewBox="0 0 42.611 37.34">
+									<g id="Group_2196" data-name="Group 2196" transform="translate(0)">
+									<path id="Path_2966" data-name="Path 2966" d="M114.046,602.4a1.285,1.285,0,0,0,2.063.435,2.187,2.187,0,0,0,.343-2.613s-2.177-3.919-.113-6.968c2.864-4.21,1.261-9.435.113-11.613a1.283,1.283,0,0,0-2.062-.436,2.189,2.189,0,0,0-.344,2.613s2.178,3.919.115,6.968C111.18,595.144,112.785,600.224,114.046,602.4Z" transform="translate(-96.793 -565.845)"/>
+									<path id="Path_2971" data-name="Path 2971" d="M114.046,602.4a1.285,1.285,0,0,0,2.063.435,2.187,2.187,0,0,0,.343-2.613s-2.177-3.919-.113-6.968c2.864-4.21,1.261-9.435.113-11.613a1.283,1.283,0,0,0-2.062-.436,2.189,2.189,0,0,0-.344,2.613s2.178,3.919.115,6.968C111.18,595.144,112.785,600.224,114.046,602.4Z" transform="translate(-90.523 -565.845)"/>
+									<path id="Path_2968" data-name="Path 2968" d="M484.554,209.9a3.15,3.15,0,1,0-3.181-3.15A3.164,3.164,0,0,0,484.554,209.9Zm0-4.228a1.078,1.078,0,1,1-1.089,1.078A1.1,1.1,0,0,1,484.554,205.672Z" transform="translate(-445.124 -191.082)"/>
+									<path id="Path_2969" data-name="Path 2969" d="M473.829,204.062a4.031,4.031,0,1,0-4.07-4.031A4.049,4.049,0,0,0,473.829,204.062Zm0-5.41a1.379,1.379,0,1,1-1.393,1.379A1.345,1.345,0,0,1,473.829,198.652Z" transform="translate(-449.145 -196)"/>
+									<path id="Path_2970" data-name="Path 2970" d="M498.693,212.5a3.15,3.15,0,1,0-3.181-3.15A3.164,3.164,0,0,0,498.693,212.5Zm0-4.228a1.078,1.078,0,1,1-1.089,1.078A1.051,1.051,0,0,1,498.693,208.272Z" transform="translate(-495.512 -180.022)"/>
+									</g>
+								</svg>
+								<br>
+								<b>ROOM SPRAY</b>
+
+			        		</div>
+			        	</div>
+
+			        	<button class="btn-primary-square mt-4">SHOP THE COLLECTION</button>
+
+
+			        </div>
+
+			    </div>
+		    </div>
+		</div>
+
+		<div class="tab-pane fade pb-5 pt-5" style="background: #ffe8a9;" id="tab55" role="tabpanel" aria-labelledby="tab55-tab">
+		    <div class="container">
+		    	<div class="row">
+		        
+			        <div class="col-sm-6">
+			        	<img src="{{cdn 'assets/img/group2209.png'}}">
+			        </div>
+			        
+			        <div class="col-sm-1"></div>
+			        <div class="col-sm-4 mt-4">
+			        	
+			        	<h1 class="hero-heading d-smmm-none"><b>AQUA MARINE</b></h1>
+			        	
+			        	<p class="pt-4"><b>NOTES:</b> aqua waters | bright citrus | smooth coconut</p>
+			        	<p><b>MOOD:</b> smooth coconut</p>
+			        	<p><b>SENSITIVITIES:</b> smooth coconut</p>
+			        	<p><b>INTENSITY:</b> smooth coconut</p>
+			        	
+			        	<p class="text-white">AVAILABLE IN:</p>
+			        	<div class="row hero-icons">
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="39" height="33" viewBox="0 0 39 33">
+									<g id="Group_2204" data-name="Group 2204" transform="translate(0.066 -0.368)">
+									<g id="Ellipse_185" data-name="Ellipse 185" transform="translate(-0.066 9.368)" fill="none" stroke="#000" stroke-width="2">
+									  <circle cx="12" cy="12" r="12" stroke="none"/>
+									  <circle cx="12" cy="12" r="11" fill="none"/>
+									</g>
+									<g id="Ellipse_186" data-name="Ellipse 186" transform="translate(14.934 0.368)" fill="none" stroke="#000" stroke-width="2">
+									  <circle cx="12" cy="12" r="12" stroke="none"/>
+									  <circle cx="12" cy="12" r="11" fill="none"/>
+									</g>
+									</g>
+								</svg>
+								<br>
+								<b>WAX MELTS</b>
+			        		</div>
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="45.138" height="45.138" viewBox="0 0 45.138 45.138">
+									<g id="Group_2190" data-name="Group 2190" transform="translate(0 22.706) rotate(-45)">
+									<path id="Path_2944" data-name="Path 2944" d="M3.695,28.06A12.733,12.733,0,0,0,24.649,23.2l7.4-21.9a.929.929,0,0,0-.234-1A.951.951,0,0,0,30.8.062L8.68,7.389A12.548,12.548,0,0,0,.345,16.414,12.274,12.274,0,0,0,3.695,28.06ZM9.3,9.163l20.254-6.71L22.779,22.507A10.753,10.753,0,0,1,5.1,26.672h0A10.56,10.56,0,0,1,9.3,9.163Z" transform="translate(0 0)"/>
+									<path id="Path_2945" data-name="Path 2945" d="M3.264,11.694a.971.971,0,0,0,0-1.388C1.084,8.146,1.706,3.055,5.29,1.9A.947.947,0,0,0,5.913.664.96.96,0,0,0,4.667.047,6.8,6.8,0,0,0,.226,5.06a7.081,7.081,0,0,0,1.636,6.633A.993.993,0,0,0,3.264,11.694Z" transform="translate(4.481 11.662)"/>
+									<path id="Path_2946" data-name="Path 2946" d="M2.415,1.235,1.169,0,0,1.235,1.169,2.468Z" transform="translate(20.831 6.309)"/>
+									<path id="Path_2947" data-name="Path 2947" d="M2.415,1.234,1.168,0,0,1.234,1.168,2.391Z" transform="translate(17.17 7.544)"/>
+									<path id="Path_2948" data-name="Path 2948" d="M0,1.2,1.212,0,2.423,1.2,1.212,2.4Z" transform="translate(13.533 8.724)"/>
+									</g>
+								</svg>
+								<br>
+								<b>DIFFUSER OIL</b>
+
+			        		</div>
+			        		<div class="col col-custom">
+			        			<svg xmlns="http://www.w3.org/2000/svg" width="42.611" height="37.34" viewBox="0 0 42.611 37.34">
+									<g id="Group_2196" data-name="Group 2196" transform="translate(0)">
+									<path id="Path_2966" data-name="Path 2966" d="M114.046,602.4a1.285,1.285,0,0,0,2.063.435,2.187,2.187,0,0,0,.343-2.613s-2.177-3.919-.113-6.968c2.864-4.21,1.261-9.435.113-11.613a1.283,1.283,0,0,0-2.062-.436,2.189,2.189,0,0,0-.344,2.613s2.178,3.919.115,6.968C111.18,595.144,112.785,600.224,114.046,602.4Z" transform="translate(-96.793 -565.845)"/>
+									<path id="Path_2971" data-name="Path 2971" d="M114.046,602.4a1.285,1.285,0,0,0,2.063.435,2.187,2.187,0,0,0,.343-2.613s-2.177-3.919-.113-6.968c2.864-4.21,1.261-9.435.113-11.613a1.283,1.283,0,0,0-2.062-.436,2.189,2.189,0,0,0-.344,2.613s2.178,3.919.115,6.968C111.18,595.144,112.785,600.224,114.046,602.4Z" transform="translate(-90.523 -565.845)"/>
+									<path id="Path_2968" data-name="Path 2968" d="M484.554,209.9a3.15,3.15,0,1,0-3.181-3.15A3.164,3.164,0,0,0,484.554,209.9Zm0-4.228a1.078,1.078,0,1,1-1.089,1.078A1.1,1.1,0,0,1,484.554,205.672Z" transform="translate(-445.124 -191.082)"/>
+									<path id="Path_2969" data-name="Path 2969" d="M473.829,204.062a4.031,4.031,0,1,0-4.07-4.031A4.049,4.049,0,0,0,473.829,204.062Zm0-5.41a1.379,1.379,0,1,1-1.393,1.379A1.345,1.345,0,0,1,473.829,198.652Z" transform="translate(-449.145 -196)"/>
+									<path id="Path_2970" data-name="Path 2970" d="M498.693,212.5a3.15,3.15,0,1,0-3.181-3.15A3.164,3.164,0,0,0,498.693,212.5Zm0-4.228a1.078,1.078,0,1,1-1.089,1.078A1.051,1.051,0,0,1,498.693,208.272Z" transform="translate(-495.512 -180.022)"/>
+									</g>
+								</svg>
+								<br>
+								<b>ROOM SPRAY</b>
+
+			        		</div>
+			        	</div>
+
+			        	<button class="btn-primary-square mt-4">SHOP THE COLLECTION</button>
+
+
+			        </div>
+
+			    </div>
+		    </div>
+		</div>
+	</div>
+
+	<ul class="nav nav-tabs" id="myTabs" role="tablist">
+		<li class="nav-item tab51" style="background: #5cbef7;">
+		    <a class="nav-link active" id="tab51-tab" data-toggle="tab" href="#tab51" role="tab" aria-controls="tab51" aria-selected="true">
+		    	<b class="mt-3 pb-3">TROPICAL SUNSHOWER</b>
+		    </a>
+		</li>
+		<li class="nav-item tab52" style="background: #aaf7ff;">
+		    <a class="nav-link" id="tab52-tab" data-toggle="tab" href="#tab52" role="tab" aria-controls="tab52" aria-selected="false">
+		    	<b class="mt-3 pb-3" >SEA SALT BREEZE</b>
+		    </a>
+		</li>
+		<li class="nav-item tab53" style="background: #ffaefc;">
+		    <a class="nav-link" id="tab53-tab" data-toggle="tab" href="#tab53" role="tab" aria-controls="tab53" aria-selected="false">
+		    	<b class="mt-3 pb-3">SEA SALT & VANILLA</b>
+		    </a>
+		</li>
+		<li class="nav-item tab54" style="background: #78d5e1;">
+		    <a class="nav-link" id="tab54-tab" data-toggle="tab" href="#tab54" role="tab" aria-controls="tab54" aria-selected="false">
+		    	<b class="mt-3 pb-3">AQUAMARINE</b>
+		    </a>
+		</li>
+		<li class="nav-item tab55" style="background: #ffe8a9;">
+		    <a class="nav-link" id="tab55-tab" data-toggle="tab" href="#tab55" role="tab" aria-controls="tab55" aria-selected="false">
+		    	<b class="mt-3 pb-3">BEACH WALK</b>
+		    </a>
+		</li>
+	</ul>
+</div>
+
+
+<div class="section section-suggest-blends">
+	<div class="container text-center">
+		<div class="text-center">
+			
+			<h1 class="clr-black font-weight-bold">OUR SUGGESTED BLENDS</h1>
+
+			<p class="mt-5 mb-5">Did you know that you can create your own Pink Zebra fragrance? Just blend two or more <br> of your favorite fragrances together to create your own unique scent!</p>
+
+
+			<div class="row">
+				
+				<div class="col-sm-4">
+					<div class="pr-5 pl-5 pt-3 pb-1 mr-3">
+						<img src="{{cdn 'assets/img/ph-1.svg'}}" class="img mb-3">
+						<h4><b class="text-dark" style="letter-spacing: 2px;">NAME SURNAME</b></h4>
+		        		<b class="designer-expert">FRAGRANCE DESIGNER</b>
+					</div>
+
+	        		<p class="quote-text"></p>
+
+	        		<div class="quote-container">
+						<div class="quote-icon">
+						    <img src="{{cdn 'assets/img/icons/quotes.png' }}" alt="Left Quote Icon">
+						</div>
+						<div class="quote-text">
+						    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor aliqua.</p>
+						</div>
+						<div class="quote-icon">
+						    <img src="{{cdn 'assets/img/icons/quotes.png' }}" alt="Right Quote Icon">
+						</div>
+					</div>
+				</div>			
+								
+				<div class="col-sm-8 ">
+					<div class="row mt-5 d-smmm-none">
+			        	
+			        	<div class="col custom-col">
+			        		<img src="{{cdn 'assets/img/ph-1.svg'}}" class="img mb-3">
+			        		<b>LILAC <br>VANILLA</b>
+			        		<button class="btn-primary-square btn-square-small mt-4">SHOP NOW</button>
+			        	</div>
+			        	
+			        	<div class="col custom-col">
+			        		<img src="{{cdn 'assets/img/ph-1.svg'}}" class="img mb-3">
+			        		<b>ALOHA <br>FLOWER</b>
+			        		<button class="btn-primary-square btn-square-small mt-4">SHOP NOW</button>
+			        	</div>
+			        	
+			        	<div class="col custom-col">
+			        		<img src="{{cdn 'assets/img/ph-1.svg'}}" class="img mb-3">
+			        		<b>SEA KISSED <br>PETALS</b>
+			        		<button class="btn-primary-square btn-square-small mt-4">SHOP NOW</button>
+			        	</div>
+			        	
+			        	<div class="col custom-col">
+			        		<img src="{{cdn 'assets/img/ph-1.svg'}}" class="img mb-3">
+			        		<b>SEA KISSED <br>PETALS</b>
+			        		<button class="btn-primary-square btn-square-small mt-4">SHOP NOW</button>
+			        	</div>
+
+			        </div>
+
+			        <div id="mobileCarousel1" class="carousel slide d-md-none" data-ride="carousel">
+						<div class="carousel-inner">
+					        <div class="carousel-item active">
+					            <div class="col custom-col p-3 product-resp p-6">
+					                <img src="{{cdn 'assets/img/ph-1.svg'}}" class="img mb-3">
+					        		<b>LILAC <br>VANILLA</b>
+					        		<button class="btn-primary-square btn-square-small mt-4">SHOP NOW</button>
+					            </div>
+					        </div>
+					        <div class="carousel-item">
+					            <div class="col custom-col p-3 product-resp p-6">
+					                <img src="{{cdn 'assets/img/ph-1.svg'}}" class="img mb-3">
+					        		<b>ALOHA <br>FLOWER</b>
+					        		<button class="btn-primary-square btn-square-small mt-4">SHOP NOW</button>
+					            </div>
+					        </div>
+					        <div class="carousel-item">
+					            <div class="col custom-col p-3 product-resp p-6">
+					                <img src="{{cdn 'assets/img/ph-1.svg'}}" class="img mb-3">
+					        		<b>SEA KISSED <br>PETALS</b>
+					        		<button class="btn-primary-square btn-square-small mt-4">SHOP NOW</button>
+					            </div>
+					        </div>
+					        <div class="carousel-item">
+					            <div class="col custom-col p-3 product-resp p-6">
+					                <img src="{{cdn 'assets/img/ph-1.svg'}}" class="img mb-3">
+					        		<b>SEA KISSED <br>PETALS</b>
+					        		<button class="btn-primary-square btn-square-small mt-4">SHOP NOW</button>
+					            </div>
+					        </div>
+					        <!-- Add more slides as needed for mobile content -->
+					    </div>
+					    
+					    <!-- Controls (optional) -->
+					    <a class="carousel-control-prev" href="#mobileCarousel1" role="button" data-slide="prev">
+					        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					        <span class="sr-only">Previous</span>
+					    </a>
+					    <a class="carousel-control-next" href="#mobileCarousel1" role="button" data-slide="next">
+					        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					        <span class="sr-only">Next</span>
+					    </a>
+
+					    <ol class="carousel-indicators">
+					        <li data-target="#mobileCarousel1" data-slide-to="0" class="active"></li>
+					        <li data-target="#mobileCarousel1" data-slide-to="1"></li>
+					        <li data-target="#mobileCarousel1" data-slide-to="2"></li>
+					        <li data-target="#mobileCarousel1" data-slide-to="3"></li>
+					        <!-- Add more indicators as needed for additional slides -->
+					    </ol>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="section section-shop-collection">
+	<div class="container">
+		
+		<h1 class="clr-black mb-5 font-weight-bold text-center mt-4">SHOP THIS COLLECTION</h1>
+		
+		<div class="row text-center adventure-sec-2 justify-content-center d-smmm-none">
+	
+        	<div class="col custom-col">
+	        	<div class="product-section">
+				    <div class="product-image">
+				        <img src="{{cdn 'assets/img/prod1.png'}}" class="img mb-3 placeholder-img">
+				    </div>
+				    <div class="product-details">
+				        <p><b>3.75 OZ. BAG OF SPRINKLES FRAGRANCE WAX</b></p>
+				    </div>
+				    <div class="product-price">
+				        <p><b class="clr-primary">$10 USD</b></p>
+				    </div>
+				    <div class="shop-now-button">
+				        <button class="btn-primary-square btn-square-small">SHOP NOW</button>
+				    </div>
+				</div>
+	        </div>
+	        
+	        <div class="col custom-col">
+	        	<div class="product-section">
+				    <div class="product-image">
+				        <img src="{{cdn 'assets/img/prod3.png'}}" class="img mb-3 placeholder-img">
+				    </div>
+				    <div class="product-details">
+				        <p><b>3. 75 FL. OX. DIFFUSER OIL</b></p>
+				    </div>
+				    <div class="product-price">
+				        <p><b class="clr-primary">$10 USD</b></p>
+				    </div>
+				    <div class="shop-now-button">
+				        <button class="btn-primary-square btn-square-small">SHOP NOW</button>
+				    </div>
+				</div>	        	
+	        </div>
+	        
+	        <div class="col custom-col">
+	        	<div class="product-section">
+				    <div class="product-image">
+				        <img src="{{cdn 'assets/img/prod2.png'}}" class="img mb-3 placeholder-img">
+				    </div>
+				    <div class="product-details">
+				        <p><b>CAR FRESHENER 4-PACK</b></p>
+				    </div>
+				    <div class="product-price">
+				        <p><b class="clr-primary">$10 USD</b></p>
+				    </div>
+				    <div class="shop-now-button">
+				        <button class="btn-primary-square btn-square-small">SHOP NOW</button>
+				    </div>
+				</div>	
+	        </div>
+
+	        <div class="col custom-col">
+	        	<div class="product-section">
+				    <div class="product-image">
+				        <img src="{{cdn 'assets/img/prod3.png'}}" class="img mb-3 placeholder-img">
+				    </div>
+				    <div class="product-details">
+				        <p><b>2.8 OZ. ROOM SPRAY</b></p>
+				    </div>
+				    <div class="product-price">
+				        <p><b class="clr-primary">$10 USD</b></p>
+				    </div>
+				    <div class="shop-now-button">
+				        <button class="btn-primary-square btn-square-small">SHOP NOW</button>
+				    </div>
+				</div>	        	
+	        </div>
+
+	        <div class="col custom-col">
+	        	<div class="product-section">
+				    <div class="product-image">
+				        <img src="{{cdn 'assets/img/prod1.png'}}" class="img mb-3 placeholder-img">
+				    </div>
+				    <div class="product-details">
+				        <p><b>3.75 OZ. BAG OF SPRINKLES FRAGRANCE WAX</b></p>
+				    </div>
+				    <div class="product-price">
+				        <p><b class="clr-primary">$10 USD</b></p>
+				    </div>
+				    <div class="shop-now-button">
+				        <button class="btn-primary-square btn-square-small">SHOP NOW</button>
+				    </div>
+				</div>
+	        </div>
+	        
+	    </div>
+
+	    <div id="mobileCarousel2" class="carousel slide d-md-none" data-ride="carousel">
+			<div class="carousel-inner">
+		        <div class="carousel-item active">
+		            <div class="product-section">
+					    <div class="product-image">
+					        <img src="{{cdn 'assets/img/prod1.png'}}" class="img mb-3 placeholder-img">
+					    </div>
+					    <div class="product-details">
+					        <p><b>3.75 OZ. BAG OF SPRINKLES FRAGRANCE WAX</b></p>
+					    </div>
+					    <div class="product-price">
+					        <p><b class="clr-primary">$10 USD</b></p>
+					    </div>
+					    <div class="shop-now-button">
+					        <button class="btn-primary-square btn-square-small">SHOP NOW</button>
+					    </div>
+					</div>
+		        </div>
+		        <div class="carousel-item">
+		            <div class="product-section">
+					    <div class="product-image">
+					        <img src="{{cdn 'assets/img/prod2.png'}}" class="img mb-3 placeholder-img">
+					    </div>
+					    <div class="product-details">
+					        <p><b>3.75 OZ. BAG OF SPRINKLES FRAGRANCE WAX</b></p>
+					    </div>
+					    <div class="product-price">
+					        <p><b class="clr-primary">$10 USD</b></p>
+					    </div>
+					    <div class="shop-now-button">
+					        <button class="btn-primary-square btn-square-small">SHOP NOW</button>
+					    </div>
+					</div>
+		        </div>
+		        <div class="carousel-item">
+		            <div class="product-section">
+					    <div class="product-image">
+					        <img src="{{cdn 'assets/img/prod3.png'}}" class="img mb-3 placeholder-img">
+					    </div>
+					    <div class="product-details">
+					        <p><b>3.75 OZ. BAG OF SPRINKLES FRAGRANCE WAX</b></p>
+					    </div>
+					    <div class="product-price">
+					        <p><b class="clr-primary">$10 USD</b></p>
+					    </div>
+					    <div class="shop-now-button">
+					        <button class="btn-primary-square btn-square-small">SHOP NOW</button>
+					    </div>
+					</div>
+		        </div>
+		        
+		        <!-- Add more slides as needed for mobile content -->
+		    </div>
+		    
+		    <!-- Controls (optional) -->
+		    <a class="carousel-control-prev" href="#mobileCarousel2" role="button" data-slide="prev">
+		        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		        <span class="sr-only">Previous</span>
+		    </a>
+		    <a class="carousel-control-next" href="#mobileCarousel2" role="button" data-slide="next">
+		        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		        <span class="sr-only">Next</span>
+		    </a>
+
+		    <ol class="carousel-indicators">
+		        <li data-target="#mobileCarousel2" data-slide-to="0" class="active"></li>
+		        <li data-target="#mobileCarousel2" data-slide-to="1"></li>
+		        <li data-target="#mobileCarousel2" data-slide-to="2"></li>
+		        <!-- Add more indicators as needed for additional slides -->
+		    </ol>
+
+		</div>
+
+	</div>
+</div>
+
+<div class="section-frag-experience section-frag-expert">
+	<div class="container text-center">
+		<div class="text-center">
+			
+			<div class="row mt-4">
+				<div class="col-sm-5">
+					<img src="{{cdn 'assets/img/ph-1.svg'}}" class="mb-5 mt-4" alt="SOFT SOY WAX MELTS">
+					
+				</div>
+
+				<div class="col-sm-7">
+
+					<h3 class="clr-black font-weight-bold frag-text text-center">SPEAK TO A</h3>
+
+					<img class="adventure-img" src="{{cdn 'assets/img/icons/frag-expert-1.png'}}">
+
+					<p class="mt-4">Can’t decide what fragrance to try?<br>
+						Want blending tips? Just have a question<br>
+						about Pink Zebra? We’re here to help!
+					</p>
+					
+					<button class="btn-secondary mt-5">CHAT NOW</button>
+
+				</div>
+
+				
+				
+			</div>
+
+			
+
+		</div>
+	</div>
+</div>
+
+
+<div class="section-frag-life">
+	<div class="container text-center">
+		<div class="text-center">
+			
+			<h1 class="clr-black mb-5 font-weight-bold">BRING YOUR FRAGRANCE TO LIFE</h1>
+
+			<div class="col-sm-12 fraglife">
+				<ul class="nav nav-tabs" id="myTabs" role="tablist">
+					<li class="nav-item">
+					    <a class="nav-link active text-right" id="tab21-tab" data-toggle="tab" href="#tab21" role="tab" aria-controls="tab21" aria-selected="true">
+					    	
+							<b class="mt-3 pb-2 mr-3">SIMMER POTS</b>
+					    </a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link text-left" id="tab22-tab" data-toggle="tab" href="#tab22" role="tab" aria-controls="tab22" aria-selected="false">
+					    	
+
+							<b class="mt-3 pb-2 ml-3" >SIMMERING LIGHTS</b>
+					    </a>
+					</li>
+					
+				</ul>
+
+				<div class="tab-content" id="myTabsContent">
+					<div class="tab-pane fade show active" id="tab21" role="tabpanel" aria-labelledby="tab1-tab">
+					    
+					    <p>Melt your Sprinkles in the warm glow of decorative Simmering Light warmers throughout your home. <br>
+							Choose from a variety of colors, patterns and textures to complement your home’s style and mood.</p>
+					    <div class="row d-smmm-none">
+
+					        <div class="col custom-col p-3">
+					        	<img src="{{cdn 'assets/img/rectangle381.svg'}}" class="img mb-3 placeholder-img">
+					        	<b>BLUEBERRY LAVENDER</b>
+					        	<p>Timeless classics that
+									perfectly accent any
+									decor style.
+								</p>
+					        	<button class="btn-secondary mt-2">Shop Now</button>
+					        </div>
+
+					        <div class="col custom-col p-3">
+					        	<img src="{{cdn 'assets/img/rectangle381.svg'}}" class="img mb-3 placeholder-img">
+					        	<b>CRACKLE</b>
+					        	<p>Timeless classics that
+									perfectly accent any
+									decor style.
+								</p>
+					        	<button class="btn-secondary mt-2">Shop Now</button>
+					        </div>
+
+					        <div class="col custom-col p-3">
+					        	<img src="{{cdn 'assets/img/rectangle381.svg'}}" class="img mb-3 placeholder-img">
+					        	<b>PATTERNED</b>
+					        	<p>Timeless classics that
+									perfectly accent any
+									decor style.
+								</p>
+					        	<button class="btn-secondary mt-2">Shop Now</button>
+					        </div>
+
+					        <div class="col custom-col p-3">
+					        	<img src="{{cdn 'assets/img/rectangle381.svg'}}" class="img mb-3 placeholder-img">
+					        	<b>TEXTURED</b>
+					        	<p>Timeless classics that
+									perfectly accent any
+									decor style.
+								</p>
+					        	<button class="btn-secondary mt-2">Shop Now</button>
+					        </div>
+					        
+					    </div>
+
+					    <div id="mobileCarousel" class="carousel slide d-md-none" data-ride="carousel">
+						    
+						    <div class="carousel-inner">
+						        <div class="carousel-item active">
+						            <div class="col custom-col p-3">
+						                <img src="{{cdn 'assets/img/rectangle381.svg'}}" class="img mb-3 placeholder-img">
+							        	<b>CRACKLE</b>
+							        	<p>Timeless classics that
+											perfectly accent any
+											decor style.
+										</p>
+							        	<button class="btn-secondary mt-2">Shop Now</button>
+						            </div>
+						        </div>
+						        <div class="carousel-item">
+						            <div class="col custom-col p-3">
+						                <img src="{{cdn 'assets/img/rectangle381.svg'}}" class="img mb-3 placeholder-img">
+							        	<b>CRACKLE</b>
+							        	<p>Timeless classics that
+											perfectly accent any
+											decor style.
+										</p>
+							        	<button class="btn-secondary mt-2">Shop Now</button>
+						            </div>
+						        </div>
+						        <!-- Add more slides as needed for mobile content -->
+						    </div>
+						    
+						    <!-- Controls (optional) -->
+						    <a class="carousel-control-prev" href="#mobileCarousel" role="button" data-slide="prev">
+						        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						        <span class="sr-only">Previous</span>
+						    </a>
+						    <a class="carousel-control-next" href="#mobileCarousel" role="button" data-slide="next">
+						        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+						        <span class="sr-only">Next</span>
+						    </a>
+
+						    <ol class="carousel-indicators">
+						        <li data-target="#mobileCarousel" data-slide-to="0" class="active"></li>
+						        <li data-target="#mobileCarousel" data-slide-to="1"></li>
+						        <!-- Add more indicators as needed for additional slides -->
+						    </ol>
+
+						</div>
+
+					</div>
+					<div class="tab-pane fade" id="tab22" role="tabpanel" aria-labelledby="tab2-tab">
+					    
+					    <div class="row">
+					        <div class="col-sm-6">
+					        	
+					        	<h2>SUNNY CITRUS</h2>
+					        	
+					        	<h4>GRAPEFRUIT | GERANIUM FRESH BREEZE</h4>
+					        	
+					        	<p>My bestie is getting married! We
+									started celebrating with a bachelorette
+									trip to Maui. When we got to our hotel,
+									we were greeted with a fragrant lei
+									made with geraniums in a variety of
+									bright colors and an island-inspired
+									grapefruit cocktail. We headed straight
+									for the beach and with a fresh breeze
+									blowing off of the water and the scent
+									of geraniums in the air, we toasted the
+									bride and wished her well!
+								</p>
+
+
+					        </div>
+
+					        <div class="col-sm-6">
+					        	<img src="{{cdn 'assets/img/sunny_citrus.svg'}}">
+					        </div>
+					        
+					    </div>
+					</div>
+					
+				</div>
+			</div>	
+
+			<button class="btn-primary mt-3">SHOP ALL SPRINKLES FRAGRANCES</button>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="section-herd">
+	<div class="container text-center">
+		<div class="text-center">
+			
+			<h1 class="clr-black mb-5 font-weight-bold">HEARDF ROM THE HERD</h1>
+			<p>Check out what other Pink Zebra users are saying about our products! #pinkzebrah</p>
+
+			<div class="row mt-5">
+	        	
+	        	<div class="col-md-3 col-sm-3 col-12">
+	        		<img src="{{cdn 'assets/img/rectangle389.svg'}}" class="img mb-3">
+	        		<p>@username1 </p>
+	        	</div>
+	        	
+	        	<div class="col-md-3 col-sm-3 col-12">
+	        		<img src="{{cdn 'assets/img/rectangle389.svg'}}" class="img mb-3">
+	        		<p>@username2 </p>
+	        	</div>
+	        	
+	        	<div class="col-md-3 col-sm-3 col-12">
+	        		<img src="{{cdn 'assets/img/rectangle389.svg'}}" class="img mb-3">
+	        		<p>@username3 </p>
+	        	</div>
+	        	
+	        	<div class="col-md-3 col-sm-3 col-12">
+	        		<img src="{{cdn 'assets/img/rectangle389.svg'}}" class="img mb-3">
+	        		<p>@username4 </p>
+	        	</div>
+
+	        </div>
+			
+		</div>
+	</div>
+</div>
+
+
+{{/partial}}
+
+{{> layout/base2}}

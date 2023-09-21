@@ -1,0 +1,172 @@
+// =============================================================================
+// TYPE (CSS)
+// =============================================================================
+
+// Stencil type component additions
+// -----------------------------------------------------------------------------
+
+
+body {
+    font-size: $body-fontSize;
+    font-weight: $body-font-weight;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: $header-font-weight;
+    margin-top: $heading-marginTop;
+}
+
+h5,
+h6 {
+    text-transform: $heading-textTransform;
+}
+
+a {
+    transition: $anchor-transition;
+}
+
+cite {
+    line-height: $blockquote-cite-lineHeight;
+    margin: $blockquote-cite-margin;
+}
+
+.page-heading {
+    color: #221f20;
+    display: table;
+    font-size: fontSize("smaller");
+    margin: 60px auto 20px;
+    opacity: 1;
+    padding: 0 1rem;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    
+    @include breakpoint("large") {
+        font-size: fontSize("largest");
+        margin: 80px auto 60px;
+        padding: 0 2rem;
+    }
+}
+
+h1 {
+    font-size: $h1-font-size;
+    letter-spacing: $letterSpacing-h1;
+    line-height: 30px;
+}
+
+h2 {
+    font-size: $h2-font-size;
+    letter-spacing: $letterSpacing-h2;
+    line-height: 30px;
+}
+
+h3 {
+    font-size: $h3-font-size;
+    letter-spacing: $letterSpacing-h3;
+    line-height: 20px;
+}
+
+h4 {
+    font-size: $h4-font-size;
+    letter-spacing: $letterSpacing-h4;
+    line-height: 20px;
+}
+
+h5 {
+    font-size: $h5-font-size;
+}
+
+h6 {
+    font-size: $h6-font-size;
+}
+
+.p1 {
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.p2 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.p3 {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.definitionList {
+    @include clearfix;
+}
+
+.definitionList-key {
+    color: stencilColor("color-textSecondary");
+    float: left;
+    font-weight: fontWeight("normal");
+    margin: 0 spacing("quarter") 0 0;
+}
+
+// .definitionList-value {
+//     margin: 0;
+// }
+
+.specialFont {
+    font-family: stencilFontFamily("special-font");
+    font-size: 52px;
+
+    &.specialFont-banner {
+        font-size: 52px;
+        left: 0;
+        line-height: 67px;
+        margin: 0 auto;
+        max-width: 400px;
+        position: absolute;
+        right: 0;
+        text-shadow: 0 3px 6px #00000d;
+        top: 20px;
+
+        @include breakpoint("large") {
+            font-size: 100px;
+            line-height: 100px;
+            max-width: 600px;
+            position: relative;
+            top: 0;
+        }
+    }
+
+    &.specialFont-h2 {
+        color: $color-primaryDark;
+        font-size: 52px;
+        font-weight: 100;
+        text-transform: none;
+
+        @include breakpoint("large") {
+            font-size: 100px;
+            line-height: 100px;
+        }
+    }
+}
+
+.special-title {
+    &::before {
+        background-color: stencilColor(color-secondaryLighter);
+        content: "";
+        height: remCalc(16px);
+        left: 0;
+        position: absolute;
+        top: 42%;
+        width: 100%;
+        z-index: -1;
+    }
+
+    &--white {
+        &::before {
+            background-color: white;
+        }
+    }
+}

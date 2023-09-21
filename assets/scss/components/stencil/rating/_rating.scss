@@ -1,0 +1,81 @@
+// =============================================================================
+// RATING (CSS)
+// =============================================================================
+
+.icon--ratingEmpty {
+    svg {
+        fill: stencilColor("icon-ratingEmpty");
+        stroke: stencilColor("icon-ratingFull");
+        stroke-width: remCalc(2px);
+    }
+}
+
+.icon--ratingFull,
+.icon--ratingEmpty {
+    svg {
+        stroke: stencilColor("icon-ratingFull");
+    }
+}
+
+.icon--ratingFull {
+    svg {
+        fill: stencilColor("icon-ratingFull");
+        stroke: stencilColor("icon-ratingFull");
+        stroke-width: remCalc(2px);
+    }
+}
+
+.facetLabel {
+    .icon {
+        &--ratingFull {
+            svg {
+                fill: stencilColor("icon-ratingFullFilter");
+            }
+        }
+
+        &--ratingEmpty,
+        &--ratingFull {
+            svg {
+                stroke: stencilColor("icon-ratingFullFilter");
+            }
+        }
+    }
+}
+
+#facetedSearch-content {
+    &--rating {
+        .icon {
+            &--ratingFull {
+                svg {
+                    fill: stencilColor("icon-ratingFullFilter");
+                }
+            }
+
+            &--ratingEmpty,
+            &--ratingFull {
+                svg {
+                    stroke: stencilColor("icon-ratingFullFilter");
+                }
+            }
+        }
+
+    }
+}
+
+// Small rating
+// -----------------------------------------------------------------------------
+//
+// 1. Vertically aligns stars to container. Icons are off by default.
+//    Icons are all vertically aligned to middle, however middle is not middle,
+//    and therefore need to be adjusted to actually sit at middle.
+//
+// -----------------------------------------------------------------------------
+
+.rating--small {
+    display: inline-block;
+
+    .icon {
+        @include square(19px);
+        margin-top: -3px; // 1
+    }
+}

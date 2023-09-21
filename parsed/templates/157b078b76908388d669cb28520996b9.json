@@ -1,0 +1,1 @@
+{"components/common/scentflirt-badge":"<div class=\"scentflirt-badge\" style=\"display: none;\">\n    <span class=\"product-type-value\">\n        {{!-- Inject value using javascript --}}\n    </span>\n</div>\n"}
