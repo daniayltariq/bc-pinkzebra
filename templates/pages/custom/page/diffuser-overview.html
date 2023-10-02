@@ -365,6 +365,24 @@
 		padding: 3rem 0;
 	}
 
+	.slick-dots{
+		display: none !important;
+	}
+
+	.slick-next, .slick-prev {
+	    top: 95% !important;
+	}
+	
+	.slick-next:before, .slick-prev:before {
+	    color: #fff0 !important;
+	}
+	.slick-prev {
+	    left: 0px;
+	}
+	.slick-next, .slick-prev {
+	    width: 20rem;
+	}
+
 	@media (max-width: 768px) {
 	    .btn-primary{
 		    padding: 0.7rem 1.5rem;
@@ -374,6 +392,9 @@
 		    width: 33.33%;
 		    margin-bottom: 1rem !important;
 		}
+		.d-smn-none {
+	        display: none;
+	    }
 	}
 
 	.carousel-control-prev-icon {
@@ -1556,7 +1577,7 @@
 			<h1 class="clr-black mb-5 font-weight-bold">HEARDF ROM THE HERD</h1>
 			<p>Check out what other Pink Zebra users are saying about our products! #pinkzebrah</p>
 
-			<div class="row mt-5">
+			<div class="row mt-5 d-smn-none">
 	        	
 	        	<div class="col-md-3 col-sm-3 col-12">
 	        		<img src="{{cdn 'assets/img/rectangle389.svg'}}" class="img mb-3">
@@ -1583,25 +1604,25 @@
 
 	        <div class="slider slider2 d-md-none">
 		        <!-- Slick Carousel items -->
-		        <div class="slider-item m-2">
+		        <div class="slider-item m-2" style="width: 300px;">
 		        	<div class="item-herd">
 		        		<img src="{{cdn 'assets/img/rectangle389.svg'}}" class="img mb-3">
 	        			<p>@username1 </p>
 	        		</div>
 		        </div>
-		        <div class="slider-item m-2">
+		        <div class="slider-item m-2" style="width: 300px;">
 		        	<div class="item-herd">
 		        		<img src="{{cdn 'assets/img/rectangle389.svg'}}" class="img mb-3">
 	        			<p>@username2</p>
 	        		</div>
 		        </div>
-		        <div class="slider-item m-2">
+		        <div class="slider-item m-2" style="width: 300px;">
 		        	<div class="item-herd">
 		        		<img src="{{cdn 'assets/img/rectangle389.svg'}}" class="img mb-3">
 	        			<p>@username3 </p>
 	        		</div>
 		        </div>
-		        <div class="slider-item m-2">
+		        <div class="slider-item m-2" style="width: 300px;">
 		        	<div class="item-herd">
 		        		<img src="{{cdn 'assets/img/rectangle389.svg'}}" class="img mb-3">
 	        			<p>@username4 </p>
@@ -1642,10 +1663,12 @@
 
 	$(document).ready(function(){
         $('.slider2').slick({
+			// slidesToShow: 2,
+			// slidesToScroll: 1,
             variableWidth: true,
-            autoplay: true, 
+            autoplay: false, 
             autoplaySpeed: 2000,
-            arrows: false, 
+            arrows: true, 
             dots: false 
         });
     });
