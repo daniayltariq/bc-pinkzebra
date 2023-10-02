@@ -161,7 +161,7 @@
 
     <!-- Currency -->
     {{#or customer (unless settings.hide_price_from_guests)}}
-      {{>components/common/currency-selector}}
+      {{>components/common/currency-selector-large}}
     {{/or}}
     <!-- Currency -->
 
@@ -248,19 +248,35 @@
 
 <div class="mobileHeader-wrapper">
   <nav id="navMobile" class="navUser navUser--mobile u-hidden">
-    <!-- Logo -->
-    {{#if page_type '===' 'default'}}
-      <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
-          {{> components/common/store-logo isDesktop=false}}
-      </h1>
-    {{else}}
-      <div class="header-logo header-logo--{{theme_settings.logo-position}}">
-          {{> components/common/store-logo isDesktop=false}}
-      </div>
-    {{/if}}
+    <ul class="list-inline">
 
-    <!-- search -->
-    <li class="navUser-item quick-search">
+      <!-- Logo -->
+      <li class="navUser-item navUser-item--menu nav-item-toggle">
+        <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+          <span class="mobileMenu-toggleIcon">Toggle menu</span>
+        </a>
+      </li>
+
+      <!-- Logo -->
+      {{#if page_type '===' 'default'}}
+        <h1 class="header-logo-custom header-logo--{{theme_settings.logo-position}}">
+            {{> components/common/store-logo isDesktop=true}}
+        </h1>
+      {{else}}
+        <div class="header-logo-custom header-logo--{{theme_settings.logo-position}}">
+            {{> components/common/store-logo isDesktop=true}}
+        </div>
+      {{/if}}
+      
+      <!-- Currency selector -->
+      {{#or customer (unless settings.hide_price_from_guests)}}
+        {{>components/common/currency-selector}}
+      {{/or}}
+
+    </ul>
+
+    <!-- Search -->
+    <div class="navUser-item quick-search">
       <span class="navUser-action navUser-action--quickSearch">
       </span>
       <form
@@ -288,21 +304,8 @@
           </div>
         </fieldset>
       </form>
-    </li>
-
-    <!-- Currency selector -->
-    {{#or customer (unless settings.hide_price_from_guests)}}
-      {{>components/common/currency-selector}}
-    {{/or}}
-
-    <div
-      class="dropdown dropdown--quickSearch"
-      id="quickSearch-mobile"
-      aria-hidden="true"
-      data-prevent-quick-search-close
-    >
-      {{> components/common/quick-search name='nav-quick-search' isMobile=true}}
     </div>
+
   </nav>
   <nav id="navMobile-logo" class="navUser navUser--mobile u-hidden">
     <!-- Logo -->

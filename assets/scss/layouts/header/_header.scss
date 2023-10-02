@@ -281,3 +281,41 @@
 
     }
 }
+
+.dropdown--quickSearch {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.mobileHeader-wrapper .navUser.navUser--mobile{
+    flex-direction: column;
+    padding-top: 6px;
+}
+.mobileHeader-wrapper .nav-item-toggle{
+    width: 20%;
+    z-index: 99999999;
+}
+.mobileHeader-wrapper .header-logo-custom{
+    width: 60%;
+}
+.mobileHeader-wrapper .list-inline{
+    display: flex;
+    width: 100%;
+}
+.mobileMenu-toggle .mobileMenu-toggleIcon {
+    top: 2.1rem;
+}
+.navUser.navUser--mobile {
+    height: 7.875rem;
+}
+.mobileMenu-toggle .s48meganav {
+    margin-top:4rem;
+}
+
+@media (min-width: 1025px)
+{
+    .header-logo {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}

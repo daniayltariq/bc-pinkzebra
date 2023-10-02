@@ -1,0 +1,56 @@
+{{#if currency_selector.currencies.length '>' 1}}
+    <ul class="navUser-section currencySelector" style="margin-top: 3rem; margin-right: 1.5rem;">
+        <li class="navUser-item">
+            <a  class="navUser-action navUser-action--currencySelector has-dropdown"
+                href="#"
+                data-dropdown="currencySelection"
+                aria-controls="currencySelection"
+                aria-expanded="false"
+            >
+                <i class="icon" aria-hidden="true">
+                    <svg>
+                        <use href="#icon-currency-{{{currency_selector.active_currency_code}}}" />
+                    </svg>
+                </i>
+                <span class="currency-code">
+                    {{#if currency_selector.active_currency_code '===' 'USD'}}
+                        {{lang 'common.countries_abbr.united_states'}}
+                    {{else}}
+                        {{lang 'common.countries_abbr.canada'}}
+                    {{/if}}
+                </span>
+                <i class="icon icon--dropdown" aria-hidden="true">
+                    <svg>
+                        <use href="#icon-arrow-dropdown-down" />
+                    </svg>
+                </i>
+            </a>
+            <ul class="dropdown-menu" id="currencySelection" data-dropdown-content aria-hidden="true" tabindex="-1">
+                {{#each currency_selector.currencies}}
+                    {{#if ../currency_selector.active_currency_code '!=' code }}
+                        <li class="dropdown-menu-item">    
+                            <a  href="{{{switch_url}}}"
+                                class="switch-currency"
+                                currencyId="{{{id}}}"
+                                data-currency-code="{{{code}}}" {{#if cart_currency_switch_url.length '>' 0 }}
+                                data-cart-currency-switch-url="{{{cart_currency_switch_url}}}" {{/if}}
+                                data-warning="{{lang 'common.currency_switch_promotion'}}"
+                            >
+                                <i class="icon" aria-hidden="true">
+                                    <svg>
+                                        <use href="#icon-currency-{{{code}}}" />
+                                    </svg>
+                                </i>
+                                {{#if code '===' 'USD'}}
+                                    <span class="currency-code">{{lang 'common.countries_abbr.united_states'}}</span>
+                                {{else}}
+                                <span class="currency-code">{{lang 'common.countries_abbr.canada'}}</span>
+                                {{/if}}
+                            </a>
+                        </li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </li>
+    </ul>
+{{/if}}
