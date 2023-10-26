@@ -1,9 +1,28 @@
 {{#partial "head"}}
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"> -->
     {{{ checkout.checkout_head }}}
     {{{ stylesheet '/assets/css/optimized-checkout.css' }}}
     {{{ stylesheet '/assets/css/layouts/checkout/checkout.css' }}}
     {{ getFontsCollection }}
     {{inject 'pageType' page_type}}
+    <style>
+        #redeemable-collapsable .form-prefixPostfix {
+            display: block !important;
+        }
+
+        #redeemable-collapsable .form-prefixPostfix .form-input{
+            width: 100% !important;
+        }
+        
+        #applyRedeemableButton {
+            margin-left: 0px !important;
+            margin-top: 10px;
+        }
+
+        #applyRedeemableButton:hover{
+           color: #ffffff !important;
+        }
+    </style>
 
     <script type="text/javascript">
         window.language = {{{langJson 'optimized_checkout'}}};
@@ -22,6 +41,7 @@
     {{> components/common/navigation-pz}}
     
     {{{ checkout.checkout_content }}}
+
 
     <script>
         // Imported snipped to listen to checkout steps when ready
@@ -162,6 +182,26 @@
                 }
             }
         })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // $(this).replaceWith(select);
+        $(document).on('mousedown', 'input[name="redeemableCode"]', function() {
+            var select = $('<select class="form-select optimizedCheckout-form-select coupon-select" id="coupon-select" aria-label="Default select example"></select>');
+            var option0 = $('<option>Select Coupon</option>');
+            var option1 = $('<option value="123321">123321</option>');
+            var option2 = $('<option value="214569">214569</option>');
+            select.append(option0, option1, option2);
+            
+            select.on('change', function() {
+                var selectedValue = select.val();
+                $(this).hide();
+                $('input[name="redeemableCode"]').val(selectedValue).show();
+            });
+
+            $(this).hide();
+            $(this).parent('.form-prefixPostfix').prepend(select);
+        });
     </script>
 
     {{{ footer.scripts }}}

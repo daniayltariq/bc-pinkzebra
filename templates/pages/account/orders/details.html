@@ -1,3 +1,13 @@
+{{#partial "head"}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        hr {
+            border: solid #707070;
+            opacity: 1;
+            border-width: 1px 0px 0px;
+        }
+    </style>
+{{/partial}}
 {{#partial "page"}}
 {{inject 'selectItem' (lang 'forms.validate.account.reorder.select_item')}}
 {{inject 'orderId' order.id}}
@@ -174,25 +184,72 @@
             <section class="account-sidebar-block">
                 <h3 class="account-heading">{{lang 'account.orders.details.actions'}}</h3>
                 <div class="order-details-info">
-                    <form class="account-reorder-form" action="{{order.reorder_url}}" method="post" data-account-reorder-form>
-                        <input type="hidden" name="orderid" value="{{order.id}}">
-                        {{#each order.items}}
-                            {{#if show_reorder}}
-                                <input type="hidden" name="reorderitem[{{order_product_id}}]">
+                    <div class="d-flex flex-wrap">
+                        <form class="account-reorder-form" action="{{order.reorder_url}}" method="post" data-account-reorder-form>
+                            <input type="hidden" name="orderid" value="{{order.id}}">
+                            {{#each order.items}}
+                                {{#if show_reorder}}
+                                    <input type="hidden" name="reorderitem[{{order_product_id}}]">
+                                {{/if}}
+                            {{/each}}
+                            <input type="submit" class="button button--secondary" value="{{lang 'account.orders.details.reorder'}}">
+                        </form>
+                        <a id="report_problem" class="button button--primary">Report a Problem</a>
+                        {{#if settings.returns_enabled}}
+                            {{#if order.is_complete}}
+                                <a href="{{order.return_url}}" class="button">{{lang 'account.orders.details.return'}}</a>
                             {{/if}}
-                        {{/each}}
-                        <input type="submit" class="button button--secondary" value="{{lang 'account.orders.details.reorder'}}">
-                    </form>
-                    {{#if settings.returns_enabled}}
-                        {{#if order.is_complete}}
-                            <a href="{{order.return_url}}" class="button">{{lang 'account.orders.details.return'}}</a>
                         {{/if}}
-                    {{/if}}
+                    </div>
                 </div>
             </section>
+            <div id="report_form_div" style="display: none;">
+                <h3 class="account-heading">Report Form</h3>
+                <hr class="mt-0" style="color: black;">
+                <form class="row g-3">
+                    <div class="col-12">
+                      <label for="full_name" class="form-label">Full Name</label>
+                      <input type="text" class="form-control" name="full_name" id="full_name" placeholder="Enter your full name!">
+                    </div>
+                    <div class="col-12">
+                      <label for="buyer_email" class="form-label">Email</label>
+                      <input type="email" class="form-control" name="buyer_email" id="buyer_email" placeholder="Enter your email!">
+                    </div>
+                    <div class="col-12">
+                      <label for="product_name" class="form-label">Product Name</label>
+                      <input type="text" class="form-control" id="product_name" id="product_name" placeholder="Enter the product name!">
+                    </div>
+                    <div class="col-12">
+                        <label for="description" class="form-label">Problem Details </label>
+                        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                    </div>
+                    <div class="col-12">
+                        
+                      <a id="cancel_report" class="button button--primary">Cancel</a>
+                      <button type="submit" class="button button--secondary">Submit</button>
+                    </div>
+                  </form>
+            </div>
         </aside>
 
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#report_problem').on('click', function(e) {
+                e.preventDefault();
+                $('#report_form_div').show(300);
+                $(this).hide(300);
+            });
+
+            $('#cancel_report').on('click', function(e) {
+                e.preventDefault();
+                $('#report_form_div').hide(200, function(){
+                    $('#report_problem').show(300);
+                });
+            });
+        });
+    </script> 
 {{/partial}}
 {{> layout/base}}
